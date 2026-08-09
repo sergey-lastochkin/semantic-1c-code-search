@@ -1,0 +1,3 @@
+# Testing
+
+After the README test install, run `.venv/bin/python -m pytest -q`, then the three CLI commands from README. Tests cover BSL boundaries/metadata, every chunk strategy, BM25, vector filters, RRF, hybrid retrieval, missing-Qdrant behavior, pgvector extension/table/upsert/search SQL generation through a fake DB-API connection, Recall@k/MRR/nDCG, context budgets, graph exports and all FastAPI flows. With `.[qdrant]`, the embedded Qdrant test is enabled. `experiments/results.json` and `.csv` are deterministic artifacts generated from the synthetic question set. A provisioned PostgreSQL/pgvector service was not available, so no live database integration is claimed.

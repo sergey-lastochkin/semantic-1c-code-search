@@ -1,0 +1,70 @@
+[
+  {
+    "id": "ecc0a238fde06cab",
+    "text": "Функция СформироватьНазначениеПлатежа(Документ) Экспорт\n Возврат \"Оплата по заявке \" + Документ.Номер;\nКонецФункции\n",
+    "configuration": "DemoConfiguration",
+    "version": "synthetic-1",
+    "object_type": "CommonModule",
+    "object_name": "demo",
+    "module_type": "CommonModule",
+    "procedure_name": "СформироватьНазначениеПлатежа",
+    "line_start": 2,
+    "line_end": 5,
+    "is_export": true,
+    "context_path": "demo/СформироватьНазначениеПлатежа",
+    "strategy": "structure_aware",
+    "metadata_refs": []
+  },
+  {
+    "id": "6488268cb9c138a7",
+    "text": "\nФункция ПроверитьОстатки(Номенклатура, Количество) Экспорт\n Запрос = Новый Запрос;\n Запрос.Текст = \"ВЫБРАТЬ Остатки.Количество ИЗ РегистрыНакопления.Остатки КАК Остатки\";\n Возврат Количество > 0;\nКонецФункции\n",
+    "configuration": "DemoConfiguration",
+    "version": "synthetic-1",
+    "object_type": "CommonModule",
+    "object_name": "demo",
+    "module_type": "CommonModule",
+    "procedure_name": "ПроверитьОстатки",
+    "line_start": 5,
+    "line_end": 11,
+    "is_export": true,
+    "context_path": "demo/ПроверитьОстатки",
+    "strategy": "structure_aware",
+    "metadata_refs": [
+      "РегистрыНакопления.Остатки"
+    ]
+  },
+  {
+    "id": "5168a8120e00d328",
+    "text": "\nПроцедура СоздатьПлатеж(Заявка) Экспорт\n Назначение = СформироватьНазначениеПлатежа(Заявка);\n ДокументПлатежа = Документы.ПлатежноеПоручение.СоздатьДокумент();\n ЗаписьJSON = Новый ЗаписьJSON;\n ЗаписьJSON.УстановитьСтроку();\n ЗаписатьJSON(ЗаписьJSON, Новый Структура(\"purpose\", Назначение));\n ТелоJSON = ЗаписьJSON.Закрыть();\nКонецПроцедуры\n",
+    "configuration": "DemoConfiguration",
+    "version": "synthetic-1",
+    "object_type": "CommonModule",
+    "object_name": "demo",
+    "module_type": "CommonModule",
+    "procedure_name": "СоздатьПлатеж",
+    "line_start": 11,
+    "line_end": 20,
+    "is_export": true,
+    "context_path": "demo/СоздатьПлатеж",
+    "strategy": "structure_aware",
+    "metadata_refs": [
+      "Документы.ПлатежноеПоручение"
+    ]
+  },
+  {
+    "id": "3a413df1926c39e9",
+    "text": "\nПроцедура ОтправитьВБанк(Платеж) Экспорт\n Если ПроверитьОстатки(Платеж.Номенклатура, Платеж.Количество) Тогда\n  HTTPСоединение = Новый HTTPСоединение(\"fixture.local\");\n  HTTPЗапрос = Новый HTTPЗапрос(\"/payments\");\n  HTTPЗапрос.УстановитьТелоИзСтроки(\"{}\");\n  HTTPОтвет = HTTPСоединение.ВызватьHTTPМетод(\"POST\", HTTPЗапрос);\n КонецЕсли;\nКонецПроцедуры",
+    "configuration": "DemoConfiguration",
+    "version": "synthetic-1",
+    "object_type": "CommonModule",
+    "object_name": "demo",
+    "module_type": "CommonModule",
+    "procedure_name": "ОтправитьВБанк",
+    "line_start": 20,
+    "line_end": 29,
+    "is_export": true,
+    "context_path": "demo/ОтправитьВБанк",
+    "strategy": "structure_aware",
+    "metadata_refs": []
+  }
+]
