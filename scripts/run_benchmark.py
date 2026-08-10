@@ -75,9 +75,9 @@ def measure(name: str, build, search, queries) -> dict[str, object]:
     started = time.perf_counter()
     index = build()
     index_seconds = time.perf_counter() - started
-    serialized_index_bytes = len(pickle.dumps(index, protocol=pickle.HIGHEST_PROTOCOL))
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
+    serialized_index_bytes = len(pickle.dumps(index, protocol=pickle.HIGHEST_PROTOCOL))
     latencies: list[float] = []
     scores: list[dict[str, float]] = []
     for row in queries:
