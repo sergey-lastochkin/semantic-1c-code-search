@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-08-10T21:32:51Z",
+  "code_commit": "3fa9b7181dc88e908568cf3b357354b5a574ecde",
+  "python": "3.14.0",
+  "device": "mps",
+  "corpus_chunks": 235,
+  "query_set_sha256": "2e2e4c9de7523e4be806e669a42c2ca333a2b4b1c5fe7bf2e421070e9e01e417",
+  "note": "Selection smoke on 20 pending Russian questions; it is not a human-reviewed public metric.",
+  "models": [
+    {
+      "model": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "license": "MIT",
+      "dimension": 384,
+      "query_count": 20,
+      "review_status": "pending",
+      "index_seconds": 2.108049,
+      "recall_at_5": 0.5,
+      "mrr_at_10": 0.433333
+    },
+    {
+      "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "license": "Apache-2.0",
+      "dimension": 384,
+      "query_count": 20,
+      "review_status": "pending",
+      "index_seconds": 0.831719,
+      "recall_at_5": 0.2,
+      "mrr_at_10": 0.138889
+    }
+  ]
+}
