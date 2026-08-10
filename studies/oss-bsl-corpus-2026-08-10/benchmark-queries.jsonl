@@ -1,0 +1,90 @@
+{"kind": "exact_procedure", "query": "Delete", "relevant_ids": ["566ab3a28478e91e"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Delete"]}
+{"kind": "exact_procedure", "query": "DeleteJson", "relevant_ids": ["9052b90d6f84fdb5"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/DeleteJson"]}
+{"kind": "exact_procedure", "query": "GZipFooter", "relevant_ids": ["41adb5c8b4665cc4"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/GZipFooter"]}
+{"kind": "exact_procedure", "query": "GZipHeader", "relevant_ids": ["ae4743fc4c5e10a7"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/GZipHeader"]}
+{"kind": "exact_procedure", "query": "GZipРазмерFooter", "relevant_ids": ["a4586aafa15e5247"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/GZipРазмерFooter"]}
+{"kind": "exact_procedure", "query": "GZipРазмерHeader", "relevant_ids": ["fc844a0826ca4f6a"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/GZipРазмерHeader"]}
+{"kind": "exact_procedure", "query": "Get", "relevant_ids": ["d76b0f8ad13231a3"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Get"]}
+{"kind": "exact_procedure", "query": "HMAC", "relevant_ids": ["cd750362582532b8"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/HMAC"]}
+{"kind": "exact_procedure", "query": "Head", "relevant_ids": ["7c5d2b583704b143"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Head"]}
+{"kind": "exact_procedure", "query": "JsonВОбъект", "relevant_ids": ["7b31ad64965c6977"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/JsonВОбъект"]}
+{"kind": "exact_procedure", "query": "Mkcol", "relevant_ids": ["deba9dddc7221ef4"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Mkcol"]}
+{"kind": "exact_procedure", "query": "Options", "relevant_ids": ["8be3071410b04498"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Options"]}
+{"kind": "exact_procedure", "query": "Patch", "relevant_ids": ["07f12076c5723ad5"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Patch"]}
+{"kind": "exact_procedure", "query": "Post", "relevant_ids": ["a9ab96a6b7e7888d"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Post"]}
+{"kind": "exact_procedure", "query": "PostJson", "relevant_ids": ["76ad2cb04ad139ce"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/PostJson"]}
+{"kind": "exact_procedure", "query": "Put", "relevant_ids": ["e8b526147b467b26"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Put"]}
+{"kind": "exact_procedure", "query": "PutJson", "relevant_ids": ["371b5f38621bda51"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/PutJson"]}
+{"kind": "exact_procedure", "query": "ZipCDH", "relevant_ids": ["f567150e8136fec9"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipCDH"]}
+{"kind": "exact_procedure", "query": "ZipDD", "relevant_ids": ["71e9453744206d5c"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipDD"]}
+{"kind": "exact_procedure", "query": "ZipEOCD", "relevant_ids": ["7cc20e9fc75db8c1"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipEOCD"]}
+{"kind": "exact_procedure", "query": "ZipLFH", "relevant_ids": ["9c4171c802d22fce"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipLFH"]}
+{"kind": "exact_procedure", "query": "ZipРазмерCDH", "relevant_ids": ["c783c0c48eb8b43c"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipРазмерCDH"]}
+{"kind": "exact_procedure", "query": "ZipРазмерDD", "relevant_ids": ["e0c1656060583264"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipРазмерDD"]}
+{"kind": "exact_procedure", "query": "ZipРазмерEOCD", "relevant_ids": ["938c3cdc6d7998df"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipРазмерEOCD"]}
+{"kind": "exact_procedure", "query": "ZipРазмерLFH", "relevant_ids": ["24c9348821e3b117"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ZipРазмерLFH"]}
+{"kind": "exact_procedure", "query": "ВосстановлениеJson", "relevant_ids": ["f218845907d932c0"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ВосстановлениеJson"]}
+{"kind": "exact_procedure", "query": "ВыбратьЗначение", "relevant_ids": ["e77719226f18e3e6"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ВыбратьЗначение"]}
+{"kind": "exact_procedure", "query": "ВызватьHTTPМетод", "relevant_ids": ["a4d0f5a97caf0db5"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ВызватьHTTPМетод"]}
+{"kind": "exact_procedure", "query": "ВызватьМетод", "relevant_ids": ["8ecb7ec2b735347c"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ВызватьМетод"]}
+{"kind": "exact_procedure", "query": "ВырезатьТекст", "relevant_ids": ["b3f410d9f55608f3"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/ВырезатьТекст"]}
+{"kind": "known_call", "query": "ADORecordSet", "relevant_ids": ["d32c331e2c70f412"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module/ADORecordSet"]}
+{"kind": "known_call", "query": "ADORecordSet", "relevant_ids": ["d32c331e2c70f412"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module/ADORecordSet"]}
+{"kind": "known_call", "query": "ADORecordSet", "relevant_ids": ["d32c331e2c70f412"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module/ADORecordSet"]}
+{"kind": "known_call", "query": "ADORecordSet", "relevant_ids": ["d32c331e2c70f412"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module/ADORecordSet"]}
+{"kind": "known_call", "query": "ADORecordSet", "relevant_ids": ["d32c331e2c70f412"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module/ADORecordSet"]}
+{"kind": "known_call", "query": "ADORecordSet", "relevant_ids": ["d32c331e2c70f412"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module/ADORecordSet"]}
+{"kind": "known_call", "query": "Allure_ПолучитьМетку", "relevant_ids": ["8c064870c444f516"], "expected_paths": ["xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/ObjectModule/Allure_ПолучитьМетку"]}
+{"kind": "known_call", "query": "Allure_ПолучитьОшибку", "relevant_ids": ["bf7fc1cac085d665"], "expected_paths": ["xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/ObjectModule/Allure_ПолучитьОшибку"]}
+{"kind": "known_call", "query": "Allure_ПолучитьПараметр", "relevant_ids": ["00805586aff7c5e6"], "expected_paths": ["xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/ObjectModule/Allure_ПолучитьПараметр"]}
+{"kind": "known_call", "query": "Allure_ПолучитьПреобразованнуюСтрокуXML", "relevant_ids": ["6002fd8914101eb3"], "expected_paths": ["xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/ObjectModule/Allure_ПолучитьПреобразованнуюСтрокуXML"]}
+{"kind": "known_call", "query": "Allure_ПолучитьСтатус", "relevant_ids": ["13f86c4e2a99969d"], "expected_paths": ["xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/ObjectModule/Allure_ПолучитьСтатус"]}
+{"kind": "known_call", "query": "AnyRef", "relevant_ids": ["6b67d484cf8f870b"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТТипыДанныхСлужебный/Module/AnyRef"]}
+{"kind": "known_call", "query": "CallHTTPMethod", "relevant_ids": ["b23cd8a3433198fc"], "expected_paths": ["yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPСоединение/ObjectModule/CallHTTPMethod"]}
+{"kind": "known_call", "query": "Close", "relevant_ids": ["3568873afcf61c4e"], "expected_paths": ["yaxunit/exts/yaxunit/src/DataProcessors/ЮТRecordSet/ObjectModule/Close"]}
+{"kind": "known_call", "query": "Close", "relevant_ids": ["4e584b783ad78962"], "expected_paths": ["yaxunit/tests/src/CommonModules/Обр_ЮТRecordSet_МО/Module/Close"]}
+{"kind": "known_call", "query": "Close", "relevant_ids": ["3568873afcf61c4e"], "expected_paths": ["yaxunit/exts/yaxunit/src/DataProcessors/ЮТRecordSet/ObjectModule/Close"]}
+{"kind": "known_call", "query": "Close", "relevant_ids": ["4e584b783ad78962"], "expected_paths": ["yaxunit/tests/src/CommonModules/Обр_ЮТRecordSet_МО/Module/Close"]}
+{"kind": "known_call", "query": "Close", "relevant_ids": ["3568873afcf61c4e"], "expected_paths": ["yaxunit/exts/yaxunit/src/DataProcessors/ЮТRecordSet/ObjectModule/Close"]}
+{"kind": "known_call", "query": "Close", "relevant_ids": ["4e584b783ad78962"], "expected_paths": ["yaxunit/tests/src/CommonModules/Обр_ЮТRecordSet_МО/Module/Close"]}
+{"kind": "known_call", "query": "Delete", "relevant_ids": ["566ab3a28478e91e"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Delete"]}
+{"kind": "known_call", "query": "Delete", "relevant_ids": ["53e2b8474b3e84de"], "expected_paths": ["yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPСоединение/ObjectModule/Delete"]}
+{"kind": "known_call", "query": "Delete", "relevant_ids": ["566ab3a28478e91e"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/Delete"]}
+{"kind": "known_call", "query": "Delete", "relevant_ids": ["53e2b8474b3e84de"], "expected_paths": ["yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPСоединение/ObjectModule/Delete"]}
+{"kind": "known_call", "query": "DeleteJson", "relevant_ids": ["9052b90d6f84fdb5"], "expected_paths": ["Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module/DeleteJson"]}
+{"kind": "known_call", "query": "Epic", "relevant_ids": ["ac67c5f18adc77f8"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module/Epic"]}
+{"kind": "known_call", "query": "Epic", "relevant_ids": ["ac67c5f18adc77f8"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module/Epic"]}
+{"kind": "known_call", "query": "Epic", "relevant_ids": ["ac67c5f18adc77f8"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module/Epic"]}
+{"kind": "known_call", "query": "Epic", "relevant_ids": ["ac67c5f18adc77f8"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module/Epic"]}
+{"kind": "known_call", "query": "Epic", "relevant_ids": ["ac67c5f18adc77f8"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module/Epic"]}
+{"kind": "known_call", "query": "Feature", "relevant_ids": ["9c87319e1b8bef22"], "expected_paths": ["yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module/Feature"]}
+{"kind": "metadata_reference", "query": "Документы.Дата", "relevant_ids": ["df2b872934f2be92"]}
+{"kind": "metadata_reference", "query": "Документы.ЗначенияРеквизитовНовых", "relevant_ids": ["46de615544d12c8e"]}
+{"kind": "metadata_reference", "query": "Документы.Найти", "relevant_ids": ["5675bf1e292abaee"]}
+{"kind": "metadata_reference", "query": "Документы.ОперацияПоУчетуТоваров", "relevant_ids": ["9467faf2544f6471"]}
+{"kind": "metadata_reference", "query": "Документы.Оплата", "relevant_ids": ["11f998216ed578d3", "56f771792613d871"]}
+{"kind": "metadata_reference", "query": "Документы.ПриходТовара", "relevant_ids": ["03a00c4f2aa868cc", "03d0971c0dc93956", "4479549a23c195f0", "488bf4d83c041c22", "5006f0867f409073", "663cc87d11007268", "6df2cd11f0800c0c", "85e82ca31b2380b2", "9986f81e2a24992e", "99ab6d064e8f09ab", "9e4982bc7d9aefa2", "a46883a286572b92", "c006c2a5bbefd691", "c7e50cf0fbc7c364", "c8616ee742709a85", "faefa78968ffa335"]}
+{"kind": "metadata_reference", "query": "Документы.Проведен", "relevant_ids": ["df2b872934f2be92"]}
+{"kind": "metadata_reference", "query": "Документы.РасходТовара", "relevant_ids": ["2f41c29301308790", "328fa054831fbd3a", "387c44d7a07c785c", "412e3df66dc78f85", "504ded63fdedc405", "89df0d89f6e104f9", "a33f5969b87eacee", "c887ec3571d72e71", "c9290649b8c5e843", "faeb32887e0233e3", "fddf4464af9d157c"]}
+{"kind": "metadata_reference", "query": "Документы.Реквизиты", "relevant_ids": ["4a25d0289d4d925d", "ad88c9f0cd602c1c", "b8fae9b69c627335"]}
+{"kind": "metadata_reference", "query": "Документы.Содержит", "relevant_ids": ["07acce0e9a384987", "100d7c6fa5d0f6fb", "2bde506eed00798f", "2ea305e17bff46e1", "4c1f71203bae5c5b", "6da504477e68e379", "7104fecbca6053fb", "7daffff69034ea6f", "8b5dd9e7e08f3b3e", "91313494ebe92d7f", "97879cc1a45ac29e", "a28f6335dace2942", "c9ef880e27f56215", "ce09dcca9318062a", "efac69bdfb6b5e5a", "f5c56f1dca53366f", "fff58505ba2dabb6"]}
+{"kind": "metadata_reference", "query": "Документы.Ссылка", "relevant_ids": ["df2b872934f2be92"]}
+{"kind": "metadata_reference", "query": "Документы.ТабличныеЧасти", "relevant_ids": ["4a25d0289d4d925d", "ad88c9f0cd602c1c", "b8fae9b69c627335"]}
+{"kind": "metadata_reference", "query": "Документы.ТипВсеСсылки", "relevant_ids": ["08f34ac5629d4d60", "30118d140e81cc1e", "325d8ec291ace5c9", "66513734e3887f7c", "70686f49235de29e", "e0af3e4cf129f926", "ef10ed903e5d74cb", "fca7baf0c815c1b1", "ff8c890d632b519f"]}
+{"kind": "metadata_reference", "query": "Документы.УстановкаЦен", "relevant_ids": ["025afa309b189db2", "43880d60517b5924", "c01e383dd8bb8cac", "d3ee11601ec797a2", "de79155fb0e7ebfe"]}
+{"kind": "metadata_reference", "query": "Перечисления.PushУведомления", "relevant_ids": ["262bd0a3dc18bd83", "331cbc901258bd8e", "7f6f196d2287cffc", "c5c15c6307441363"]}
+{"kind": "metadata_reference", "query": "Перечисления.ВидСодержимогоВходящегоПисьма", "relevant_ids": ["77156c67d4858f29", "bdad8a68485a5b78", "e4aae42d1cb3f614"]}
+{"kind": "metadata_reference", "query": "Перечисления.ВидыМобильныхОтчетов", "relevant_ids": ["ed49f82388204119"]}
+{"kind": "metadata_reference", "query": "Перечисления.ВидыТоваров", "relevant_ids": ["3da98cc2896bd1f6", "72e7262e02fa3c9e"]}
+{"kind": "metadata_reference", "query": "Перечисления.ИспользоватьПровайдерГеопозиционирования", "relevant_ids": ["4702b3f52668b2d5", "bd1aba4204904ed3"]}
+{"kind": "metadata_reference", "query": "Перечисления.Перечисление1", "relevant_ids": ["014675dc5bcd3fc9", "1d5862b9ea802b26", "22499dde63aa1c0e", "4048327796869bfe", "a55ea99185c67fc3", "d241c41495bffe91", "eb6f604185f0ab66"]}
+{"kind": "metadata_reference", "query": "Перечисления.Содержит", "relevant_ids": ["2d3a898ca2aa1b92", "e7934275c6203cfb"]}
+{"kind": "metadata_reference", "query": "Перечисления.СостоянияЗаказов", "relevant_ids": ["b9c4fd2411e6f1c9"]}
+{"kind": "metadata_reference", "query": "Перечисления.ТипВсеСсылки", "relevant_ids": ["08f34ac5629d4d60", "325d8ec291ace5c9", "60d8e0988b29c923", "70686f49235de29e", "903ddd068d482862", "e0af3e4cf129f926", "ef10ed903e5d74cb", "ff8c890d632b519f"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.Взаиморасчеты", "relevant_ids": ["29116a50a6383d48", "560fd8f1c283da97", "5a6e22cce708ad6e"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.Измерения", "relevant_ids": ["4a25d0289d4d925d", "ad88c9f0cd602c1c", "b8fae9b69c627335"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.Продажи", "relevant_ids": ["05ae19974c2e5ffe", "17033eecaafcbe25", "2afb405d8914222b", "3c380fea37d58b1f", "9859338d79ac591b", "a2fe47b0a7b4fb48", "ac78f97368591148", "d0decb8f116a4860"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.РегистрНакопления2", "relevant_ids": ["7e8003fba9862729", "8b2ee9910a984ffa", "9351d2132e550947", "a5d9550006b2e531"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.Реквизиты", "relevant_ids": ["4a25d0289d4d925d", "ad88c9f0cd602c1c", "b8fae9b69c627335"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.Ресурсы", "relevant_ids": ["4a25d0289d4d925d", "ad88c9f0cd602c1c", "b8fae9b69c627335"]}
+{"kind": "metadata_reference", "query": "РегистрыНакопления.Содержит", "relevant_ids": ["278ec16f49391cd1", "2bde506eed00798f", "2f7e13355fda3f79", "4c1f71203bae5c5b", "757c3d97933d0962", "8265399de13648a6", "912269bd0cd709b3", "9e15c7af0046e9ba", "aea716548a308ef9", "bf9ff7330aa40341", "e18e182b8e138b68", "e77e19f294e53ab8", "e8cef959170909bb", "f5c56f1dca53366f", "ff91b8c5060ce327", "fff58505ba2dabb6"]}

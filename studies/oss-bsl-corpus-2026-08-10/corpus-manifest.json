@@ -1,0 +1,3501 @@
+{
+  "retrieved_at": "2026-08-10T20:10:12.027094+00:00",
+  "sources": [
+    {
+      "name": "Connector",
+      "directory": "Connector",
+      "url": "https://github.com/vbondarevsky/Connector.git",
+      "commit": "7e37f1f5cdd35aac220af853b20a551d4da88cdd",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/vbondarevsky/Connector/blob/master/LICENSE",
+      "scope": "BSL modules from the exported 1C HTTP connector"
+    },
+    {
+      "name": "YAxUnit",
+      "directory": "yaxunit",
+      "url": "https://github.com/bia-technologies/yaxunit.git",
+      "commit": "23fd2db738dbb26b7b43bdcf0c35fd2c263a3899",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/bia-technologies/yaxunit/blob/develop/LICENSE",
+      "scope": "BSL modules from the YAxUnit test framework and smoke extension"
+    },
+    {
+      "name": "xUnitFor1C",
+      "directory": "xUnitFor1C",
+      "url": "https://github.com/xDrivenDevelopment/xUnitFor1C.git",
+      "commit": "acdbe70417e16a1c02d1e16cfc0b409e11307848",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/xDrivenDevelopment/xUnitFor1C/blob/develop/LICENSE",
+      "scope": "BSL modules from the xUnitFor1C test framework"
+    }
+  ],
+  "files": [
+    {
+      "path": "Connector/src/en/CommonModules/HTTPConnector/Ext/Module.bsl",
+      "sha256": "8811d528471f0842392872f46ab0621107e37f0c810f12450627a5d1bec11f19",
+      "bytes": 99623,
+      "lines": 3096
+    },
+    {
+      "path": "Connector/src/en/DataProcessors/Tests/Ext/ObjectModule.bsl",
+      "sha256": "31b03a84cedd02bfad3347a44c0df06f562e17d3032aa1b9748c27dfb5c18c3b",
+      "bytes": 45488,
+      "lines": 1332
+    },
+    {
+      "path": "Connector/src/en/DataProcessors/Tests/Forms/Form/Ext/Form/Module.bsl",
+      "sha256": "b6cc8eae316d54863c3f3c0c12be1a33a027cda1acf2a17463f2215a170bff69",
+      "bytes": 2038,
+      "lines": 125
+    },
+    {
+      "path": "Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module.bsl",
+      "sha256": "a9efedad1fd98b57ba92c0be660ca8901636f57a86d100c63bd0c352f0c9dcba",
+      "bytes": 214705,
+      "lines": 3487
+    },
+    {
+      "path": "Connector/src/ru/DataProcessors/Тесты/Ext/ObjectModule.bsl",
+      "sha256": "55cd157a752965cb1f225f4eb67dbccd3c1293f58d315b093273cbc420ffd25f",
+      "bytes": 83725,
+      "lines": 1415
+    },
+    {
+      "path": "Connector/src/ru/DataProcessors/Тесты/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "251b39fee8c0f0c739787f632b8498c623e16bf9df47e801e9a2a1114c2785d5",
+      "bytes": 4797,
+      "lines": 126
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/БазовыеУтверждения/Form/Форма/Форма.bsl",
+      "sha256": "23e041cc12aa0f75b35a6b010ad833778705d2ba363179b8153cb32c2561b9a7",
+      "bytes": 27656,
+      "lines": 367
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/БазовыеУтверждения/ObjectModule.bsl",
+      "sha256": "319a846ca634647c4e0a9cc353a01498dabcc7578953304565c7c6c9b6c6d16e",
+      "bytes": 30486,
+      "lines": 386
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ВременныеФайлы/Form/Форма/Форма.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ВременныеФайлы/ObjectModule.bsl",
+      "sha256": "2fed80d4fbf78909c06839a7049438195c48dfe6fa73b19d976b61edfaa62970",
+      "bytes": 4188,
+      "lines": 102
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/Form/Форма/Форма.bsl",
+      "sha256": "2f03ffc70f69af88133ae2e107ac5663b51a09b42e90ee5ca4d69d014a7f9874",
+      "bytes": 4950,
+      "lines": 95
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаAllureXML/ObjectModule.bsl",
+      "sha256": "b60e90f11d61d02adb5ea075df78900c374a9e337822a81d90c1751541432b38",
+      "bytes": 15695,
+      "lines": 295
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаJUnitXML/Form/Форма/Форма.bsl",
+      "sha256": "52cf68882b519415692d93530c7756cea7b09c3b4e757911cb28792a574b29bc",
+      "bytes": 2127,
+      "lines": 45
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаJUnitXML/ObjectModule.bsl",
+      "sha256": "936ad747e3dc30f9088a4904782fb4abd7ae7b42284005340a585e5255a78e7e",
+      "bytes": 8151,
+      "lines": 116
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаJUnitXML_TFS/Form/Форма/Форма.bsl",
+      "sha256": "3b7dea7361a40e9d6fca4d33de69d01a80aed572d73b138275fe9e3ab98610e6",
+      "bytes": 2339,
+      "lines": 46
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаJUnitXML_TFS/ObjectModule.bsl",
+      "sha256": "f21ab36866b5747795f63c715e42df142da0a13096f31718c85a41ec9954bf00",
+      "bytes": 9411,
+      "lines": 128
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаMXL/Form/Форма/Форма.bsl",
+      "sha256": "d888b6eae20c6ad9e2e3d60b2d9fb842ddd7a6635d060b3520d59ff8204be354",
+      "bytes": 4171,
+      "lines": 72
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенераторОтчетаMXL/ObjectModule.bsl",
+      "sha256": "8c1ae6d4063484145dde28130eb412a87137be93eb50fb8de0de6ebf9c45f735",
+      "bytes": 8074,
+      "lines": 110
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенерацияКодаВозврата/Form/Форма/Форма.bsl",
+      "sha256": "661b38f6e621400b5ee79e8d25f904965cd9e89e18a6d6e5c29590ff45bd768e",
+      "bytes": 3985,
+      "lines": 65
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ГенерацияКодаВозврата/ObjectModule.bsl",
+      "sha256": "5ca0268d42686cc08ec5154e494a70a77d5c942dd59bf56c889f7af1e5c9204f",
+      "bytes": 4119,
+      "lines": 61
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикИзПодсистемКонфигурации/Form/УправляемаяФорма/Форма.bsl",
+      "sha256": "cff86347b2c2db5557b99a2935bbed8ee3da26c3d1ed56e3d9ddb0b29510540e",
+      "bytes": 26981,
+      "lines": 429
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикИзПодсистемКонфигурации/Form/ФормаВыбораПодсистемУФ/Форма.bsl",
+      "sha256": "bf1bf1365b38a09757854e1ce43c545b9da77a973680ed0578bee16beb866eda",
+      "bytes": 1487,
+      "lines": 27
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикИзПодсистемКонфигурации/Form/ФормаВыбораПодсистемы/module.bsl",
+      "sha256": "253894f2e86a82d492705536d5cebc2d1677681ee7cff878c9fafa59b23e5c6a",
+      "bytes": 1981,
+      "lines": 22
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикИзПодсистемКонфигурации/ObjectModule.bsl",
+      "sha256": "9022f3408e60c228af913e71edd2231f80a6b369d68fb9d62ce9a3cb57ca39d4",
+      "bytes": 24711,
+      "lines": 349
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикКаталога/Form/Форма/Форма.bsl",
+      "sha256": "ff5c8dcfae88a55814c26e6aeb520d5a7bf73d6b79e215e190a86e0d4635702e",
+      "bytes": 6764,
+      "lines": 114
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикКаталога/ObjectModule.bsl",
+      "sha256": "5d30c93cf3263f0b0d4b9ff9d3e18d15c3dca6477b592e1c38027d67d3c87c25",
+      "bytes": 5626,
+      "lines": 89
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикФайла/Form/Форма/Форма.bsl",
+      "sha256": "894a8d57507a10135ef7186067d4599bf801a6aab1157c7a21088d5a71a45f4e",
+      "bytes": 27109,
+      "lines": 427
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗагрузчикФайла/ObjectModule.bsl",
+      "sha256": "47d2c16be9c3de8b1f89fc285813cac6e5bee8c732eca5899552198f19df72ef",
+      "bytes": 18988,
+      "lines": 304
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗапросыИзБД/Form/Форма/Форма.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ЗапросыИзБД/ObjectModule.bsl",
+      "sha256": "42bf4b1212dc8ab9582a27ba629a73ec4ae01855c469e545246d4e46ff0d5b75",
+      "bytes": 21666,
+      "lines": 391
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/КомандныйФайл/Form/Форма/Форма.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/КомандныйФайл/ObjectModule.bsl",
+      "sha256": "e45487b3ff74267970555df84ac160a9a70e2765c55e6d512d24bf3a5c71614a",
+      "bytes": 2681,
+      "lines": 75
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/Настройки/Form/Форма/Форма.bsl",
+      "sha256": "72dc2d2d047eed82aa5fa07eb3159bdca78d2f14f1a8560ab31943499a2f714d",
+      "bytes": 4441,
+      "lines": 97
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/Настройки/ObjectModule.bsl",
+      "sha256": "56e2cf67d7011ba2c36e0cddf586b2c63939b18f5c5957274a050854d8ea5f0f",
+      "bytes": 4402,
+      "lines": 88
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ПарсерКоманднойСтроки/Form/Форма/Форма.bsl",
+      "sha256": "c6f6798aa9226680ecaeef1c7a71a82639a2dc7f23c439954bd67154c8d6b737",
+      "bytes": 1261,
+      "lines": 30
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ПарсерКоманднойСтроки/ObjectModule.bsl",
+      "sha256": "95b6bedd9de64e6a05251648195b606aa93b3d52f0068a6de3123c770312aa07",
+      "bytes": 10110,
+      "lines": 176
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ПостроительДереваТестов/Form/Форма/Форма.bsl",
+      "sha256": "e75ec2f56007c67248c1b53a911c8a063746b2e158c62202c6056f56c249a52a",
+      "bytes": 2123,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ПостроительДереваТестов/ObjectModule.bsl",
+      "sha256": "0ba62ee8d1e2447c55d1975ca2c65806ed1a03dd05691370ec1c7845481a1f7d",
+      "bytes": 4778,
+      "lines": 75
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СериализаторMXL/Form/УправляемаяФорма/Форма.bsl",
+      "sha256": "33d24184439c2be9a58c032be26422ae6d071260e9ce63435b3e6d6aff5c20fd",
+      "bytes": 72367,
+      "lines": 1323
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СериализаторMXL/Form/Форма/module.bsl",
+      "sha256": "48de23f023776a11aff6f6f5759ac839a9fa9763b8e31ce5788ce0010d62369a",
+      "bytes": 22584,
+      "lines": 375
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СериализаторMXL/Form/ФормаСтруктурыПодчиненности/Форма.bsl",
+      "sha256": "3a59a78a076248cac025631de318b76a19d72e03f1a5880c2d416554a7899bf7",
+      "bytes": 68117,
+      "lines": 1178
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СериализаторMXL/Form/ФормаСтруктурыСсылокОбъекта/Форма.bsl",
+      "sha256": "caa711f0706e3ed26468f9f95af7d4d7841f2238482ee23bbe69ca42b8b9a268",
+      "bytes": 16915,
+      "lines": 355
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СериализаторMXL/Form/ФормаУстановкиПодчиненныхРегистраторовПоДереву/Форма.bsl",
+      "sha256": "87625e0d54d86db6d1c001760452c4cc73b7cf0bcd9ea1fd0379195dd5f4d3c3",
+      "bytes": 11550,
+      "lines": 219
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СериализаторMXL/ObjectModule.bsl",
+      "sha256": "422fd2910130e6dbddf9358afe257bc95041cb69731d093e95ab50c115545d39",
+      "bytes": 417010,
+      "lines": 5971
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СтроковыеУтилиты/Form/Форма/Форма.bsl",
+      "sha256": "ac331047b9043080cc004de2d141a2c14ddcdedd0011eedb499af345cd6002fb",
+      "bytes": 72555,
+      "lines": 1275
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/СтроковыеУтилиты/ObjectModule.bsl",
+      "sha256": "d26848d0060d8baa2cd742f2dff8a56b4d7a8b4ff7806760def0c0159bdc6def",
+      "bytes": 71925,
+      "lines": 1240
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ТестКлиенты/Form/Форма/Форма.bsl",
+      "sha256": "b7c9804e7ba3f954c71b19d224efb31487f78c7506b6b8890e70e40fe1e5eafd",
+      "bytes": 13147,
+      "lines": 293
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/ТестКлиенты/ObjectModule.bsl",
+      "sha256": "736b279674e9d4af20216496c611e44e167ff00af2c7236d94f890d7afcc7634",
+      "bytes": 858,
+      "lines": 16
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/УтвержденияBDD/Form/Форма/Форма.bsl",
+      "sha256": "d7fd855e07d13e1d96d282852b615ff06f043650cec51d8439bf954dd34212af",
+      "bytes": 8493,
+      "lines": 209
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/УтвержденияBDD/ObjectModule.bsl",
+      "sha256": "ac9a205124db832d28a85b8a808122a92a264b4b486006f755b43d0b70ddf4a6",
+      "bytes": 20085,
+      "lines": 307
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/УтвержденияПроверкаТаблиц/Form/Форма/Форма.bsl",
+      "sha256": "d4dfb58106c1f20e667ce740ec71244eb9239a94a03f8a9dbab796b5d95cba68",
+      "bytes": 2627,
+      "lines": 31
+    },
+    {
+      "path": "xUnitFor1C/src/Plugins/УтвержденияПроверкаТаблиц/ObjectModule.bsl",
+      "sha256": "22c23b4b634d1026cc18a0bc00dc5bbf2376549b62c276585c673d647c3c401b",
+      "bytes": 16559,
+      "lines": 220
+    },
+    {
+      "path": "xUnitFor1C/src/PluginsTemplates/ШаблонГенератораОтчета/Form/Форма/Форма.bsl",
+      "sha256": "af19fa7ff983545eb9226bed537feaeb83dcaf5b76027724d964380a0b92d011",
+      "bytes": 1855,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/PluginsTemplates/ШаблонГенератораОтчета/ObjectModule.bsl",
+      "sha256": "21f28d9511d1bd28f40894dc7416dd62acc0d5e03011daa3bf2238d0fa958216",
+      "bytes": 1943,
+      "lines": 34
+    },
+    {
+      "path": "xUnitFor1C/src/PluginsTemplates/ШаблонЗагрузчика/Form/Форма/Форма.bsl",
+      "sha256": "fad1cbfcdb4b52b446ac24d131e5d0f9d37cc452812af56673fa8c3c2db3fd2a",
+      "bytes": 2078,
+      "lines": 52
+    },
+    {
+      "path": "xUnitFor1C/src/PluginsTemplates/ШаблонЗагрузчика/ObjectModule.bsl",
+      "sha256": "d69e4dd7e348b45915078251c60cec6083296ade271f946590a80a73076f5ec6",
+      "bytes": 2149,
+      "lines": 47
+    },
+    {
+      "path": "xUnitFor1C/src/PluginsTemplates/ШаблонУтилиты/Form/Форма/Форма.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/PluginsTemplates/ШаблонУтилиты/ObjectModule.bsl",
+      "sha256": "65e07238d316bc890dc0266910d79c5338598f27315f5e89d8c1a4c1fa186a5c",
+      "bytes": 839,
+      "lines": 16
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Core/Тесты_ВыполнениеТестов/Form/Форма/Форма.bsl",
+      "sha256": "17fb4ce76949b2ee7a856c51c259c90055e95ee99eced2ac1bc7688b020c4eb2",
+      "bytes": 53854,
+      "lines": 565
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Core/Тесты_ВыполнениеТестов/ObjectModule.bsl",
+      "sha256": "cbdf4338d68fc7f6672fad53cb812cd4e57cc4cd8122bb96f8e535068068cbbe",
+      "bytes": 53033,
+      "lines": 514
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Core/Тесты_ЗапускВПакетномРежиме/ObjectModule.bsl",
+      "sha256": "c18595914c219e396433f1982a091611e2e2fed8d006d8095413eb41f809438a",
+      "bytes": 35904,
+      "lines": 420
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Core/Тесты_СистемаПлагинов/Form/Форма/Форма.bsl",
+      "sha256": "097bddde0cad75456ee2c071720f9eae6ca3e0082907745af25a8fab530659be",
+      "bytes": 6078,
+      "lines": 71
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Core/Тесты_СистемаПлагинов/ObjectModule.bsl",
+      "sha256": "2d1826c30bddad27e9c86e35c5f67f495c10723a64893bdd07e062b18af72c23",
+      "bytes": 5128,
+      "lines": 54
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Gui83/юнитТест_UI_83/Form/Форма/Форма.bsl",
+      "sha256": "889167f3ac99575fa1dcca90a4c082ab87afdd518c0325257ccbb4554e7913c3",
+      "bytes": 22789,
+      "lines": 417
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тест_Проверить_ТочкуМаршрута/ObjectModule.bsl",
+      "sha256": "1d82c2ccf9c2a30f3d24467c2171d39f452794914f427492fd8fe4201fcbd5ee",
+      "bytes": 3845,
+      "lines": 65
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тест_ПроверитьОтчетНаСоответствиеЭталону/ObjectModule.bsl",
+      "sha256": "7863b79f4318af616b57204b08bf6ec866910e748c14d65cf70caca0a219aa6f",
+      "bytes": 5865,
+      "lines": 85
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ГенераторОтчетаJUnitXML/ObjectModule.bsl",
+      "sha256": "4c69ad5d355ba7ae2ddb2a22eeb3ad3daad617bf251042335a2d70eb6f520f6a",
+      "bytes": 7542,
+      "lines": 118
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ГенераторОтчетаJUnitXML-TFS/ObjectModule.bsl",
+      "sha256": "99ebd226cb56b9943bc58fb30992f96ac573402110b822fe999404342d6d0540",
+      "bytes": 8543,
+      "lines": 128
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ГенераторОтчетаMXL/ObjectModule.bsl",
+      "sha256": "5bc58cf94eb2925fe316233a483723d17c95d08efbd27d40f5548642423ddbfe",
+      "bytes": 4787,
+      "lines": 71
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикИзПодсистемКонфигурации/Form/Форма/Форма.bsl",
+      "sha256": "c464c6888be877cace6751ad3b40ac590feb7b9ca707097fb5da017465d0c116",
+      "bytes": 13156,
+      "lines": 136
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикИзПодсистемКонфигурации/ObjectModule.bsl",
+      "sha256": "c78a4cee106fa97c590e62d722c9585ce7f1be1c9158572f616aa23cc9beaefd",
+      "bytes": 11427,
+      "lines": 116
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикКаталога/ObjectModule.bsl",
+      "sha256": "d51ad365b609d79a545cebe25b09d1270cf3bfd1c9c4e7e202f59294a2b6b8db",
+      "bytes": 10474,
+      "lines": 139
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикФайла/Form/Форма/Форма.bsl",
+      "sha256": "f37132135890c13fc86588403694be3f99d691625b7119a2aa5d3368ffae94ea",
+      "bytes": 26764,
+      "lines": 312
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикФайла/ObjectModule.bsl",
+      "sha256": "2d587125dd33b7e180c9cc4772a42a594e683d6677bb15d43d01f33ed535c47e",
+      "bytes": 21488,
+      "lines": 242
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикФайла_НовыйAPIОбъявленияТестов/Form/Форма/Форма.bsl",
+      "sha256": "0ed9ac80d41724ed83fa6428b7543922f66510efb013c2ceada883af9ab39a3f",
+      "bytes": 7212,
+      "lines": 104
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ЗагрузчикФайла_НовыйAPIОбъявленияТестов/ObjectModule.bsl",
+      "sha256": "0caca087c54a4ed4c5a8bbff56d5bc863c6d322640b851f7ff61fb36017b48bd",
+      "bytes": 6866,
+      "lines": 87
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ПарсерКоманднойСтроки/Form/Форма/Форма.bsl",
+      "sha256": "8e1522f21dcc83ecf7ceebdc4343157530b83b05d74cab62135616a04b6ab917",
+      "bytes": 8815,
+      "lines": 115
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_ПарсерКоманднойСтроки/ObjectModule.bsl",
+      "sha256": "1e51508363f86b272737fcbda6091faed5a7950a92338f634453fc5a1a2af012",
+      "bytes": 10647,
+      "lines": 123
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_СериализаторMXL/Form/Форма/Форма.bsl",
+      "sha256": "ef4b979b164ed0ccf96a9e077ed1b6e6c40e72dc780500cce9412b16ab51f31c",
+      "bytes": 6554,
+      "lines": 103
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_СериализаторMXL/ObjectModule.bsl",
+      "sha256": "1ea8a40a9e79de125b091c386a3ef91d560fa265b0e521d07c7728333310db4b",
+      "bytes": 149605,
+      "lines": 1322
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_СтроковыеУтилиты/Form/Форма/Форма.bsl",
+      "sha256": "eb0d5cb3d43c390c359a09eb3ce5e8f4375ef946b8be79e112ff63724a98f535",
+      "bytes": 33540,
+      "lines": 426
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_СтроковыеУтилиты/ObjectModule.bsl",
+      "sha256": "71791286875c94b73a96a41033f679344f91cee2a71ab0311102c91e90fa6682",
+      "bytes": 32879,
+      "lines": 393
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_УтвержденияBDD/Form/Форма/Форма.bsl",
+      "sha256": "ed3a4117d2ead3789cd883782f75b91fe8b94d3a266f19337ffbf2ad3e7ae5ad",
+      "bytes": 5033,
+      "lines": 88
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/Тесты_УтвержденияBDD/ObjectModule.bsl",
+      "sha256": "31cd260b02f935ea0a2402d1e3d5895883ab5cb3836a49247365b5e6ce461b2c",
+      "bytes": 21859,
+      "lines": 348
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/ТестыПроверитьРавенствоТаблиц/Form/Форма/Форма.bsl",
+      "sha256": "b0e30ccebb423a2146913befc813cabbf4ca897028614b09e58b84adb8050a0e",
+      "bytes": 8777,
+      "lines": 126
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/ТестыПроверитьРавенствоТаблиц/ObjectModule.bsl",
+      "sha256": "df24bceb6593204240ec9872938998a8e148fd1d04ee4cfbcfc713b400abfcc6",
+      "bytes": 12236,
+      "lines": 179
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Plugins/ТестыПроверитьРавенствоФайлов/ObjectModule.bsl",
+      "sha256": "5b78d51657a53e2332d62722dff1d35b6b310442ac71a9952750924f9958af75",
+      "bytes": 5262,
+      "lines": 95
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Smoke/Smoke_InputBasedOn/Form/Форма/Форма.bsl",
+      "sha256": "507120b30d8c1ba7961c63080d072ebbb56cd5cf99567a324c952b2899b93967",
+      "bytes": 39565,
+      "lines": 620
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Smoke/Smoke_InputBasedOn/ObjectModule.bsl",
+      "sha256": "58b6959f75c15a5782789a9453e77a00d675f438949c944aebfcd7f662955a05",
+      "bytes": 714,
+      "lines": 15
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Smoke/тесты_КомандныйИнтерфейс/Form/Форма/Форма.bsl",
+      "sha256": "b4b9eda17818bcde36da3ffe7913abc4a39486c432d10b67524d0d60a7a7933f",
+      "bytes": 21265,
+      "lines": 412
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Smoke/тесты_ОткрытиеФормКонфигурации/Form/ПолучениеФорм/module.bsl",
+      "sha256": "83e1f40ef132f2bebf2df4ff90132a18a71a7c8ff1393e12c1a03fd94c6cb681",
+      "bytes": 635,
+      "lines": 13
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Smoke/тесты_ОткрытиеФормКонфигурации/Form/УправляемаяФорма/Форма.bsl",
+      "sha256": "6707ee25ec136fb4b55f1535f3670cf49c424499e3b122581d6ed43cfde0a0f3",
+      "bytes": 33088,
+      "lines": 468
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Smoke/тесты_ОткрытиеФормКонфигурации/ObjectModule.bsl",
+      "sha256": "7acfe41d177ab3291914ae5d20319eaf779dc60023c635b18d76acc5760f2d6c",
+      "bytes": 72230,
+      "lines": 1277
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/Utils/Тест_КонвертацияТестов_в_версию4/ObjectModule.bsl",
+      "sha256": "8574dcb1975872e5af3389f0850dbfb9e0f62ac7ee6ba3d044a4e9ac7dec401d",
+      "bytes": 41991,
+      "lines": 417
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Catalogs/ИерархическийСправочник/Ext/ObjectModule.bsl",
+      "sha256": "e164077d2dd16eb2fceca0be14fe3a00a6daeb6219d747693909b54e5d16a81b",
+      "bytes": 544,
+      "lines": 8
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Catalogs/ПростойСправочник/Ext/ManagerModule.bsl",
+      "sha256": "f123ac430d209535c10ac6389a6ac14f543ccb06609b518bc45c08491b42ada7",
+      "bytes": 334,
+      "lines": 7
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Catalogs/ПростойСправочник/Ext/ObjectModule.bsl",
+      "sha256": "ba6051cab59f045ecd04b30dd978a68ad548484502e3479b73eb9ab5bd27a61b",
+      "bytes": 560,
+      "lines": 11
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Catalogs/ПростойСправочник/Forms/ФормаСписка/Ext/Form/Module.bsl",
+      "sha256": "301c21fe86694516eb391a26963db69dacc24cad38b4b20c91d0b58f35ac9896",
+      "bytes": 362,
+      "lines": 6
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Catalogs/СправочникСОбязательнымРеквизитом/Ext/ObjectModule.bsl",
+      "sha256": "d86bb58b751dd6532f3f2ceb1732d145484cd2fe5b61c9ba28b3ae4108ea4e74",
+      "bytes": 241,
+      "lines": 7
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/CommonForms/ФормаОтчета/Ext/Form/Module.bsl",
+      "sha256": "c969b1f65a89eecaec095624d0272a305ba83c0be34e320229641b06e14f398d",
+      "bytes": 580,
+      "lines": 17
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/CommonModules/xddКлиент/Ext/Module.bsl",
+      "sha256": "afac316f8474984a7400f0dd87db7b98a5cf0c0a704859fedfa4abdf7875b5ad",
+      "bytes": 752,
+      "lines": 11
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/CommonModules/xddСервер/Ext/Module.bsl",
+      "sha256": "9bdaad863a355d6e80f413c568efc78bb1d00b86d27a8c4594987ee1c1b22135",
+      "bytes": 752,
+      "lines": 10
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/CommonModules/ЗапускПриложенияКлиент/Ext/Module.bsl",
+      "sha256": "4a22396570ec0982e501a97d531df87cea577927740b3fce50b7ea9915b72020",
+      "bytes": 981,
+      "lines": 18
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/CommonModules/ЗапускПриложенияСервер/Ext/Module.bsl",
+      "sha256": "d9498a4c1a7d0f1c3abc124749c148b1a27d80d150332bead04ae056ac1540e4",
+      "bytes": 1367,
+      "lines": 24
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/xddGuidShow/Ext/ObjectModule.bsl",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "bytes": 3,
+      "lines": 1
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/xddGuidShow/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "030af236efa5c305fdc91eaf45828013b9078cca6efac3189bab8049d947a118",
+      "bytes": 663,
+      "lines": 21
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/xddTestRunner/Ext/ObjectModule.bsl",
+      "sha256": "6335246a62d92a4de1cf37da63929ae2d923b0943c87045578e99227f84e658d",
+      "bytes": 51252,
+      "lines": 728
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/xddTestRunner/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "923084cd8c3795d8ffb66e4a7d36fa2a50b169a3b4788b3c80067c9f040f3eb0",
+      "bytes": 82486,
+      "lines": 1192
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/xddTestsConvertIntoRebornFormat/Ext/ObjectModule.bsl",
+      "sha256": "d0200512dff1897bf504e000d0f9722c764b9049c2a01a9edc48bfaf51d0a7b4",
+      "bytes": 63738,
+      "lines": 790
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/БазовыеУтверждения/Ext/ObjectModule.bsl",
+      "sha256": "319a846ca634647c4e0a9cc353a01498dabcc7578953304565c7c6c9b6c6d16e",
+      "bytes": 30486,
+      "lines": 386
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/БазовыеУтверждения/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "23e041cc12aa0f75b35a6b010ad833778705d2ba363179b8153cb32c2561b9a7",
+      "bytes": 27656,
+      "lines": 367
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ВременныеФайлы/Ext/ObjectModule.bsl",
+      "sha256": "2fed80d4fbf78909c06839a7049438195c48dfe6fa73b19d976b61edfaa62970",
+      "bytes": 4188,
+      "lines": 102
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ВременныеФайлы/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ГенераторОтчетаJUnitXML/Ext/ObjectModule.bsl",
+      "sha256": "c4763338ad5bc6b27db4c8f59e46e45f82d79fff25c4d03aa4496cc10bcec4a2",
+      "bytes": 8145,
+      "lines": 116
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ГенераторОтчетаJUnitXML/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "52cf68882b519415692d93530c7756cea7b09c3b4e757911cb28792a574b29bc",
+      "bytes": 2127,
+      "lines": 45
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ГенераторОтчетаMXL/Ext/ObjectModule.bsl",
+      "sha256": "b53f7f07d6bf6240a775af94299dd6183cbf92adc06ac79ea9ab95630b31aba5",
+      "bytes": 6262,
+      "lines": 82
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ГенераторОтчетаMXL/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "41609bc62fc8a561b6ede789b700d61929af82224b26009f21586e9a2f4ec3f9",
+      "bytes": 2393,
+      "lines": 47
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикИзПодсистемКонфигурации/Ext/ObjectModule.bsl",
+      "sha256": "d98ff45f948e2790de68d32383b283a298f0c764b513c92edc47dcab9c42f498",
+      "bytes": 23640,
+      "lines": 333
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикИзПодсистемКонфигурации/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "7f82836c0d02282a0114ee64e3d9818a20cb5190c4d18cb3992e248e628f2636",
+      "bytes": 25765,
+      "lines": 409
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикИзПодсистемКонфигурации/Forms/ФормаВыбораПодсистемУФ/Ext/Form/Module.bsl",
+      "sha256": "bf1bf1365b38a09757854e1ce43c545b9da77a973680ed0578bee16beb866eda",
+      "bytes": 1487,
+      "lines": 27
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикКаталога/Ext/ObjectModule.bsl",
+      "sha256": "5d30c93cf3263f0b0d4b9ff9d3e18d15c3dca6477b592e1c38027d67d3c87c25",
+      "bytes": 5626,
+      "lines": 89
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикКаталога/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "4911c5df7b5cde70b47610dcb02eec12bba447653c18957776e9d51cf91576c8",
+      "bytes": 6646,
+      "lines": 110
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикФайла/Ext/ObjectModule.bsl",
+      "sha256": "a0112736063edc9a47b2664784ff468c41d50d643692e98b4a40a2eaa7a74a6e",
+      "bytes": 17064,
+      "lines": 272
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗагрузчикФайла/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "501c79461a5627e32f1e1cc48c122a2d7c298331b7d57d3bcd705fb742d5988d",
+      "bytes": 24963,
+      "lines": 393
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗапросыИзБД/Ext/ObjectModule.bsl",
+      "sha256": "4fb7e4f746defb7433019fd12bdc7f76a814ce909473d5a02674160b21d53dba",
+      "bytes": 16858,
+      "lines": 261
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ЗапросыИзБД/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/КомандныйФайл/Ext/ObjectModule.bsl",
+      "sha256": "e45487b3ff74267970555df84ac160a9a70e2765c55e6d512d24bf3a5c71614a",
+      "bytes": 2681,
+      "lines": 75
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/КомандныйФайл/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ПарсерКоманднойСтроки/Ext/ObjectModule.bsl",
+      "sha256": "ef4201fb8b6a7965a101c0b25fe9198e9010f607097048dc021948ca93719133",
+      "bytes": 8356,
+      "lines": 146
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ПарсерКоманднойСтроки/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "c6f6798aa9226680ecaeef1c7a71a82639a2dc7f23c439954bd67154c8d6b737",
+      "bytes": 1261,
+      "lines": 30
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ПостроительДереваТестов/Ext/ObjectModule.bsl",
+      "sha256": "64d456e11f53873297454e609a3191fba7443e32bf7def342d11950940b85aea",
+      "bytes": 4622,
+      "lines": 73
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ПостроительДереваТестов/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "e75ec2f56007c67248c1b53a911c8a063746b2e158c62202c6056f56c249a52a",
+      "bytes": 2123,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ПреобразованиеЖурналаДействийПользователя/Ext/ObjectModule.bsl",
+      "sha256": "3f4d40464ebec898d73c6052f0bfe604d37b2ec6cbd198ab1c1292271125cb4f",
+      "bytes": 53245,
+      "lines": 1282
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ПреобразованиеЖурналаДействийПользователя/Forms/DefaultForm/Ext/Form/Module.bsl",
+      "sha256": "78740f57051db9e8d300cc138c77a0aa72360abcecd53d2879439d0cdef43fd9",
+      "bytes": 8627,
+      "lines": 300
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/СериализаторMXL/Ext/ObjectModule.bsl",
+      "sha256": "fd63859bdd3fa890a790a74b3614e85da0bda2e2550f5e6d086e89b8a5893f3f",
+      "bytes": 375786,
+      "lines": 5446
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/СериализаторMXL/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "8a44f3d72e0fc0b1dc37fd435f770fa9e17b33b320ec63fdbb9173622d8a0002",
+      "bytes": 27226,
+      "lines": 491
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/СтроковыеУтилиты/Ext/ObjectModule.bsl",
+      "sha256": "d26848d0060d8baa2cd742f2dff8a56b4d7a8b4ff7806760def0c0159bdc6def",
+      "bytes": 71925,
+      "lines": 1240
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/СтроковыеУтилиты/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "ac331047b9043080cc004de2d141a2c14ddcdedd0011eedb499af345cd6002fb",
+      "bytes": 72555,
+      "lines": 1275
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов/Ext/ObjectModule.bsl",
+      "sha256": "f6e16e95bca77cfb77e63be73f51f600a37c7c26835a14f07d77e1c979797c5b",
+      "bytes": 4711,
+      "lines": 63
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "8315ff6376033491d3d90d50903b789227a05a0ffc4330cde438e8dd015ccd32",
+      "bytes": 4931,
+      "lines": 74
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/Тест_Обработка/Ext/ObjectModule.bsl",
+      "sha256": "1cd2930115f7125e2060e0f8f243f0f7bb98cf949dfe3ca1332f04ee33119aef",
+      "bytes": 850,
+      "lines": 19
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/Тест_Обработка/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "e34f66e9a30d3a37cca74efb9425b51ad87cf78902ea036da2bb732a3413e858",
+      "bytes": 980,
+      "lines": 24
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ТестОбработка_Форма_ИсключениеПриОткрытии/Ext/ObjectModule.bsl",
+      "sha256": "18e3ec051114289ab57bbb6b14e048514bd9afdfa7c501f08a76c41d3b500feb",
+      "bytes": 1207,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ТестОбработка_Форма_ИсключениеПриОткрытии/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "f6d19d4d4a81c6a9243120664d3e840c6c2ca283c4bd6b514703b50956d7ddb8",
+      "bytes": 141,
+      "lines": 2
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/ТестПадающий_Обработка/Ext/ObjectModule.bsl",
+      "sha256": "4939e62263b6faf29b045bbf6de86d946410968bbfd057c8dd24b1dd65e06c73",
+      "bytes": 1109,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/УтвержденияBDD/Ext/ObjectModule.bsl",
+      "sha256": "ac9a205124db832d28a85b8a808122a92a264b4b486006f755b43d0b70ddf4a6",
+      "bytes": 20085,
+      "lines": 307
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/УтвержденияBDD/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "d7fd855e07d13e1d96d282852b615ff06f043650cec51d8439bf954dd34212af",
+      "bytes": 8493,
+      "lines": 209
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/УтвержденияПроверкаТаблиц/Ext/ObjectModule.bsl",
+      "sha256": "22c23b4b634d1026cc18a0bc00dc5bbf2376549b62c276585c673d647c3c401b",
+      "bytes": 16559,
+      "lines": 220
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/DataProcessors/УтвержденияПроверкаТаблиц/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "d4dfb58106c1f20e667ce740ec71244eb9239a94a03f8a9dbab796b5d95cba68",
+      "bytes": 2627,
+      "lines": 31
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Documents/Документ2/Ext/ObjectModule.bsl",
+      "sha256": "eb136d7841619f2318265e45883c90d02e206d6b5bd8241a6ae15fe3f1d71f6e",
+      "bytes": 5045,
+      "lines": 64
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Ext/ManagedApplicationModule.bsl",
+      "sha256": "0693f484ffd8693e4dd461d7f423011620f9db12579a15aac491989441728acc",
+      "bytes": 769,
+      "lines": 12
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Ext/OrdinaryApplicationModule.bsl",
+      "sha256": "0693f484ffd8693e4dd461d7f423011620f9db12579a15aac491989441728acc",
+      "bytes": 769,
+      "lines": 12
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Reports/Отчет1/Forms/УправляемаяФормаОтчета/Ext/Form/Module.bsl",
+      "sha256": "f84f7c0150c9b0d5a1a2b44f5615909e19a93aed39f94e81bc5a7fcd578b939a",
+      "bytes": 322,
+      "lines": 7
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Reports/Отчет2/Ext/ObjectModule.bsl",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "bytes": 3,
+      "lines": 1
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83/Reports/Тест_Отчет/Ext/ObjectModule.bsl",
+      "sha256": "23ef1bdbbb9a4ef2d9eb13ee50c15822c6caa4b4ec39dbd49b71abf16b5c535d",
+      "bytes": 1024,
+      "lines": 24
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Catalogs/ИерархическийСправочник/Ext/ObjectModule.bsl",
+      "sha256": "e164077d2dd16eb2fceca0be14fe3a00a6daeb6219d747693909b54e5d16a81b",
+      "bytes": 544,
+      "lines": 8
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Catalogs/ПростойСправочник/Ext/ManagerModule.bsl",
+      "sha256": "f123ac430d209535c10ac6389a6ac14f543ccb06609b518bc45c08491b42ada7",
+      "bytes": 334,
+      "lines": 7
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Catalogs/ПростойСправочник/Ext/ObjectModule.bsl",
+      "sha256": "ba6051cab59f045ecd04b30dd978a68ad548484502e3479b73eb9ab5bd27a61b",
+      "bytes": 560,
+      "lines": 11
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Catalogs/ПростойСправочник/Forms/ФормаСписка/Ext/Form/Module.bsl",
+      "sha256": "301c21fe86694516eb391a26963db69dacc24cad38b4b20c91d0b58f35ac9896",
+      "bytes": 362,
+      "lines": 6
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/CommonForms/ФормаОтчета/Ext/Form/Module.bsl",
+      "sha256": "c969b1f65a89eecaec095624d0272a305ba83c0be34e320229641b06e14f398d",
+      "bytes": 580,
+      "lines": 17
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/CommonModules/xddКлиент/Ext/Module.bsl",
+      "sha256": "afac316f8474984a7400f0dd87db7b98a5cf0c0a704859fedfa4abdf7875b5ad",
+      "bytes": 752,
+      "lines": 11
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/CommonModules/xddСервер/Ext/Module.bsl",
+      "sha256": "9bdaad863a355d6e80f413c568efc78bb1d00b86d27a8c4594987ee1c1b22135",
+      "bytes": 752,
+      "lines": 10
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/CommonModules/ЗапускПриложенияКлиент/Ext/Module.bsl",
+      "sha256": "4a22396570ec0982e501a97d531df87cea577927740b3fce50b7ea9915b72020",
+      "bytes": 981,
+      "lines": 18
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/CommonModules/ЗапускПриложенияСервер/Ext/Module.bsl",
+      "sha256": "d9498a4c1a7d0f1c3abc124749c148b1a27d80d150332bead04ae056ac1540e4",
+      "bytes": 1367,
+      "lines": 24
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/xddGuidShow/Ext/ObjectModule.bsl",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "bytes": 3,
+      "lines": 1
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/xddGuidShow/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "030af236efa5c305fdc91eaf45828013b9078cca6efac3189bab8049d947a118",
+      "bytes": 663,
+      "lines": 21
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/xddTestRunner/Ext/ObjectModule.bsl",
+      "sha256": "6335246a62d92a4de1cf37da63929ae2d923b0943c87045578e99227f84e658d",
+      "bytes": 51252,
+      "lines": 728
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/xddTestRunner/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "923084cd8c3795d8ffb66e4a7d36fa2a50b169a3b4788b3c80067c9f040f3eb0",
+      "bytes": 82486,
+      "lines": 1192
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/xddTestsConvertIntoRebornFormat/Ext/ObjectModule.bsl",
+      "sha256": "d0200512dff1897bf504e000d0f9722c764b9049c2a01a9edc48bfaf51d0a7b4",
+      "bytes": 63738,
+      "lines": 790
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/БазовыеУтверждения/Ext/ObjectModule.bsl",
+      "sha256": "319a846ca634647c4e0a9cc353a01498dabcc7578953304565c7c6c9b6c6d16e",
+      "bytes": 30486,
+      "lines": 386
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/БазовыеУтверждения/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "23e041cc12aa0f75b35a6b010ad833778705d2ba363179b8153cb32c2561b9a7",
+      "bytes": 27656,
+      "lines": 367
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ВременныеФайлы/Ext/ObjectModule.bsl",
+      "sha256": "2fed80d4fbf78909c06839a7049438195c48dfe6fa73b19d976b61edfaa62970",
+      "bytes": 4188,
+      "lines": 102
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ВременныеФайлы/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ГенераторОтчетаJUnitXML/Ext/ObjectModule.bsl",
+      "sha256": "c4763338ad5bc6b27db4c8f59e46e45f82d79fff25c4d03aa4496cc10bcec4a2",
+      "bytes": 8145,
+      "lines": 116
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ГенераторОтчетаJUnitXML/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "52cf68882b519415692d93530c7756cea7b09c3b4e757911cb28792a574b29bc",
+      "bytes": 2127,
+      "lines": 45
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ГенераторОтчетаMXL/Ext/ObjectModule.bsl",
+      "sha256": "b53f7f07d6bf6240a775af94299dd6183cbf92adc06ac79ea9ab95630b31aba5",
+      "bytes": 6262,
+      "lines": 82
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ГенераторОтчетаMXL/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "41609bc62fc8a561b6ede789b700d61929af82224b26009f21586e9a2f4ec3f9",
+      "bytes": 2393,
+      "lines": 47
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикИзПодсистемКонфигурации/Ext/ObjectModule.bsl",
+      "sha256": "d98ff45f948e2790de68d32383b283a298f0c764b513c92edc47dcab9c42f498",
+      "bytes": 23640,
+      "lines": 333
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикИзПодсистемКонфигурации/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "7f82836c0d02282a0114ee64e3d9818a20cb5190c4d18cb3992e248e628f2636",
+      "bytes": 25765,
+      "lines": 409
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикИзПодсистемКонфигурации/Forms/ФормаВыбораПодсистемУФ/Ext/Form/Module.bsl",
+      "sha256": "bf1bf1365b38a09757854e1ce43c545b9da77a973680ed0578bee16beb866eda",
+      "bytes": 1487,
+      "lines": 27
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикКаталога/Ext/ObjectModule.bsl",
+      "sha256": "5d30c93cf3263f0b0d4b9ff9d3e18d15c3dca6477b592e1c38027d67d3c87c25",
+      "bytes": 5626,
+      "lines": 89
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикКаталога/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "4911c5df7b5cde70b47610dcb02eec12bba447653c18957776e9d51cf91576c8",
+      "bytes": 6646,
+      "lines": 110
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикФайла/Ext/ObjectModule.bsl",
+      "sha256": "a0112736063edc9a47b2664784ff468c41d50d643692e98b4a40a2eaa7a74a6e",
+      "bytes": 17064,
+      "lines": 272
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗагрузчикФайла/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "501c79461a5627e32f1e1cc48c122a2d7c298331b7d57d3bcd705fb742d5988d",
+      "bytes": 24963,
+      "lines": 393
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗапросыИзБД/Ext/ObjectModule.bsl",
+      "sha256": "4fb7e4f746defb7433019fd12bdc7f76a814ce909473d5a02674160b21d53dba",
+      "bytes": 16858,
+      "lines": 261
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ЗапросыИзБД/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/КомандныйФайл/Ext/ObjectModule.bsl",
+      "sha256": "e45487b3ff74267970555df84ac160a9a70e2765c55e6d512d24bf3a5c71614a",
+      "bytes": 2681,
+      "lines": 75
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/КомандныйФайл/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "67614bb0465e76d84e12149ba9cdea37d5ecb2a25946175361403befbc13a313",
+      "bytes": 801,
+      "lines": 20
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ПарсерКоманднойСтроки/Ext/ObjectModule.bsl",
+      "sha256": "ef4201fb8b6a7965a101c0b25fe9198e9010f607097048dc021948ca93719133",
+      "bytes": 8356,
+      "lines": 146
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ПарсерКоманднойСтроки/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "c6f6798aa9226680ecaeef1c7a71a82639a2dc7f23c439954bd67154c8d6b737",
+      "bytes": 1261,
+      "lines": 30
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ПостроительДереваТестов/Ext/ObjectModule.bsl",
+      "sha256": "64d456e11f53873297454e609a3191fba7443e32bf7def342d11950940b85aea",
+      "bytes": 4622,
+      "lines": 73
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ПостроительДереваТестов/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "e75ec2f56007c67248c1b53a911c8a063746b2e158c62202c6056f56c249a52a",
+      "bytes": 2123,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ПреобразованиеЖурналаДействийПользователя/Ext/ObjectModule.bsl",
+      "sha256": "3f4d40464ebec898d73c6052f0bfe604d37b2ec6cbd198ab1c1292271125cb4f",
+      "bytes": 53245,
+      "lines": 1282
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ПреобразованиеЖурналаДействийПользователя/Forms/DefaultForm/Ext/Form/Module.bsl",
+      "sha256": "78740f57051db9e8d300cc138c77a0aa72360abcecd53d2879439d0cdef43fd9",
+      "bytes": 8627,
+      "lines": 300
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/СериализаторMXL/Ext/ObjectModule.bsl",
+      "sha256": "fd63859bdd3fa890a790a74b3614e85da0bda2e2550f5e6d086e89b8a5893f3f",
+      "bytes": 375786,
+      "lines": 5446
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/СериализаторMXL/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "8a44f3d72e0fc0b1dc37fd435f770fa9e17b33b320ec63fdbb9173622d8a0002",
+      "bytes": 27226,
+      "lines": 491
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/СтроковыеУтилиты/Ext/ObjectModule.bsl",
+      "sha256": "d26848d0060d8baa2cd742f2dff8a56b4d7a8b4ff7806760def0c0159bdc6def",
+      "bytes": 71925,
+      "lines": 1240
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/СтроковыеУтилиты/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "ac331047b9043080cc004de2d141a2c14ddcdedd0011eedb499af345cd6002fb",
+      "bytes": 72555,
+      "lines": 1275
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов/Ext/ObjectModule.bsl",
+      "sha256": "f6e16e95bca77cfb77e63be73f51f600a37c7c26835a14f07d77e1c979797c5b",
+      "bytes": 4711,
+      "lines": 63
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "8315ff6376033491d3d90d50903b789227a05a0ffc4330cde438e8dd015ccd32",
+      "bytes": 4931,
+      "lines": 74
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/Тест_Обработка/Ext/ObjectModule.bsl",
+      "sha256": "1cd2930115f7125e2060e0f8f243f0f7bb98cf949dfe3ca1332f04ee33119aef",
+      "bytes": 850,
+      "lines": 19
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/Тест_Обработка/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "e34f66e9a30d3a37cca74efb9425b51ad87cf78902ea036da2bb732a3413e858",
+      "bytes": 980,
+      "lines": 24
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ТестОбработка_Форма_ИсключениеПриОткрытии/Ext/ObjectModule.bsl",
+      "sha256": "18e3ec051114289ab57bbb6b14e048514bd9afdfa7c501f08a76c41d3b500feb",
+      "bytes": 1207,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ТестОбработка_Форма_ИсключениеПриОткрытии/Forms/УправляемаяФорма/Ext/Form/Module.bsl",
+      "sha256": "f6d19d4d4a81c6a9243120664d3e840c6c2ca283c4bd6b514703b50956d7ddb8",
+      "bytes": 141,
+      "lines": 2
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/ТестПадающий_Обработка/Ext/ObjectModule.bsl",
+      "sha256": "4939e62263b6faf29b045bbf6de86d946410968bbfd057c8dd24b1dd65e06c73",
+      "bytes": 1109,
+      "lines": 39
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/УтвержденияBDD/Ext/ObjectModule.bsl",
+      "sha256": "ac9a205124db832d28a85b8a808122a92a264b4b486006f755b43d0b70ddf4a6",
+      "bytes": 20085,
+      "lines": 307
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/УтвержденияBDD/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "d7fd855e07d13e1d96d282852b615ff06f043650cec51d8439bf954dd34212af",
+      "bytes": 8493,
+      "lines": 209
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/УтвержденияПроверкаТаблиц/Ext/ObjectModule.bsl",
+      "sha256": "22c23b4b634d1026cc18a0bc00dc5bbf2376549b62c276585c673d647c3c401b",
+      "bytes": 16559,
+      "lines": 220
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/DataProcessors/УтвержденияПроверкаТаблиц/Forms/Форма/Ext/Form/Module.bsl",
+      "sha256": "d4dfb58106c1f20e667ce740ec71244eb9239a94a03f8a9dbab796b5d95cba68",
+      "bytes": 2627,
+      "lines": 31
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Documents/Документ2/Ext/ObjectModule.bsl",
+      "sha256": "eb136d7841619f2318265e45883c90d02e206d6b5bd8241a6ae15fe3f1d71f6e",
+      "bytes": 5045,
+      "lines": 64
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Ext/ManagedApplicationModule.bsl",
+      "sha256": "0693f484ffd8693e4dd461d7f423011620f9db12579a15aac491989441728acc",
+      "bytes": 769,
+      "lines": 12
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Ext/OrdinaryApplicationModule.bsl",
+      "sha256": "0693f484ffd8693e4dd461d7f423011620f9db12579a15aac491989441728acc",
+      "bytes": 769,
+      "lines": 12
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Reports/Отчет1/Forms/УправляемаяФормаОтчета/Ext/Form/Module.bsl",
+      "sha256": "f84f7c0150c9b0d5a1a2b44f5615909e19a93aed39f94e81bc5a7fcd578b939a",
+      "bytes": 322,
+      "lines": 7
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Reports/Отчет2/Ext/ObjectModule.bsl",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "bytes": 3,
+      "lines": 1
+    },
+    {
+      "path": "xUnitFor1C/src/Tests/cf/83-no-modal/Reports/Тест_Отчет/Ext/ObjectModule.bsl",
+      "sha256": "23ef1bdbbb9a4ef2d9eb13ee50c15822c6caa4b4ec39dbd49b71abf16b5c535d",
+      "bytes": 1024,
+      "lines": 24
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/UILogToScript/Form/DefaultForm/Форма.bsl",
+      "sha256": "78740f57051db9e8d300cc138c77a0aa72360abcecd53d2879439d0cdef43fd9",
+      "bytes": 8627,
+      "lines": 300
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/UILogToScript/ObjectModule.bsl",
+      "sha256": "3f4d40464ebec898d73c6052f0bfe604d37b2ec6cbd198ab1c1292271125cb4f",
+      "bytes": 53245,
+      "lines": 1282
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/xddGuidShow/Form/УправляемаяФорма/Форма.bsl",
+      "sha256": "030af236efa5c305fdc91eaf45828013b9078cca6efac3189bab8049d947a118",
+      "bytes": 663,
+      "lines": 21
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/xddGuidShow/Form/Форма/module.bsl",
+      "sha256": "c7303622650299666a3bbd4bf37399dab3c0c336aeeac7223455be1d33f77345",
+      "bytes": 680,
+      "lines": 22
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/xddGuidShow/ObjectModule.bsl",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "bytes": 3,
+      "lines": 1
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/xddTestsConvertIntoRebornFormat/Form/УправляемаяФорма/Форма.bsl",
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "bytes": 3,
+      "lines": 1
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/xddTestsConvertIntoRebornFormat/Form/Форма/module.bsl",
+      "sha256": "e4278193bfa7ea387e3869f185b625fb4e8a1d75b1816bd25b3d4ca347a2440c",
+      "bytes": 4585,
+      "lines": 72
+    },
+    {
+      "path": "xUnitFor1C/src/Utils/xddTestsConvertIntoRebornFormat/ObjectModule.bsl",
+      "sha256": "17bfe8368b801cbb93be1e801056a320028158d1675cbcc4fb381d5e67696629",
+      "bytes": 62740,
+      "lines": 783
+    },
+    {
+      "path": "xUnitFor1C/src/fixtures/core/Тесты_Настройки/Form/Форма/Форма.bsl",
+      "sha256": "703c27d827340b57362a51c99acd5a52fbe5c7221fc4f1f282829334df6a4158",
+      "bytes": 4235,
+      "lines": 77
+    },
+    {
+      "path": "xUnitFor1C/src/fixtures/core/Тесты_Настройки/ObjectModule.bsl",
+      "sha256": "5b5657442c69e5f74cc1af0ab3913b4df343aa59b1d3f219b65b727dd1dc28df",
+      "bytes": 4144,
+      "lines": 71
+    },
+    {
+      "path": "xUnitFor1C/src/xddTestRunner/Form/УправляемаяФорма/Форма.bsl",
+      "sha256": "1dc7a79037698de674fe7c8bdf5c7357e95b399b2cae4190b03a8e538cda12b2",
+      "bytes": 94604,
+      "lines": 1377
+    },
+    {
+      "path": "xUnitFor1C/src/xddTestRunner/Form/Форма/module.bsl",
+      "sha256": "83c6c334e2d9f1e0fd74bf65b9e2908ff34b52e7a3ad0ac7bde44a4b8442044a",
+      "bytes": 36414,
+      "lines": 509
+    },
+    {
+      "path": "xUnitFor1C/src/xddTestRunner/ObjectModule.bsl",
+      "sha256": "ef3b386aea1b5bcba16a38d6b261d2c4761e1f87239a84c8567a891836a6ec91",
+      "bytes": 56013,
+      "lines": 787
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТЗаписьСправочников/Module.bsl",
+      "sha256": "3e49de5b92d901e312ec82933d3fc1f29816881a7606a01f8bf4dd98b3dfbe79",
+      "bytes": 11862,
+      "lines": 234
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТЗаписьСправочниковСлужебныйВызовСервера/Module.bsl",
+      "sha256": "63156165b9bf2a03e4071bb400f7142b6a0752397c43b9aad38ef20e301ee97f",
+      "bytes": 9657,
+      "lines": 185
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТОткрытиеФорм/Module.bsl",
+      "sha256": "77d72e2833d485faa0d32df59647083e49b489055465cafe1ad6bb5c41b11eef",
+      "bytes": 19374,
+      "lines": 376
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТОткрытиеФормСлужебныйВызовСервера/Module.bsl",
+      "sha256": "7094210ff20d22b318f0f8983516a6e5df37ea93fe78e718c19473eaf69f38aa",
+      "bytes": 23681,
+      "lines": 448
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТОткрытиеФормСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "c4baf55c078cfb9fdde7a6f293f06bad7dff36d15b8f861260df107cb0373f96",
+      "bytes": 4678,
+      "lines": 66
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТПроведениеДокументов/Module.bsl",
+      "sha256": "7ad52939eb856a0dca6967c25d8bef2d627993441dd8fd11d87eaa5634507c5a",
+      "bytes": 10129,
+      "lines": 205
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТПроведениеДокументовСлужебныйВызовСервера/Module.bsl",
+      "sha256": "197a71dd8f003b9fc4f02a4428c6fdb0c95d93b980573de52e8bc88e931d10b6",
+      "bytes": 6306,
+      "lines": 129
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТПроверкаПрав/Module.bsl",
+      "sha256": "2d19db8144381609fe3f6d3496ef88748b47a999b254179b6d7f10de354d18f1",
+      "bytes": 12073,
+      "lines": 235
+    },
+    {
+      "path": "yaxunit/exts/smoke/src/CommonModules/ДТПроверкаПравСлужебныйВызовСервера/Module.bsl",
+      "sha256": "7abc67a8b59147f34e10f96e04b6d4fd4e327409d408230ee798ba7b973b6ad0",
+      "bytes": 13156,
+      "lines": 232
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/.settings/templates/common_module.bsl",
+      "sha256": "c686ee06b1fdfd3a1b634e771d241d5ac6c20076050cf332f60375511656aea5",
+      "bytes": 1033,
+      "lines": 26
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/Мокито/Module.bsl",
+      "sha256": "5e37204fa41b47cf5a4f3d526b2de5a7a93f58bc81cad357040d697e7be8d3bc",
+      "bytes": 14060,
+      "lines": 267
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/МокитоОбучение/Module.bsl",
+      "sha256": "eaadfcf1b182954756fd9e6f83ca8a0fe33d23d527fda2307fc0694de5f8c903",
+      "bytes": 15937,
+      "lines": 277
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/МокитоПерехват/Module.bsl",
+      "sha256": "4d438763d85f945bcc291edef6808797b21becca87ff2bb40f82d050d636f38a",
+      "bytes": 1722,
+      "lines": 38
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/МокитоПроверки/Module.bsl",
+      "sha256": "e2989888f0a7c2e53216ca335cb1bae310278222d3a6ec50a2779034a6f78ad6",
+      "bytes": 14296,
+      "lines": 272
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/МокитоСлужебный/Module.bsl",
+      "sha256": "1943c18d9d6847baabc184ce6aeead4edb2a7e70b4f0002870c21c26d3e408bd",
+      "bytes": 33866,
+      "lines": 715
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТАлюр/Module.bsl",
+      "sha256": "c7733c563fcca80964ab14178c5ea2ec552be9658b3b58f2c2912e9bf5804b35",
+      "bytes": 17716,
+      "lines": 430
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТАсинхроннаяОбработкаСлужебныйКлиент/Module.bsl",
+      "sha256": "cf5eb864ff8da42b46e811a853d7d12307b0da6f0b9464feaaab1c83bd8ba2f0",
+      "bytes": 7184,
+      "lines": 131
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТВнешниеОбработкиСлужебныйСервер/Module.bsl",
+      "sha256": "18d95bbe8bf04c755ab53693f5986647ce450eb4f96909c7e3317fe74d3b58ac",
+      "bytes": 4137,
+      "lines": 75
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТВнешнийЗапускТестовСлужебныйКлиент/Module.bsl",
+      "sha256": "f26736ed5c8b731216272f2b486488fb7220b5db49aaa94916bfcd95602aa751",
+      "bytes": 16454,
+      "lines": 301
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТГенераторКода/Module.bsl",
+      "sha256": "77a307a35a5842f0108cf9f42477fc1f94d3b0ec4026dd589b86f0561742183b",
+      "bytes": 8046,
+      "lines": 99
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТГенераторКодаСлужебныйСервер/Module.bsl",
+      "sha256": "9fbd3e51380f2bb454dd2edb8067a8486cfb8bcd665d0413029bd41fc5e66170",
+      "bytes": 92483,
+      "lines": 1547
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТДымовыеТесты/Module.bsl",
+      "sha256": "26f4d6f790ac0f1b0ca566aa82b8bfc58798212fde159d2c65e5dc5002b8b52f",
+      "bytes": 4323,
+      "lines": 93
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТДымовыеТестыСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "15a08385f55732ad1354d035e69a3bfa623bf721c20ab4e719be0e351d59f35b",
+      "bytes": 7850,
+      "lines": 166
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗависимости/Module.bsl",
+      "sha256": "e608fbbe5f951fb79323d652c01666857740e8e40291f70909ce71e5004552df",
+      "bytes": 3988,
+      "lines": 65
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗависимостиСлужебный/Module.bsl",
+      "sha256": "ede041778160d1f6102c0d7b6b43c4f9ffa7c95360b92b36b71a2d5162c0304b",
+      "bytes": 7958,
+      "lines": 154
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗависимостиСлужебныйВызовСервера/Module.bsl",
+      "sha256": "1c88f1831f54ff3d7aa76d0163c25fb2fe88a0c1f9f9b6cbfea22cb8091ea419",
+      "bytes": 2776,
+      "lines": 51
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗависимостиСлужебныйКлиент/Module.bsl",
+      "sha256": "e65350c0fbb4870677610dcd4d02b563aeba8c21887c77974db210a50cae205f",
+      "bytes": 22908,
+      "lines": 364
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗапросы/Module.bsl",
+      "sha256": "9e058b77acd6dfadedd06b6bddded1227db63e8208aa43b61e89b56158e9fc51",
+      "bytes": 23825,
+      "lines": 362
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗапросыСлужебныйВызовСервера/Module.bsl",
+      "sha256": "c3aaf0d0f05960a4bb9cc71f340e54cfc949434680a6c1be648daae20c0dc41d",
+      "bytes": 3434,
+      "lines": 67
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗапросыСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "dfb1541b81680a05d8386484b4efbc0fbaa3c895b6cf29becddacf86f41ac4c3",
+      "bytes": 3396,
+      "lines": 72
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЗапросыСлужебныйСервер/Module.bsl",
+      "sha256": "5d589857dd4e81c2e85051ccede1f889fa20c944f748d8978f7a163abbd24a41",
+      "bytes": 26494,
+      "lines": 530
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТИсключения/Module.bsl",
+      "sha256": "17173f4a27114d1b802e429e85e1559a4c30eddbf049b4d558b409ae21ad9d3b",
+      "bytes": 3136,
+      "lines": 65
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТИсполнительСлужебныйВызовСервера/Module.bsl",
+      "sha256": "f0874e87c5a5efb9a50f255599d8d8e174b52d06a73fdf2cec7cb8015bd95a7f",
+      "bytes": 5511,
+      "lines": 81
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТИсполнительСлужебныйГлобальный/Module.bsl",
+      "sha256": "1dcd661b863d248e2c7f3c6fe7b8797bf7f76fc720dd2e4ca11c69b396fbccff",
+      "bytes": 3020,
+      "lines": 56
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТИсполнительСлужебныйКлиент/Module.bsl",
+      "sha256": "edf8af4c93fc221802f2dac63635e29b5658e3877eeb489d932e92afa9c1fb59",
+      "bytes": 51772,
+      "lines": 752
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТИсполнительСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "757e2d869a69d4d4c66e358bb358b5db748932fb68571e889773ed9c4b54f442",
+      "bytes": 25712,
+      "lines": 434
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТИсполнительСлужебныйСервер/Module.bsl",
+      "sha256": "7331ae298f645eaeb425543e33a8bc1e9702da78e5f52463f10a4940ce947f33",
+      "bytes": 3993,
+      "lines": 79
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКоллекции/Module.bsl",
+      "sha256": "e8c534cb8487d78d8ee226e415eefd2e5a359d112be6831edf507f43938f6f3d",
+      "bytes": 38443,
+      "lines": 777
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКомпоненты/Module.bsl",
+      "sha256": "bc310df8f260d16660969b332b3fe710dee84ce943d08a93737d28e995355247",
+      "bytes": 9576,
+      "lines": 178
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКомпонентыСлужебныйВызовСервера/Module.bsl",
+      "sha256": "6d1b0dd6d4514d4360ef393d3bc0dcafc69b1c4a7975f0808afbdfb64ef6a0cd",
+      "bytes": 5444,
+      "lines": 110
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКомпонентыСлужебныйКлиент/Module.bsl",
+      "sha256": "4853f3c4c98f6df19a1aadb821b43d063866ebe17e618fd7b6560916c7294a83",
+      "bytes": 13321,
+      "lines": 199
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонструкторВариантов/Module.bsl",
+      "sha256": "cec9e2e457469f2d0b6f45b80e8903feca5324cf5a328215800560e46c2bff6d",
+      "bytes": 12039,
+      "lines": 204
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонструкторТестовыхДанныхСлужебный/Module.bsl",
+      "sha256": "d2eb504aecfafa8abe14873b66d88f588c35334e8da26c9393161b3a34050b55",
+      "bytes": 31898,
+      "lines": 569
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонтекст/Module.bsl",
+      "sha256": "b44afa1eaf859b131e3ad251a52c6ae9a5c79ef6e4947378031f8272ef2f5889",
+      "bytes": 2774,
+      "lines": 57
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонтекстИсполненияСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "afbf1034cd3b3dbfa575d13cfccfe0edd78ffcc14371ca981aeb2b718d55271c",
+      "bytes": 4917,
+      "lines": 96
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонтекстСлужебный/Module.bsl",
+      "sha256": "cbc59aebe7d8df1f65031b667a04b02b63f4284a060e54afb6aa355cad411634",
+      "bytes": 22312,
+      "lines": 449
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонтекстСлужебныйВызовСервера/Module.bsl",
+      "sha256": "62d7973693b4a41414d8773b17d0076e784dbd29009539b4170eb1d763914a8c",
+      "bytes": 5592,
+      "lines": 108
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонтекстСлужебныйКлиент/Module.bsl",
+      "sha256": "aed734ee4809e3d6505d3eb34830a70c1e3237e6390d0c1dd816eacf18d15774",
+      "bytes": 1672,
+      "lines": 40
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТКонтекстТеста/Module.bsl",
+      "sha256": "b0e683711c8750b24c4ff4f0b2fcae6284ec00050c5e5fd39ffe8de58f5b0929",
+      "bytes": 5786,
+      "lines": 127
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЛогИсполненияТестаСлужебный/Module.bsl",
+      "sha256": "4b8bb90bc85a3d447faf43908659e75a869bc14c3eb0a838be381ba82fbca86e",
+      "bytes": 3179,
+      "lines": 85
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЛогирование/Module.bsl",
+      "sha256": "891352525f190d77287bdc73e30fe346e013fe909aeac80b7b4b41477e3996d3",
+      "bytes": 3330,
+      "lines": 84
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЛогированиеСлужебный/Module.bsl",
+      "sha256": "40dfd9cfe06f432685218fe2415ddab8766a59b9946e59b4c1bab40512ecc550",
+      "bytes": 24228,
+      "lines": 447
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЛогированиеСлужебныйВызовСервера/Module.bsl",
+      "sha256": "a1b0d169e6a8f42101cf7b5e1ba7d9001f60622034c55ad0b1f2c122fd92b842",
+      "bytes": 1783,
+      "lines": 46
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетаданные/Module.bsl",
+      "sha256": "6dfccce265dc300b16467d28f8b7304668dbcffe54398ff4caffef38875e45e3",
+      "bytes": 45795,
+      "lines": 753
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетаданныеСлужебныйВызовСервера/Module.bsl",
+      "sha256": "a9546b070852d671a0255eb9c5607c682fed8478c36cdef191079d43dbd892c3",
+      "bytes": 34440,
+      "lines": 632
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетаданныеСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "9b2050e49a5d693a972bedf11dcdcc333b4a0e0f6fe2eb6e604b7d354e91239d",
+      "bytes": 1321,
+      "lines": 28
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетаданныеСлужебныйПовтИсп/Module.bsl",
+      "sha256": "f32e315eab2e1475a8070bc990a2cf6aaf202d8435d61ecf02cb046fd7495bf7",
+      "bytes": 3093,
+      "lines": 69
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетоды/Module.bsl",
+      "sha256": "8889c7748d3928e9f29ec0d0708e8d9b5d9d50bf2cd5b67f9669faf850dfc8f2",
+      "bytes": 10237,
+      "lines": 197
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетодыСлужебный/Module.bsl",
+      "sha256": "247702a1a5d85f4d04be0ba63b990e6dbe013d3b3b150ddefe58af904db84cd1",
+      "bytes": 15997,
+      "lines": 292
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТМетодыСлужебныйВызовСервера/Module.bsl",
+      "sha256": "69987c9601572bcd46e77354c60f0f7ba8b4accae69c0488c9a8df30251a7f00",
+      "bytes": 1358,
+      "lines": 28
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТНастройкиВыполнения/Module.bsl",
+      "sha256": "c203053e56c21ebfb44e8398372ede38baa7c9f7c21d7cfa36a52be97856f8e6",
+      "bytes": 8607,
+      "lines": 152
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОбщий/Module.bsl",
+      "sha256": "a2f9ac4e5d2e9ebcb2b29b86145ba07c6edac728fb78e1d6ee4241185644a087",
+      "bytes": 73237,
+      "lines": 1196
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОбщийСлужебный/Module.bsl",
+      "sha256": "528c3c78719f826cb3582f5fab50d5e115c944eca2756ed6d461c5c7c5ddd5c0",
+      "bytes": 8722,
+      "lines": 207
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОбщийСлужебныйВызовСервера/Module.bsl",
+      "sha256": "406e2c35663f1a7070898beac967c3007992bfd4cdc4c3f81db4df2b3aef2795",
+      "bytes": 3745,
+      "lines": 78
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОкружение/Module.bsl",
+      "sha256": "1ca9cc163d149875b7e2b0905924c96458e49f0fb75decf7caa11d544bf32b7b",
+      "bytes": 8350,
+      "lines": 182
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОкружениеСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "89e4584b85407197f3bc08915b188d6a1b443ed3a30b0a1021ebc4359179aa68",
+      "bytes": 9870,
+      "lines": 167
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОтчетAllureСлужебный/Module.bsl",
+      "sha256": "4d8a129e04623d92803bfa451e615fabc51742d6e4908c2331e3857ccd6ce421",
+      "bytes": 23000,
+      "lines": 444
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОтчетJSONСлужебный/Module.bsl",
+      "sha256": "3e3667e74c27fb15f20341a66327badba3cb9240bc2ebd0d52f5c7a1f18be9ec",
+      "bytes": 3000,
+      "lines": 60
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОтчетJUnitСлужебный/Module.bsl",
+      "sha256": "fcd93d08af0d4470135549a4606fa6b9ead440395be111f93f7a29c648232f0f",
+      "bytes": 26501,
+      "lines": 532
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОтчетСлужебный/Module.bsl",
+      "sha256": "159d089f4436c39dbb22ab6d21539f53329f5379f03de0c513b9a36995fb1bbb",
+      "bytes": 16259,
+      "lines": 246
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТОтчетСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "8273eb6bdc1f0cdaed439b458a0f07dfad449dae4c45d9c206d557cce836cb50",
+      "bytes": 1315,
+      "lines": 29
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПараметрыЗапускаСлужебный/Module.bsl",
+      "sha256": "737d22d18f94a74fff94ca96041cf438123daad9a5e9a698f582e1415294e14e",
+      "bytes": 32620,
+      "lines": 619
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодключаемыеМодулиСлужебный/Module.bsl",
+      "sha256": "11a8b1af407626fbdba0fc4de9c3f346b880e1025f0628a5759e7c7b325b86ae",
+      "bytes": 3774,
+      "lines": 89
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодключаемыеМодулиСлужебныйВызовСервера/Module.bsl",
+      "sha256": "5005daff4c7360a876106059c42c566da36a513eb0d74676bf075cd4601d1dfb",
+      "bytes": 5682,
+      "lines": 105
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражатель/Module.bsl",
+      "sha256": "d1a21b11c991c4c58be524e1987ddb4c6988af21f42f0f1b3e12d4bcb60b1d45",
+      "bytes": 3977,
+      "lines": 95
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражатель_Банки/Module.bsl",
+      "sha256": "ae03e29f3a2740b07fa0ac3f75e822e88e2f6bef378d251e9ac15ed90d1b5804",
+      "bytes": 4244,
+      "lines": 86
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражатель_Коммерция/Module.bsl",
+      "sha256": "2e7244cc890c4d1f7adebd56c6a07503966aa1388d71c1e25df081f27791022b",
+      "bytes": 2718,
+      "lines": 68
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражатель_Компании/Module.bsl",
+      "sha256": "03bcd7441fec33092b81485a2365f35e65d76363c78a02d2d71347ed6424faf0",
+      "bytes": 11278,
+      "lines": 238
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражатель_Локация/Module.bsl",
+      "sha256": "24bdd0256a0da1af1a57a9f2fff0441f838b7968909548947aa9ac0728637902",
+      "bytes": 5232,
+      "lines": 127
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражатель_Люди/Module.bsl",
+      "sha256": "4fc96386ed355d96475e1d6b2ec1fb19f7bb4e7734724edd1d1880ffa59426be",
+      "bytes": 12336,
+      "lines": 240
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражательСлужебный/Module.bsl",
+      "sha256": "08e6ec160df072f2970734a28b9287e1639a503edd8672be4aac5974dc191df7",
+      "bytes": 4364,
+      "lines": 104
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражательСлужебныйВызовСервера/Module.bsl",
+      "sha256": "6ae24d9c6fbfe67985619c6d4394bc3d79292ca72831e498857f6c2713c52592",
+      "bytes": 1794,
+      "lines": 39
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПодражательСлужебныйПовтИсп/Module.bsl",
+      "sha256": "5d29fc24bec3d344c38a576093e62bcc6c6a5cbbfdba5a1b2f00e7b4191a99dc",
+      "bytes": 2352,
+      "lines": 49
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПользовательскийИнтерфейсСлужебныйКлиент/Module.bsl",
+      "sha256": "0ce8331f0eaafd77fb8840e001ddf4ff00763fabfe9c13c4267f2d6cf7fff515",
+      "bytes": 3384,
+      "lines": 68
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПредикаты/Module.bsl",
+      "sha256": "4278a4c52536de061e35dfc32662682dc28452c6940b6c1bd7b13e709ce771c8",
+      "bytes": 41340,
+      "lines": 764
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПредикатыСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "f756172a0110c0d1775c468915cd1cb98850ca62b7970208d04234d068ce5b9a",
+      "bytes": 15268,
+      "lines": 261
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПреобразованияСлужебный/Module.bsl",
+      "sha256": "23c5508f7c8a7a7ac4153aa06eaab5207cf443a0d95142d9aae99cc772d95404",
+      "bytes": 12540,
+      "lines": 232
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТПроверкиСлужебный/Module.bsl",
+      "sha256": "9575711feac5cced27b2aa518e3855349df244210843826e8c678c878b92d3c9",
+      "bytes": 4003,
+      "lines": 79
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРаботаСТекстом/Module.bsl",
+      "sha256": "1f320ba00af0175952dc0a9bb2b54a6899a8be15c76a079a9a9b5df64cf05cea",
+      "bytes": 539,
+      "lines": 17
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРазрешениеЗависимостейСлужебныйВызовСервера/Module.bsl",
+      "sha256": "66bd72394e1b9fffe06f8f6667f7a9b1b823e354c4c6f705e24469745af8b34c",
+      "bytes": 4439,
+      "lines": 93
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРазрешениеЗависимостейСлужебныйКлиент/Module.bsl",
+      "sha256": "541859f325fcffbfdddfff2973fb409de789306c34246995d50638084fdf9163",
+      "bytes": 11481,
+      "lines": 182
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРеактивныйКлиент/Module.bsl",
+      "sha256": "4a719305b1cdae759beb468234e53ccb4ac5fb53c20bd16ddd9e0310a62bf51e",
+      "bytes": 6531,
+      "lines": 115
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРеактивныйСервер/Module.bsl",
+      "sha256": "1db71ca7d28c9e70d9cd12bdfaa62a1dda619ffbaa1fd737190984c4a1bdc050",
+      "bytes": 2831,
+      "lines": 53
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРегистрацияОшибок/Module.bsl",
+      "sha256": "da14ebd97fcb24962dad5976cbf50ee4ddd2bb9be8306e540eef41970fe6dbc8",
+      "bytes": 2251,
+      "lines": 47
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТРегистрацияОшибокСлужебный/Module.bsl",
+      "sha256": "b09476a65c7cb45a80c6ad7e96131635beb33daa2ef62f54417ac53463d4eafa",
+      "bytes": 36694,
+      "lines": 719
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСлужебныйПовторногоИспользования/Module.bsl",
+      "sha256": "683cb3025d02491dc8cb75dddf1ab8294bd88e4fd351d93b56c574d1644577fb",
+      "bytes": 5239,
+      "lines": 112
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСобытияСлужебный/Module.bsl",
+      "sha256": "0a2ba17958d7a43d22d4e6484ee7ec0582aa97c8ab6adbda0a4ad8cf819239b1",
+      "bytes": 34257,
+      "lines": 512
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСообщенияСлужебный/Module.bsl",
+      "sha256": "b0b5b1c61e94ae1931690f21a033e279c756ea4754ddded7ae4b1a4073d81edb",
+      "bytes": 7321,
+      "lines": 138
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСостояниеИсполненияТестовСлужебный/Module.bsl",
+      "sha256": "f68f4e57d4a9f8b3653bc83163b5f01d4fd386c53d941ad7130d4f009903fdaa",
+      "bytes": 8846,
+      "lines": 172
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСравнениеСлужебныйВызовСервера/Module.bsl",
+      "sha256": "c739a130d752b0a8f8d169a667eefef2015e58e7ea4a29d3bd727b595ad29d74",
+      "bytes": 2062,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСравнениеСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "7ee9e2ace6fbdc864cf683fe5e83a104799a48501d80cd12e622188f2c6b5803",
+      "bytes": 45344,
+      "lines": 769
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСравнениеСлужебныйСервер/Module.bsl",
+      "sha256": "3e3a2c756c564fbd0fcc9d61a937c4610b06b86076be81e8506490e50d6f4d8f",
+      "bytes": 10245,
+      "lines": 167
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТСтроки/Module.bsl",
+      "sha256": "3c505a80a7ad12ae0186b43a7573a9e9c0cabd55bede88962efbb1c7a7e67581",
+      "bytes": 32995,
+      "lines": 556
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанные/Module.bsl",
+      "sha256": "687e19621cd4f5d66a54a6974a94ff2c90a436c6dbdabc8ae6ea80984061c193",
+      "bytes": 90666,
+      "lines": 1393
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанныеПереопределяемый/Module.bsl",
+      "sha256": "7b9f26e7efae8bbe31ed002712f93912f7e491c95d9d7eb705cb375d83d17ea2",
+      "bytes": 4622,
+      "lines": 89
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанныеСлужебный/Module.bsl",
+      "sha256": "5f2315c37f1d8e422dbe0c35b3be12b366e6e99b9a565f95640b651a1b2edca5",
+      "bytes": 17805,
+      "lines": 355
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанныеСлужебныйВызовСервера/Module.bsl",
+      "sha256": "38b88f5871a4a291131e9a6b2811bb605c953b42143990d061d1cc74d1b45457",
+      "bytes": 7698,
+      "lines": 134
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТестовыеДанныеСлужебныйСервер/Module.bsl",
+      "sha256": "18f06fe66ea2ae79809100f8c28ce0e6d2270f7b97f5b89d7f7c82fb7deb0699",
+      "bytes": 86071,
+      "lines": 1455
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТесты/Module.bsl",
+      "sha256": "59829a59ef287b626da8c2fcd4a4e4a42c51a3f082953ca2eab47747210754b6",
+      "bytes": 27962,
+      "lines": 556
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТестыСлужебный/Module.bsl",
+      "sha256": "46934b695b4e3ffd4678d44469a67dbc14e0ee13f30b34172bfd43c204ac0977",
+      "bytes": 16852,
+      "lines": 327
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТТипыДанныхСлужебный/Module.bsl",
+      "sha256": "a71d7e3108ea6e6a32e3f1b7bf900e39a7b0abe522b5a36974b4ca7a5999acde",
+      "bytes": 14369,
+      "lines": 312
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТУтверждения/Module.bsl",
+      "sha256": "96dd34af0cbac66450ad1055ac81ee0caafbf5fa0eb17c5bc916a66dc169a207",
+      "bytes": 147465,
+      "lines": 2291
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТУтвержденияИБ/Module.bsl",
+      "sha256": "cd2024418e83c85152eb288eb27e86727f73cde9ff1f33572968a2faf216d20c",
+      "bytes": 22055,
+      "lines": 355
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТФабрика/Module.bsl",
+      "sha256": "7b9446b6d1c738adfd92c32b5d15e000a30863a1922b94b456392663fba2bfec",
+      "bytes": 36446,
+      "lines": 565
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТФабрикаСлужебный/Module.bsl",
+      "sha256": "23540c77ff1211619074876958f749102da2a1c7810acfbf460ac54f616f5947",
+      "bytes": 40758,
+      "lines": 689
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТФайлы/Module.bsl",
+      "sha256": "de8fe5352688b442751712f75ddf809cbac5900518eeab83d2df5a9cd0b320cf",
+      "bytes": 13464,
+      "lines": 293
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТФильтрацияСлужебный/Module.bsl",
+      "sha256": "636ecf583332efe667a4eb4ee4c8363ab4ce2a29aaab12b94614a94b04864cf3",
+      "bytes": 19074,
+      "lines": 363
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЧитательСлужебный/Module.bsl",
+      "sha256": "93018530e9ad9f78b6c734db91aba9dfffce96209bf40192cb08f34621b95bf7",
+      "bytes": 11128,
+      "lines": 186
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЧитательСлужебныйВызовСервера/Module.bsl",
+      "sha256": "cd61c61b255ff90f922b63a209631abc8eb0f70a00c56589d1ed0ef8bed9bf66",
+      "bytes": 1593,
+      "lines": 35
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТЧитательСлужебныйКлиент/Module.bsl",
+      "sha256": "fab07871cfd162cccfa7876b39eda15ec2462fabb41ddaeb2b0cb143184c26c5",
+      "bytes": 14273,
+      "lines": 238
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/CommonModules/ЮТест/Module.bsl",
+      "sha256": "a9e43ed91dcad2633a9cfa27723c011bfd50d11cf5eae27554eb4170a9784919",
+      "bytes": 18704,
+      "lines": 307
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/Configuration/ManagedApplicationModule.bsl",
+      "sha256": "70f73a9a371a9d41ad761fc06ddd16cb392ec157e32e2f587b2dd581dbaa8689",
+      "bytes": 4057,
+      "lines": 71
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/Configuration/OrdinaryApplicationModule.bsl",
+      "sha256": "70f73a9a371a9d41ad761fc06ddd16cb392ec157e32e2f587b2dd581dbaa8689",
+      "bytes": 4057,
+      "lines": 71
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPServiceRequest/ObjectModule.bsl",
+      "sha256": "1f1708fa582ea92dd6733b663b065e58849a983f8f72bfceb3aecde85d912fbb",
+      "bytes": 17684,
+      "lines": 362
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPОтвет/ObjectModule.bsl",
+      "sha256": "a47e5be80bce0ec9e7f7bb6000c17fdb510350204fc66283e1fd08f4cf575da1",
+      "bytes": 16820,
+      "lines": 414
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPСервисЗапрос/ObjectModule.bsl",
+      "sha256": "404abb386b478d3edfdda8c84ebff9f39c202029250e91dcec0ddacf19f6e5bc",
+      "bytes": 16498,
+      "lines": 335
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТHTTPСоединение/ObjectModule.bsl",
+      "sha256": "c26097e081b6f89b7789d8222f6135422c87b05d59926646e19e0c0c7c63cba7",
+      "bytes": 34725,
+      "lines": 681
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТRecordSet/ObjectModule.bsl",
+      "sha256": "30d2da371ad62bc881bef0cc2316355aca9f880af7a5d958c3bf14d63d06f931",
+      "bytes": 13174,
+      "lines": 267
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТГенераторКода/Commands/ГенераторКода/CommandModule.bsl",
+      "sha256": "d55127e6f005f77eb7726bb99e3219903e47745d701333a80c34401d7d5a592d",
+      "bytes": 1536,
+      "lines": 33
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТГенераторКода/Forms/Форма/Module.bsl",
+      "sha256": "cf19127777452ad246774c69a14ae7a2f28e076dbd38e725888c11a76b8a429d",
+      "bytes": 44492,
+      "lines": 831
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТГенераторКода/ManagerModule.bsl",
+      "sha256": "ba1935405c8d8e753331a2061731aaf96c61adb75696ef7058a20e8601988714",
+      "bytes": 23865,
+      "lines": 432
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТГенераторКода/ObjectModule.bsl",
+      "sha256": "7b7ac410ca6d5bc7a2ff08f9328253467aebff1c4642f9f0caa7db35f2a4518c",
+      "bytes": 59557,
+      "lines": 1000
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТГенераторКодаТестовыхДанных/Commands/ГенераторНаОснованииДанных/CommandModule.bsl",
+      "sha256": "2ea757669ef8c2c48f021268b9b3d69a70d8f8ce2064e26ad36b567f5b8ce5d5",
+      "bytes": 1566,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТГенераторКодаТестовыхДанных/Forms/ГенераторНаОснованииДанных/Module.bsl",
+      "sha256": "53c191d2eb90f234df7d97f8c9bf6f06ff0e33c658349b74c221a7669def2dfb",
+      "bytes": 10967,
+      "lines": 183
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТКонструкторДвижений/Forms/КлиентскийКонструктор/Module.bsl",
+      "sha256": "aa3f82f52e0979103ea3430e59145916493e9a5e08e0866e6dc89544fdd7235d",
+      "bytes": 23255,
+      "lines": 359
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТКонструкторДвижений/ObjectModule.bsl",
+      "sha256": "1309b0479cca99f9d4a6f5e3f834b615396671d280bdd84a997d2a99f16c649f",
+      "bytes": 22876,
+      "lines": 351
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТКонструкторОбъектаXDTO/ObjectModule.bsl",
+      "sha256": "60b535abb037840780e4c22934f6ad8fe13eb717dcdec9f19d3923151958e1dc",
+      "bytes": 26091,
+      "lines": 515
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТКонструкторТекста/ObjectModule.bsl",
+      "sha256": "d7609a7e94d08e89b2c72e9381047d8e57a6df93b7e6e021baa29e2cc14fee54",
+      "bytes": 22916,
+      "lines": 407
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТКонструкторТестовыхДанных/Forms/КлиентскийКонструктор/Module.bsl",
+      "sha256": "70d22c23e8c36eb702e74ec844c7d5153f5890c05e328d75d74ea060e2d16adc",
+      "bytes": 22559,
+      "lines": 367
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТКонструкторТестовыхДанных/ObjectModule.bsl",
+      "sha256": "a06ac19642c8178aafff29b3dcb72057e7825721079272c7778a27efdcc75e65",
+      "bytes": 38322,
+      "lines": 507
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТПомощникДляСозданияТестовыхДанных/Commands/ПомощникДляСозданияТестовыхДанных/CommandModule.bsl",
+      "sha256": "3d3ab436fe134885fa796ae58d235b5d8b0e70ef62b7b84c1a2b2ff8e1fa70b4",
+      "bytes": 1573,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТПомощникДляСозданияТестовыхДанных/Forms/Форма/Module.bsl",
+      "sha256": "eb32d8bd8f5c4bc35ea134aea6d83d586d8f8f6bd5918770e22e5c38b74c0e51",
+      "bytes": 16906,
+      "lines": 349
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТПомощникДляСозданияТестовыхДанных/ManagerModule.bsl",
+      "sha256": "ebf3dae5e42b373400a39136276403a81dd1519085b6c0cc5a7fb23bdb46cc36",
+      "bytes": 67154,
+      "lines": 1178
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТПомощникДляСозданияТестовыхДанных/ObjectModule.bsl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "lines": 0
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТРедакторМакетаСТестовымиДанными/Forms/Форма/Module.bsl",
+      "sha256": "a52bd14c46faed9da45005161bc6939fc2529854c4826f0799b42f21d0674fa9",
+      "bytes": 12576,
+      "lines": 274
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТРедакторМакетаСТестовымиДанными/ManagerModule.bsl",
+      "sha256": "bd839c67bb5db211a0600122dd761740ecf55f7de25da86fe7019d8429ff59c7",
+      "bytes": 16096,
+      "lines": 376
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТРедакторОбработки/ObjectModule.bsl",
+      "sha256": "cc06ca5cc2cba9dba9a4fb333e940185ac93bf904291ebb67e03985e9dfff71d",
+      "bytes": 32377,
+      "lines": 597
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТРедакторТестов/Commands/ЮТРедакторТестов/CommandModule.bsl",
+      "sha256": "49ed43f2e7c06121b268f16a7e001220f95f8f3b9e8cdf9ac4983f2f7d8de3d1",
+      "bytes": 1540,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТРедакторТестов/Forms/Форма/Module.bsl",
+      "sha256": "25132d8f7b33586c0b746198e9880afaf07a72fba0252e37d15fd307eb40c675",
+      "bytes": 7230,
+      "lines": 139
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТСообщениеСервисаИнтеграции/ObjectModule.bsl",
+      "sha256": "b446ddcec4de6c6f7aa9bf43660a604f0a68d43bb2a99a9ad2399ea40bc3b3f1",
+      "bytes": 15808,
+      "lines": 333
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТЮнитТесты/Commands/ЗапускТестов/CommandModule.bsl",
+      "sha256": "b0013eade5510700db16ecad6cbe54b56b264dfff3f14390eea63767278cbd2a",
+      "bytes": 1700,
+      "lines": 36
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТЮнитТесты/Commands/СформироватьНастройкиТестирования/CommandModule.bsl",
+      "sha256": "c643aaca51cf07072823a8f802e6e1b1e45739139cba74fbc9f93d0ecec66ebe",
+      "bytes": 1565,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТЮнитТесты/Forms/Основная/Module.bsl",
+      "sha256": "c13912ab30a3e03b3ddec68139a7a674a539b37f4db30ed455d2ae4890588222",
+      "bytes": 59700,
+      "lines": 1252
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТЮнитТесты/Forms/СозданиеНастройки/Module.bsl",
+      "sha256": "c914f8477b53a84194dd86f9650b13a59b17d8f22b0de4e0fcdf49515a2c69a4",
+      "bytes": 28235,
+      "lines": 597
+    },
+    {
+      "path": "yaxunit/exts/yaxunit/src/DataProcessors/ЮТЮнитТесты/Forms/Сравнение/Module.bsl",
+      "sha256": "a56b1c2153d01ba3bfa02231b5e13c6065bbc11caaf0cfba9dbe220548802c46",
+      "bytes": 2001,
+      "lines": 35
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/AccountingRegisters/Основной/Forms/ФормаНабораЗаписей/Module.bsl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "lines": 0
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/AccumulationRegisters/Взаиморасчеты/Forms/ТекущиеВзаиморасчеты/Module.bsl",
+      "sha256": "46334a4a750589aae16ab5e0751efbe2116a9d83788e64df90bfc0035823ca91",
+      "bytes": 2171,
+      "lines": 40
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/AccumulationRegisters/Взаиморасчеты/Forms/ФормаСписка/Module.bsl",
+      "sha256": "841802be09988dbb31b9c03a3fe2aa68340df4079f1fafa0ed71cda2bb106b35",
+      "bytes": 728,
+      "lines": 14
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Встречи/Commands/ОткрытьКалендарь/CommandModule.bsl",
+      "sha256": "5fc71e1a49a9b0f7b60143ee13eec6c3a8998a081ab6124161468804fe889978",
+      "bytes": 621,
+      "lines": 14
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Встречи/Forms/Календарь/Module.bsl",
+      "sha256": "dceeab6fa40c5eeb277124ed97726e061548e8d4d8e11f24c9ccf654e10fa3a2",
+      "bytes": 37238,
+      "lines": 595
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Встречи/Forms/ФормаСписка/Module.bsl",
+      "sha256": "d3b0efd20950234b90e8770cf5d372d6d9214226dac7896c881f6e6feb1ba684",
+      "bytes": 1018,
+      "lines": 15
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Встречи/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "d790b3171f909380f619adae842c901d7c7da253e7d31d30839d8dc9dfd914b3",
+      "bytes": 3072,
+      "lines": 63
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Встречи/ManagerModule.bsl",
+      "sha256": "02355ac82513499afcbf3bfd47e506b67c8bb10158d0d47a1dacdf6900119ac9",
+      "bytes": 2093,
+      "lines": 50
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Встречи/ObjectModule.bsl",
+      "sha256": "bbdc3baf77ac5e18846688253794e1ea299f5ef999a481f844151e093b7373a7",
+      "bytes": 2609,
+      "lines": 60
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ВходящиеПисьма/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "c34867697d8bede90ac2d7801dac7e1fbd54983cd5a35cc98b413b68366a349b",
+      "bytes": 2217,
+      "lines": 43
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ИсходящиеПисьма/Commands/КомандаОтправитьПисьмоКонтрагенту/CommandModule.bsl",
+      "sha256": "876a81af24c5801e7597d712f959bb3e0465965ccac7a495d85f7165f8e99c44",
+      "bytes": 659,
+      "lines": 7
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ИсходящиеПисьма/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "c3ace6cf3a10aa5f53bfaaeffdf5b3c47c267b63c8c668db63ed62385f682b9b",
+      "bytes": 17987,
+      "lines": 305
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Контрагенты/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "cd0315c385a6143659916906685fef745dd2d79f9b62d07c045471c5b2cc6691",
+      "bytes": 22440,
+      "lines": 399
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Контрагенты/ManagerModule.bsl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "lines": 0
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Контрагенты/ObjectModule.bsl",
+      "sha256": "a107c8285dcb3b200d4aa2f8690d21c6e3c43155e5139f13315e0b05f0535459",
+      "bytes": 2154,
+      "lines": 42
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/МобильныеУстройства/ManagerModule.bsl",
+      "sha256": "da047cd0d47d830cdf0a3bda58007af209fcfddd869148c92f588defec17922b",
+      "bytes": 1821,
+      "lines": 31
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/НастройкиТорговогоОборудования/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "1aaf7677e05fe92f03141f6cb36052314cdff26ce2adb92a4bc4b51387f97894",
+      "bytes": 514,
+      "lines": 17
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Организации/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "80598d1fc7f848c03313984f6a74405d8eb781b1bad1f27275ea257f259dca90",
+      "bytes": 168,
+      "lines": 6
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Пользователи/ObjectModule.bsl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "lines": 0
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/РасчетныеСчетаКонтрагентов/ObjectModule.bsl",
+      "sha256": "6c05b946f0a832df8eff44dba8d645ce9bda0f1b639d06755357f985fdd532ac",
+      "bytes": 634,
+      "lines": 18
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Склады/ManagerModule.bsl",
+      "sha256": "7b6800346fe50c2293761b9f3684a9faed01477fb95b68f26814a0183502525c",
+      "bytes": 2114,
+      "lines": 46
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Товары/Commands/ПечатьПрайсЛиста/CommandModule.bsl",
+      "sha256": "77b5faae89bc4eb88df9ac4aa7b686021e2dd476e5ede392c2295c21a991c546",
+      "bytes": 4708,
+      "lines": 86
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Товары/Commands/ПечатьШтрихкода/CommandModule.bsl",
+      "sha256": "aa19f93c1a231ee4b0ed27cca4a197ef38c44390f6dc3ada26d7eb0920c60e63",
+      "bytes": 1932,
+      "lines": 40
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Товары/Forms/ФормаСпискаСОстатками/Module.bsl",
+      "sha256": "140a2e9b421cf276382d6831afc1d65b61f35af717b097901bf4eeacc02a4e4a",
+      "bytes": 1391,
+      "lines": 30
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Товары/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "ba5192a2207da31a1e4ad5d135a226e3759254bfcb5f5a745ef5eadec37f0754",
+      "bytes": 26880,
+      "lines": 486
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/Товары/ObjectModule.bsl",
+      "sha256": "0ba287cc5e019735dfe699afef70f6284220670ab17dcf5734fc3b7540831d1c",
+      "bytes": 7358,
+      "lines": 150
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранилищеВариантовОтчетов/Commands/ОткрытьОтчет/CommandModule.bsl",
+      "sha256": "8122906a8e830b484f4cb8eea274f1fb106e494baf7dd84392932de927cc2f7d",
+      "bytes": 1512,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранимыеФайлы/Forms/СписокСертификатов/Module.bsl",
+      "sha256": "2f859889a5e3f9e0d52f8acef7b33b84bb79af10aed8866ba6179dd4622e7232",
+      "bytes": 11230,
+      "lines": 204
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранимыеФайлы/Forms/ФормаЗагрузкиФайлов/Module.bsl",
+      "sha256": "106d95cd06ecfa0e3cc1825606bb6dd08230c7d56c1c5611bf08ddb306079316",
+      "bytes": 5899,
+      "lines": 117
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранимыеФайлы/Forms/ФормаПароля/Module.bsl",
+      "sha256": "bdb020b88b61fd0c8370ec4d0dcf999d096a24f74a51c3e38509e3a804276c00",
+      "bytes": 585,
+      "lines": 14
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранимыеФайлы/Forms/ФормаСписка/Module.bsl",
+      "sha256": "7be6a0ed7b12f17a3b3907a355a391ac0f2f592e2867174ac747a6604a542580",
+      "bytes": 13389,
+      "lines": 230
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранимыеФайлы/Forms/ФормаЭлемента/Module.bsl",
+      "sha256": "4e01890a6b7a65d7d8e4692fba0315cabb1cf2b78128ae8499a5df5f08f1f166",
+      "bytes": 50937,
+      "lines": 883
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Catalogs/ХранимыеФайлы/ObjectModule.bsl",
+      "sha256": "dc15cb2cc2101c8f526c2b53e79c40d1f759f136a078ae051398d0fe907edad7",
+      "bytes": 368,
+      "lines": 10
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonCommands/НастроитьСканерШтрихКодов/CommandModule.bsl",
+      "sha256": "e6146fa01ebb1a64e0333760ae7430391ad8852be93000419d19c14d5c26036e",
+      "bytes": 4707,
+      "lines": 82
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonCommands/ОбщиеНастройки/CommandModule.bsl",
+      "sha256": "207bf3069f3ccc54e21473bd2990fb34d780b297c7c15aeeb83749c6cbaef38f",
+      "bytes": 675,
+      "lines": 7
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonCommands/УстановитьВидимостьОбъектовЧерезODataAPI/CommandModule.bsl",
+      "sha256": "b2ed9c881051d50048bccfb705996888476380b3a34799479a6758b894d8ecb9",
+      "bytes": 2171,
+      "lines": 45
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonCommands/УстановитьРасширениеРаботыСКриптографией/CommandModule.bsl",
+      "sha256": "8ac911b205e2c02dd3dc4df3c15bc1d666f839e11fb510c784082e451d39c2e8",
+      "bytes": 522,
+      "lines": 11
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonCommands/УстановитьРасширениеРаботыСФайлами/CommandModule.bsl",
+      "sha256": "78500a96891b671bbc3930f660a649eaaaf68e1b05281c53a5534819abf2ecb4",
+      "bytes": 514,
+      "lines": 10
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonCommands/УстановитьСканерШтрихкодов/CommandModule.bsl",
+      "sha256": "cffd10224a6fdc75cf5732ad4619af83f8e9ff31a6ac8e1099410fea00d2d3b1",
+      "bytes": 588,
+      "lines": 13
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/Звонок/Module.bsl",
+      "sha256": "083523770db37d6d090c822fe59da8592a6f312cadf2ff66ac1db4efe5f1ff22",
+      "bytes": 547,
+      "lines": 17
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/НастройкаPushУведомлений/Module.bsl",
+      "sha256": "665d8b80851ce855d6ab5e7939e35965aeb2224154d3d50144a3aea92f05b310",
+      "bytes": 3628,
+      "lines": 61
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/НастройкаПомощникаНеотработанныхЗаказов/Module.bsl",
+      "sha256": "8fb3add7a37c7e501ecda6b9a8cf9eea20a235735dce4084cd2eca7837f040bc",
+      "bytes": 3013,
+      "lines": 70
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/НастройкиМобильногоУстройства/Module.bsl",
+      "sha256": "4ee0fc28a641f84962430151a835f176752d6edc06ddc739d04e9d1128d5ad6c",
+      "bytes": 7448,
+      "lines": 145
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/ОбщиеНастройки/Module.bsl",
+      "sha256": "9679478f8537228a90d0cfc1917a0cf6b90cf628bbefc8d43262d0c0bc0c8dff",
+      "bytes": 251,
+      "lines": 6
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/ФормаПодбора/Module.bsl",
+      "sha256": "eedb53fc704fb2898e2db86afa544097184afd12df19e4ca139d15419297b4bd",
+      "bytes": 5661,
+      "lines": 98
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonForms/ФормаПодбораМобильная/Module.bsl",
+      "sha256": "055c3e5604a0d0220047c71f2fb2cd5ad5b4de4d05f4eb2cee862966f562cb1b",
+      "bytes": 5886,
+      "lines": 122
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ГеопозиционированиеКлиент/Module.bsl",
+      "sha256": "b988015707743489db71d1b0923a290e8498852a9d67c091d7ef3db90d02d9da",
+      "bytes": 7545,
+      "lines": 116
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ГеопозиционированиеСервер/Module.bsl",
+      "sha256": "301a5a9436a43e818236c0fceba0aa0c2fb93f97cc630ad15ac6ce87e253ed38",
+      "bytes": 5044,
+      "lines": 83
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/Интеграция/Module.bsl",
+      "sha256": "2210411b530d14e05bfc8248e680eae853b8a4f76f69a14f9244dfefb00eeb67",
+      "bytes": 8830,
+      "lines": 187
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ИнтеграцияМагазин/Module.bsl",
+      "sha256": "0cdf17b7572bde1f630eb30aceb859ca3251347f2e76cd9bc9e98d1f95b45488",
+      "bytes": 11188,
+      "lines": 244
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ОбменМобильныеОбщее/Module.bsl",
+      "sha256": "073995374113fe1b0ce73f6e626a144fb59a3be495c5f76bebb8abe92344facb",
+      "bytes": 6543,
+      "lines": 110
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ОбменМобильныеПереопределяемый/Module.bsl",
+      "sha256": "b877c30ab285f37a229c1156b310b8567de04fb6550b15489067bd898011d3a2",
+      "bytes": 16282,
+      "lines": 259
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ПодпискиНаСобытия/Module.bsl",
+      "sha256": "10edfb4c3a9cdebc8c235974986c01a95428da9de088b88e43dca40c771f654e",
+      "bytes": 525,
+      "lines": 13
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/Пользователи/Module.bsl",
+      "sha256": "91cf5edaabff1ad5482705e3845256aa9f881bf157e469b52df4dbcdac88e3c6",
+      "bytes": 4308,
+      "lines": 71
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/Помощник/Module.bsl",
+      "sha256": "7d563ebc9892d503f41ec4810a51fc2c93e1947679e89a1416417d080e510717",
+      "bytes": 16214,
+      "lines": 245
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/ПомощникКлиент/Module.bsl",
+      "sha256": "f04b3d12fb763b947bf82d3ab4b32d3fe92045136833a7e2117e50dd70c4a384",
+      "bytes": 1186,
+      "lines": 24
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСИсториейДанных/Module.bsl",
+      "sha256": "e5cb049a84e655061708109cc0ac8d69f25c7201671f7303086ac1f8989d72d7",
+      "bytes": 179,
+      "lines": 5
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСПанельюЗадач/Module.bsl",
+      "sha256": "e808e6a94cdb1bc94f4a66acb363bf2dde1a51a35b8b246190913df33dd55eb4",
+      "bytes": 3498,
+      "lines": 51
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСПолнотекстовымПоиском/Module.bsl",
+      "sha256": "d4ec003ce2474c997ee28c7a7d4968814167390ffdba75c3d19e57c65dc11e63",
+      "bytes": 1198,
+      "lines": 19
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСПочтой/Module.bsl",
+      "sha256": "b7a9ceacb86365f2f75ab6a6dd2ad88e10b8b6fdd3a094e52971c814b97f6e32",
+      "bytes": 23909,
+      "lines": 370
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСПочтойВызовСервера/Module.bsl",
+      "sha256": "60cd3f637ef4c4fc818ffd26f263c1042bcd2a777d16020b5e24425d93878595",
+      "bytes": 731,
+      "lines": 13
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСТорговымОборудованием/Module.bsl",
+      "sha256": "3c8e0c3e82e090cc9aa5ff8e1085b10e98aa787e4f89ffb0455756bb07de6c29",
+      "bytes": 11694,
+      "lines": 181
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РаботаСХранилищемОбщихНастроек/Module.bsl",
+      "sha256": "5e628425f8dd5f6ad91a12961344c44d30a57bf98ab69c5b8c74a3c32b0b8ad7",
+      "bytes": 5169,
+      "lines": 87
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РегистрацияОшибок/Module.bsl",
+      "sha256": "462891f9f64814400455633a4274bd902458e4d75d74f8698284ce804343376e",
+      "bytes": 160,
+      "lines": 7
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/РегламентныеЗаданияАгрегатов/Module.bsl",
+      "sha256": "42f151b4d484de9b911a185afc56cb718b0204c393174b16a28cea17287a903d",
+      "bytes": 1534,
+      "lines": 25
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/СервисныеМеханизмы/Module.bsl",
+      "sha256": "5f74e52fd4138469012e62a54fd7c2032cba8da55ee3058302979ce74b501626",
+      "bytes": 1216,
+      "lines": 18
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/УведомленияКлиент/Module.bsl",
+      "sha256": "d59931d0b5429f758413e1ac473c9009faee89110b245cc51b42c748aa6891b8",
+      "bytes": 3568,
+      "lines": 61
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/CommonModules/УведомленияСервер/Module.bsl",
+      "sha256": "db384d6b890ea50ce444bc76549e02ec8b9b29429c9c9287045da8d1f421ca32",
+      "bytes": 11109,
+      "lines": 154
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Configuration/ManagedApplicationModule.bsl",
+      "sha256": "7cc3108746eb204538a8f5aa7a23a780af66cb0a6c7a2235fda106ac7374894c",
+      "bytes": 2071,
+      "lines": 32
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Configuration/OrdinaryApplicationModule.bsl",
+      "sha256": "09fc050f2eae1a693285b2c17bb545ecc3404fef0207db15bcf811c921ee5d27",
+      "bytes": 245,
+      "lines": 6
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Configuration/SessionModule.bsl",
+      "sha256": "ad0aebc1d9847ed40cee81f85a83f9649f8306b40ef9b98a55825e808a3cfdd1",
+      "bytes": 416,
+      "lines": 11
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/АдминистративныйСервис/Commands/АдминистративныйСервис/CommandModule.bsl",
+      "sha256": "8a745240c156557fdec014e7d5c84071b321ca7ccb5e54cdfc06d8ac2e926f65",
+      "bytes": 513,
+      "lines": 6
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/АдминистративныйСервис/Forms/Форма/Module.bsl",
+      "sha256": "b9b2f4214748535e06f240062f7a525c91eac9941bf739f0dcbe927cadb47737",
+      "bytes": 328,
+      "lines": 9
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ЖурналРегистрации/Forms/ЖурналРегистрации/Module.bsl",
+      "sha256": "c56bb3caf4253c0bcf501cf54661d66cadfa7615295daae7df1c37a94b3b360d",
+      "bytes": 20793,
+      "lines": 293
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ЖурналРегистрации/Forms/ОтборЖурналаРегистрации/Module.bsl",
+      "sha256": "61d3f467dfdd5e83b06b6c2e3d978e436d99861dad9db9abeee9280f5002784a",
+      "bytes": 20703,
+      "lines": 312
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ЖурналРегистрации/Forms/РедакторСоставаСвойства/Module.bsl",
+      "sha256": "42763470c173e24733df1a8962b953ca3d801d7e502927655d9c3ee15c28c9ed",
+      "bytes": 16511,
+      "lines": 272
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ЖурналРегистрации/ObjectModule.bsl",
+      "sha256": "b1a8233e88ee5e16192b8592706a8af51c5f6044435adce36f162052f644a793",
+      "bytes": 2980,
+      "lines": 44
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/НастройкиПользователя/Forms/Форма/Module.bsl",
+      "sha256": "5f7bef0ec3e03a71bf877b9170f87bb28309126af979225084aa940b6a44b831",
+      "bytes": 3779,
+      "lines": 66
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ПроведениеДокументов/Forms/Форма/Module.bsl",
+      "sha256": "c22bc40a55f9b56f9dd5825722ada0db729e9b6fd77810792c40580a29ba132f",
+      "bytes": 5932,
+      "lines": 111
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ПроведениеДокументов/ObjectModule.bsl",
+      "sha256": "8d361198f53b3fe6de49d88d01d5cf25589bcea9af6b00bc433caafc73c82c7a",
+      "bytes": 2169,
+      "lines": 42
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/Путеводитель/Commands/ПутеводительПоКонфигурации/CommandModule.bsl",
+      "sha256": "a0f5dcef2bd28b5ea12f002be4515f14591d8f68287ce84a39c0564f76ec65f8",
+      "bytes": 591,
+      "lines": 7
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/Путеводитель/Forms/ФормаПутеводителя/Module.bsl",
+      "sha256": "9480496462f164c3917325dbfc4c55106a761ea9a63cc54a2c7487021f9231e1",
+      "bytes": 10832,
+      "lines": 225
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/СписокАктивныхПользователей/Forms/ФормаСпискаАктивныхПользователей/Module.bsl",
+      "sha256": "0d329b01eb59204839d7f55fee9d9b175bdf50d1a75e6f6cdb47f6cac12c16ac",
+      "bytes": 6529,
+      "lines": 107
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/УдалениеПомеченныхОбъектов/Forms/ОсновнаяФорма/Module.bsl",
+      "sha256": "f929d8dc435cff7f6e405df2c7626b3f6f3747fe0a266be1788abdbfd3206576",
+      "bytes": 19391,
+      "lines": 285
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/УправлениеАгрегатамиПродаж/Forms/Форма/Module.bsl",
+      "sha256": "2d487d70a7f513c1aa88a84f9299ccd220fca7688b45dced76b51cffd7391cff",
+      "bytes": 13194,
+      "lines": 233
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/УправлениеНастройкамиФорм/Forms/Форма/Module.bsl",
+      "sha256": "d508d37033c288dc2effbb74e43163560a33bbaae8c1291852856483df74d86a",
+      "bytes": 13283,
+      "lines": 263
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/УправлениеНастройкамиФорм/ObjectModule.bsl",
+      "sha256": "c883354f690e642c3052ffee47c15849ea12d38df11f363dddf7b3376d7e42df",
+      "bytes": 10615,
+      "lines": 154
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/УправлениеПолнотекстовымПоиском/Forms/Форма/Module.bsl",
+      "sha256": "f729bc73f4df3b064e9a6849924b3dcfb3cfd068fe7d6d4d41cdff3f1b6947e2",
+      "bytes": 5615,
+      "lines": 89
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/УправлениеСистемойВзаимодействия/Forms/Форма/Module.bsl",
+      "sha256": "de678ba456732418a83eb714da4d2fd7c0da7b0a27ea1748e03e5f78ac09a958",
+      "bytes": 8966,
+      "lines": 173
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/DataProcessors/ЭлектроннаяПочта/Forms/Форма/Module.bsl",
+      "sha256": "42bc039881b658d98dba236a7f62faa9eb41b82ed21bd1169937f654fd74c3d7",
+      "bytes": 11367,
+      "lines": 193
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/Заказ/Forms/ФормаДокумента/Module.bsl",
+      "sha256": "4fc26e85fb587259d1a146edaf7aeb08c0a8dd149a885f12161216533ccb6ba5",
+      "bytes": 19008,
+      "lines": 372
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/Заказ/ObjectModule.bsl",
+      "sha256": "36debf46c123743668915cbc95a0bfc7fb3c55aa3f338714652e7c228d8af0c3",
+      "bytes": 2212,
+      "lines": 45
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ОперацияПоУчетуТоваров/Forms/ФормаДокумента/Module.bsl",
+      "sha256": "ce1c35b59c2e0f20c6746558cd24938b6e6f00d0778df28d93771b1bd1c17fd7",
+      "bytes": 2796,
+      "lines": 65
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ОперацияПоУчетуТоваров/ObjectModule.bsl",
+      "sha256": "35854a2981cd4c29329b4e81c085a250f8fa0c4ef54a5d08be012bb289a82977",
+      "bytes": 1525,
+      "lines": 26
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/Оплата/Forms/ФормаДокумента/Module.bsl",
+      "sha256": "0c8ff5376d5a38dc26a3662ba4b784be9cfb74fdd6ca45700f315084a79bd030",
+      "bytes": 1836,
+      "lines": 41
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/Оплата/ObjectModule.bsl",
+      "sha256": "8b8bdcfb7d317c6ea5e5dc018a0dede8b0272a3f11563861a19958aeeb194f05",
+      "bytes": 3266,
+      "lines": 50
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ПоступлениеДенег/Forms/ФормаДокумента/Module.bsl",
+      "sha256": "e80d4217ed62c5852da2a34800a6c147d678cf621392d0c7268d94684816010a",
+      "bytes": 1727,
+      "lines": 38
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ПоступлениеДенег/ObjectModule.bsl",
+      "sha256": "7fd6b181d2c0dbaa08b574e1c3f319ec031b9cfef6249c712e9606b5b96fc767",
+      "bytes": 3175,
+      "lines": 49
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ПриходТовара/Forms/ФормаДокумента/Module.bsl",
+      "sha256": "c0162d359ebeb69e14c85f2f884a91998789475e16a75eb0cb483caef3b94f47",
+      "bytes": 7283,
+      "lines": 167
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ПриходТовара/ManagerModule.bsl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "lines": 0
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/ПриходТовара/ObjectModule.bsl",
+      "sha256": "a2f5d29696aef9b45da2195b4888f11c0b2dc260f6cbe57c3414b9c28f2f3008",
+      "bytes": 7188,
+      "lines": 131
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/РасходТовара/Commands/ПечатьРасходнойНакладной/CommandModule.bsl",
+      "sha256": "e451f736cb318669789717e4e450c2554c0a147c0e8e0b0e17595108d9de6a64",
+      "bytes": 1919,
+      "lines": 41
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/РасходТовара/Forms/ОформлениеДоставки/Module.bsl",
+      "sha256": "bb0edb4425cb3fd0c86b331ccc86681167e48197be5cc61435360f302dca96e3",
+      "bytes": 2965,
+      "lines": 44
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/РасходТовара/Forms/ФормаДокумента/Module.bsl",
+      "sha256": "cc4be4cb892eef6d086723175539534c35094f24cdeb6ee768a88335efb390d5",
+      "bytes": 15231,
+      "lines": 301
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/РасходТовара/ObjectModule.bsl",
+      "sha256": "9890d7cd3784f34e2ea888d00cbc3b2b1291877b0679da83a673c5d3e1aab869",
+      "bytes": 17758,
+      "lines": 3
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Documents/УстановкаЦен/ObjectModule.bsl",
+      "sha256": "c7000048fd57d1a7411ee6b6d223e0a91cf8c75b558abda4f18d2a7381a96a32",
+      "bytes": 1881,
+      "lines": 37
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/HTTPServices/ОписанияТоваров/Module.bsl",
+      "sha256": "6b6d25bae9ecddc72b680529fadb42d69587be855b98c379c95740f06313eb66",
+      "bytes": 2907,
+      "lines": 68
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/HTTPServices/Товары/Module.bsl",
+      "sha256": "c322ef961ce6fc8f7c7706f1ad8730bc6722689c214b717921f8a55b7cace371",
+      "bytes": 10790,
+      "lines": 217
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/InformationRegisters/КурсыВалют/RecordSetModule.bsl",
+      "sha256": "89c65895ed7f422ef23619b41e94071703d4ce482f4f3b7d59c7f46c1cb2ece9",
+      "bytes": 1621,
+      "lines": 42
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/InformationRegisters/ЦеныТоваров/ManagerModule.bsl",
+      "sha256": "9566b49f0d7cb85f2ca261dde08b4ca21a51be4fcac8f4e5eca230b5ce0c36e5",
+      "bytes": 422,
+      "lines": 10
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/InformationRegisters/ЦеныТоваров/RecordSetModule.bsl",
+      "sha256": "8ee6b5b00a9a0e63f4d109eea8809a7ea0863b0af9a8b8e8f62e54e0d4e969f8",
+      "bytes": 709,
+      "lines": 20
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Reports/ОстаткиТоваровНаСкладах/Commands/ОстаткиПоСкладу/CommandModule.bsl",
+      "sha256": "51392b9a7efbfaa46ef8a212953cd2fab48ac15290e928940a06d7a5df1bead9",
+      "bytes": 846,
+      "lines": 9
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/Reports/ОтчетПоВзаиморасчетам/Forms/ФормаВарианта/Module.bsl",
+      "sha256": "c24f33c467e3d03a4bf431229483b96807976ed7e03d75d3da2251f5dd5a28e6",
+      "bytes": 21290,
+      "lines": 366
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/SettingsStorages/ХранилищеВариантовОтчетов/Forms/ФормаЗагрузки/Module.bsl",
+      "sha256": "6cfec101174a98cac8496514ff0a61b8c45b95366f12da3cfa5a41a7240156b2",
+      "bytes": 6632,
+      "lines": 154
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/SettingsStorages/ХранилищеВариантовОтчетов/Forms/ФормаСохранения/Module.bsl",
+      "sha256": "52f8ddd60a3487fac38a9482bcace7f9d1babbda69c45fc9b97e6f91d9f6c46a",
+      "bytes": 9376,
+      "lines": 216
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/SettingsStorages/ХранилищеВариантовОтчетов/ManagerModule.bsl",
+      "sha256": "4afad3924c332e11b284d21e66fef318f9d14e09ace990711df6231ca8b751b1",
+      "bytes": 7704,
+      "lines": 145
+    },
+    {
+      "path": "yaxunit/fixtures/demo-configuration/src/WebServices/MAExchange/Module.bsl",
+      "sha256": "31965e7e404ebbdc042ea19b09d58b112e53898ead546e561e6e426093e26ffa",
+      "bytes": 10239,
+      "lines": 168
+    },
+    {
+      "path": "yaxunit/tests/.settings/templates/common_module.bsl",
+      "sha256": "3203eca118c96254a1414e120fe0dd3ea6a2fdac90fa4647322f0fd4d7a20def",
+      "bytes": 1908,
+      "lines": 59
+    },
+    {
+      "path": "yaxunit/tests/src/Catalogs/Встречи/ManagerModule.bsl",
+      "sha256": "e43bfee364bf16fbfed6c89b535912c307032930dd51bbb36f7c6188ceb7c353",
+      "bytes": 2500,
+      "lines": 48
+    },
+    {
+      "path": "yaxunit/tests/src/Catalogs/Встречи/ObjectModule.bsl",
+      "sha256": "9d8fbfa572626ac6874b36035775ceb7ab9bb88aa38df584e79577661b6c4909",
+      "bytes": 2140,
+      "lines": 48
+    },
+    {
+      "path": "yaxunit/tests/src/Catalogs/Товары/ObjectModule.bsl",
+      "sha256": "4c0eda01dd193c34dbdc11928a1fc41a4aa17752641855be3e878d3d8f5e6ac6",
+      "bytes": 1670,
+      "lines": 34
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Интеграция/Module.bsl",
+      "sha256": "55b4171f7b41a632b0e4d3b07c31302ea982b5fdb2a3771073a4d76588e66789",
+      "bytes": 2319,
+      "lines": 50
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/НастройкаYAxUnit/Module.bsl",
+      "sha256": "1f48419eb03e534ca98e41ba1d467106cbd61a15319c7a7e79bf1c6adb0dbada",
+      "bytes": 1986,
+      "lines": 45
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/НастройкиКодогенерации/Module.bsl",
+      "sha256": "2f97cda24f6ce72372f828006ba3036ebfe8e4bd0526a770ec3adff71ed8c702",
+      "bytes": 9337,
+      "lines": 136
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ВыполнениеТестовОбработки/Module.bsl",
+      "sha256": "211bc62d747ff580669f7d9a5fc989c54367a8279b99103a38135a42ebb67d31",
+      "bytes": 7726,
+      "lines": 140
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ДТОткрытиеФормСлужебныйВызовСервера/Module.bsl",
+      "sha256": "5267e140085bbbc842fc6cddda4454f44d91383fff9b7a4398226dbc712f1c8d",
+      "bytes": 18342,
+      "lines": 294
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_Мокито/Module.bsl",
+      "sha256": "c98077853e080b8284dc715006fa405fbf78b168b1e67bdd35d0c7ae6fc1edab",
+      "bytes": 31301,
+      "lines": 529
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_МокитоОбучение/Module.bsl",
+      "sha256": "94e5e94ea540a32d2eb1e9d0b5d554054c42487852e752eb48f62f4ed4bbc6dc",
+      "bytes": 4788,
+      "lines": 85
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_МокитоСлужебный/Module.bsl",
+      "sha256": "4859744f0933e1ab7fa64c751b9052800f8cb385e715a5487088be69f75313c9",
+      "bytes": 1942,
+      "lines": 49
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ОшибкаЗагрузкиСценариев/Module.bsl",
+      "sha256": "386324ab67c6f6928cdd20e55383ec9eeccb917484577b484eec6a14825caef3",
+      "bytes": 2663,
+      "lines": 46
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТВнешниеОбработкиСлужебныйСервер/Module.bsl",
+      "sha256": "fc895ddb3efb5fe8c74ff15084e110595f0efb7f662c3da2238a1f13eedda730",
+      "bytes": 3708,
+      "lines": 85
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТГенераторКодаСлужебныйСервер/Module.bsl",
+      "sha256": "120de7f28e3db600d0c4a35f8c3f501e9904af2f64605dc4fbb0070d8a66fbb5",
+      "bytes": 60899,
+      "lines": 887
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТЗависимостиСлужебный/Module.bsl",
+      "sha256": "58199d28c765edf5c367d555d5f2c812fd44638f2915940c4538a3327bc71a9b",
+      "bytes": 8326,
+      "lines": 145
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТЗапросы/Module.bsl",
+      "sha256": "44a4bed21ff1d8cb257b57dc6e232c2fa3fd8d918889ead9ce905cb956d6428f",
+      "bytes": 34565,
+      "lines": 601
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТИсполнительСлужебныйКлиент/Module.bsl",
+      "sha256": "87a4d73fd2abd37c11c998576f255ee357a2e0440bc284a35846b18e907445d5",
+      "bytes": 10984,
+      "lines": 190
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТИсполнительСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "0a972a618ecae83740fd2173678d2bd5bc75068969912dd79a9ed3bf34797810",
+      "bytes": 2836,
+      "lines": 62
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТКоллекции/Module.bsl",
+      "sha256": "81b7090a36b9d720dd2ffde58ed2b4c87a8fd52af3d77caec9dc6a53195732da",
+      "bytes": 43538,
+      "lines": 764
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТКонструкторВариантов/Module.bsl",
+      "sha256": "343dbc870115e712332cf6ef37e679bfddd7ecb6b2598bbabcb8f5181ce7748f",
+      "bytes": 10704,
+      "lines": 203
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТКонструкторТестовыхДанных/Module.bsl",
+      "sha256": "060b084b6d1756dbbe270671e36b0bb95d104c59bb97ca5db46db35153fed328",
+      "bytes": 27426,
+      "lines": 494
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТКонтекст/Module.bsl",
+      "sha256": "540afd850d336d27a42976e0c816cd923c58236d199b7e209f8aa65dfd5414e4",
+      "bytes": 1454,
+      "lines": 38
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТКонтекстТеста/Module.bsl",
+      "sha256": "c6eff1126787cfd30fa8213ea8874ae0cd80d5a88a3d51f1fa3e655f575b1078",
+      "bytes": 2615,
+      "lines": 46
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТЛогирование/Module.bsl",
+      "sha256": "fb10533254555ecd12558f63ed599b35e5495be3c6bb5e77821050012758e5ee",
+      "bytes": 9100,
+      "lines": 138
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТМетаданные/Module.bsl",
+      "sha256": "469ff8bdd73f5cf34688bb272070976f0f3721f11805d9005e8645674101df50",
+      "bytes": 7613,
+      "lines": 138
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТМетоды/Module.bsl",
+      "sha256": "fcffc68cab1e63035bcfa5293a447157866b79a6c67c033a398082901a7c4e07",
+      "bytes": 14504,
+      "lines": 207
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТОбщий/Module.bsl",
+      "sha256": "943f57f99830872ba2bc6822dac9ccd7b7b393a0c401f6849171e1581ab7bec4",
+      "bytes": 24532,
+      "lines": 461
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТОтчетAllureСлужебный/Module.bsl",
+      "sha256": "d71220046fb29f6c295b776cc5d0bc4b8f33bc6dff25837ce2218722edf2a0cb",
+      "bytes": 26391,
+      "lines": 438
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТОтчетСлужебный/Module.bsl",
+      "sha256": "8401dcfa135221463ac1d8664a9fe78c04f7090273f8ae95d212977bccfdb79c",
+      "bytes": 3487,
+      "lines": 71
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПараметрыЗапускаСлужебный/Module.bsl",
+      "sha256": "fc6676f4e77c66f5639a60ff97280e3edd4e6df5b6e6c9129f2ad227929008a2",
+      "bytes": 31913,
+      "lines": 604
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодключаемыеМодулиСлужебныйВызовСервера/Module.bsl",
+      "sha256": "33b9d7bc7e86ed10711dd07320346d16eaa7f616c7583545f16eb6788fae5835",
+      "bytes": 2873,
+      "lines": 67
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодражатель/Module.bsl",
+      "sha256": "b550742f50be8e8121228fb3a50b140f4c14a6b8031ffdbebcde28dd6b9d851e",
+      "bytes": 3949,
+      "lines": 91
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодражатель_Банки/Module.bsl",
+      "sha256": "26cec2a2a957183590ac2905eb4d68b2f454b6ea8152354e2ccf8a438459abe8",
+      "bytes": 2206,
+      "lines": 60
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодражатель_Коммерция/Module.bsl",
+      "sha256": "66f91383c6c978a12006d3557972e1359f1bf1921a64246a00425f6989c5733e",
+      "bytes": 3524,
+      "lines": 100
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодражатель_Компании/Module.bsl",
+      "sha256": "180ed55e3bbac0048ea46b4d191310a239c4ac8a61cc0d3ad8db4de138a2aee2",
+      "bytes": 2435,
+      "lines": 71
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодражатель_Локация/Module.bsl",
+      "sha256": "aa3fb69f9ef7cac372d091299b5de6a806a674127f761251aeb164420ac1f552",
+      "bytes": 6367,
+      "lines": 189
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПодражатель_Люди/Module.bsl",
+      "sha256": "b1d632e55fe32cadc3adc208ce54592c4483eb04fa3eb75d322e45302c534b2a",
+      "bytes": 5810,
+      "lines": 149
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПредикаты/Module.bsl",
+      "sha256": "500ad33a5912992b89d2864f54b26782e963365cfd4fdae692168b15423c3105",
+      "bytes": 24657,
+      "lines": 603
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТПредикатыСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "e86da4fd5d29542b8e77310901000f084ab113f3b41079b46f80d54fef1512ac",
+      "bytes": 9156,
+      "lines": 122
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТРаботаСТекстом/Module.bsl",
+      "sha256": "fcb999ac9a608134343af7d66e637a94605600fd85666b8427282c8a2d115790",
+      "bytes": 14933,
+      "lines": 353
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТРегистрацияОшибок/Module.bsl",
+      "sha256": "a6bb6702e2b80a1be22932cc03cb6ecdad64dffdcf1fbb0a421de93297f44a8b",
+      "bytes": 3288,
+      "lines": 88
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТСостояниеИсполненияТестовСлужебный/Module.bsl",
+      "sha256": "d5c4b1e6ea6a8cd65635efd8a5816b463188ab50036a1855a535b3618926c3b0",
+      "bytes": 9254,
+      "lines": 135
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТСравнениеСлужебныйКлиентСервер/Module.bsl",
+      "sha256": "2b9035a65b35c9a712b5330edf4f0a91349cb46108e05ab4f061233fd9347506",
+      "bytes": 13267,
+      "lines": 242
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТСравнениеСлужебныйСервер/Module.bsl",
+      "sha256": "274087f81e09599f4fead2590f338e1085ac5a540ebc44649d00537448457f41",
+      "bytes": 6302,
+      "lines": 129
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТСтроки/Module.bsl",
+      "sha256": "20ac2a5a1c009ca757bf9fde9ff47195b60f5e8bb68e483e72b3aae8bccc12d0",
+      "bytes": 17300,
+      "lines": 269
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТТестовыеДанные/Module.bsl",
+      "sha256": "606ea8a29247aa221e42642f1d46dbf4883eb4040d12835d49180073db6cbcce",
+      "bytes": 51768,
+      "lines": 886
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТТестовыеДанные_ПоискДанных/Module.bsl",
+      "sha256": "d830a34d983e400f16b6a021faddee4f3542bac4434b22b39523d57ca110957f",
+      "bytes": 12476,
+      "lines": 253
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТТестовыеДанныеСлужебный/Module.bsl",
+      "sha256": "ea29c54d06dd845aaee9bd849783bbcbc8bbd0b15707d5c1a3725b24f0ad7826",
+      "bytes": 9641,
+      "lines": 171
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТТесты/Module.bsl",
+      "sha256": "ade3de6894ebfd09634122ace1356d8631fd8263f7f02190fd671d93f6896ebd",
+      "bytes": 10772,
+      "lines": 210
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТТипыДанныхСлужебный/Module.bsl",
+      "sha256": "cc5077d2a6f56b08d6ccae3a7ddc745727c2d49d01c2b3f8cd8f03759daf6dfa",
+      "bytes": 7376,
+      "lines": 131
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТУтверждения/Module.bsl",
+      "sha256": "4fc324c2fd32ff755a46def91dfa711fad7b507926a4c155a1c268d9d634b85a",
+      "bytes": 147003,
+      "lines": 2672
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТУтверждения_Предикаты/Module.bsl",
+      "sha256": "18da43d9be6b9344d92676a488c150f2445d49b6aea4c5e76a2b9839879017e3",
+      "bytes": 34329,
+      "lines": 504
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТУтвержденияИБ/Module.bsl",
+      "sha256": "79ccad33a20cbb34bd41dcf4071b6c7a9fa189e983f4c0f71ea04cc608240432",
+      "bytes": 24820,
+      "lines": 416
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТФильтрацияСлужебный/Module.bsl",
+      "sha256": "f60e95c321a46d625b62f1672229c9cfc059e2ab98645be8bcd4e5eb44bf8720",
+      "bytes": 26305,
+      "lines": 437
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТЧитательСлужебный/Module.bsl",
+      "sha256": "fae07e887ea16191542c78e790f61bf276d40d6cb93a393ba5b020288f4eeb36",
+      "bytes": 11875,
+      "lines": 190
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТест/Module.bsl",
+      "sha256": "0ce5d77d7e400e84c7fe7da94feb7e3e56b560e856ba38f99cd447690944b264",
+      "bytes": 18458,
+      "lines": 329
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ОМ_ЮТестПереопределяемый/Module.bsl",
+      "sha256": "bb1fd287c28f224a44fa462d4c5756c7786cc5d25f74f1a9d1c926041e0c642b",
+      "bytes": 3922,
+      "lines": 78
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТHTTPОтвет/Module.bsl",
+      "sha256": "73a81dead2da15840a39f0cb5a33f2ab14200d618114b0f410f89528253d1edd",
+      "bytes": 8995,
+      "lines": 126
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТHTTPСервисЗапрос/Module.bsl",
+      "sha256": "a6a0799eb7e87ced9594ae4e5b71991669cc499b14f9393dd08eb010a2095883",
+      "bytes": 5498,
+      "lines": 87
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТHTTPСоединение_МО/Module.bsl",
+      "sha256": "2dda01d58cc29643f33a55dd0a7d58a1980ced2770d791c039e7cb813652b6a3",
+      "bytes": 16998,
+      "lines": 278
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТRecordSet_МО/Module.bsl",
+      "sha256": "52829787629269c80b54f174e8838fa42915c4cad7447354f40e0bce259cc148",
+      "bytes": 5755,
+      "lines": 152
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТГенераторКода_ММ/Module.bsl",
+      "sha256": "fe076bacba629a602895748290995dcdb10e3c4079874edd43eceb3e10e845a7",
+      "bytes": 3480,
+      "lines": 73
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТКонструкторДвижений_МО/Module.bsl",
+      "sha256": "f607852dc4e8164efd67be5b14569be3ad81f3f51d9c23c4b30349b02519dcc8",
+      "bytes": 27868,
+      "lines": 457
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТКонструкторОбъектаXDTO_МО/Module.bsl",
+      "sha256": "30d774b39ae5e8cb268d7ee1a67e7c95c53cbda87852b26d50c745166a246b6d",
+      "bytes": 8612,
+      "lines": 217
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТРедакторОбработки_МО/Module.bsl",
+      "sha256": "7260140f30f431ef272d14b8de5b8f2fed90ddbeb38ebe8ec7848e54912488a4",
+      "bytes": 2242,
+      "lines": 58
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Обр_ЮТСообщениеСервисаИнтеграции/Module.bsl",
+      "sha256": "f704cb7d26e2177de5891b99a218b6330b149c48e0344bd4f463e668e7ef152c",
+      "bytes": 5668,
+      "lines": 94
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ПодпискиНаСобытия/Module.bsl",
+      "sha256": "5835c364306fe850a90a6e78d0fc08776351b7a5734bccdb1c9a549d6fa8ec42",
+      "bytes": 2761,
+      "lines": 52
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/Пользователи/Module.bsl",
+      "sha256": "fafb50ff7880611c9817f49716cb12f9325da3fbb811e9054f9a11d685f19546",
+      "bytes": 1447,
+      "lines": 30
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ПомощникТестированияВызовСервера/Module.bsl",
+      "sha256": "3c6f4021e5fec990ba8078a306797473a31f6e528b9d9a6aca339b8be337e52f",
+      "bytes": 5432,
+      "lines": 121
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ТегиТестов/Module.bsl",
+      "sha256": "2e3c6cc8df7ce802fa3ecec4a51c2a456b243ede8ffcee48d8d9d21bb0f0d3b3",
+      "bytes": 1213,
+      "lines": 33
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ТестовыеДанные/Module.bsl",
+      "sha256": "22cfb7dbe3615f92e10d46aea5e756ed457666077794c1e8f96536c1ad48214b",
+      "bytes": 6766,
+      "lines": 126
+    },
+    {
+      "path": "yaxunit/tests/src/CommonModules/ФильтрацияЗагрузкиТестов/Module.bsl",
+      "sha256": "9dd02251497640b96aa05676cc97fbfe7aa49caa8d02ecf1c246dcf2f03a5159",
+      "bytes": 1356,
+      "lines": 30
+    },
+    {
+      "path": "yaxunit/tests/src/DataProcessors/ПроведениеДокументов/ObjectModule.bsl",
+      "sha256": "b0bc22084cc17f419790c903dfda2a6d2db9ecb99137238592e15d60c40ea6a4",
+      "bytes": 1416,
+      "lines": 32
+    },
+    {
+      "path": "yaxunit/tests/src/Documents/ПриходТовара/ObjectModule.bsl",
+      "sha256": "100c8ee8a7b02c07ca2be4269c0bcff256ea5c811f81f639cb12e26eec7b5d52",
+      "bytes": 1522,
+      "lines": 32
+    },
+    {
+      "path": "yaxunit/tests/src/InformationRegisters/ЦеныТоваров/ManagerModule.bsl",
+      "sha256": "fd7e0eb6d0a5d6d16d131c81a086f70fa50f207947353bd01af92ca492384066",
+      "bytes": 1572,
+      "lines": 32
+    },
+    {
+      "path": "yaxunit/tests/src/InformationRegisters/ЦеныТоваров/RecordSetModule.bsl",
+      "sha256": "58983b543d3f1b800bbea44075373f967f7ba5d822fc2384df5a8a7ad0f50021",
+      "bytes": 2339,
+      "lines": 46
+    }
+  ],
+  "totals": {
+    "bsl_files": 577,
+    "lines": 156869,
+    "bytes": 9328165
+  }
+}

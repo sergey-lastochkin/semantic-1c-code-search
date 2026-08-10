@@ -1,0 +1,29 @@
+{
+  "executed_at": "2026-08-10T23:10:31+03:00",
+  "tool": {
+    "name": "BSL Language Server",
+    "version": "1.0.7-DIRTY",
+    "mode": "analyze -r json"
+  },
+  "corpus": {
+    "bsl_files": 577,
+    "bsl_language_server_procedures": 3907,
+    "bsl_language_server_functions": 3873,
+    "bsl_language_server_symbols": 7780,
+    "local_regex_parser_symbols": 7342,
+    "symbol_difference": -438,
+    "difference_percent_of_reference": -5.63
+  },
+  "diagnostics": {
+    "total": 18692,
+    "error": 958,
+    "warning": 2913,
+    "information": 7772,
+    "hint": 7049
+  },
+  "notes": [
+    "BSL Language Server completed a static analysis of all 577 selected BSL files.",
+    "The local parser is intentionally heuristic. It found 438 fewer procedures and functions than the independent tool, so it must not be used as a compiler-equivalence check.",
+    "The independent run warned that no installed 1C platform context was available. Diagnostics are retained as external-tool output and are not reclassified as defects of the corpus."
+  ]
+}
