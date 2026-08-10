@@ -136,7 +136,7 @@ def main() -> None:
         ),
         measure(
             "graph_context",
-            lambda: graph,
+            lambda: ImpactGraph(chunks),
             lambda index, query: index.search_context(query, 10),
             queries,
         ),
