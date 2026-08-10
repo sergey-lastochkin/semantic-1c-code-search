@@ -43,6 +43,9 @@ class BM25Index:
         self.average_length = sum(map(len, self.docs)) / max(1, len(self.docs))
 
     def search(self, query: str, k: int = 10) -> list[Chunk]:
+        return [chunk for _, chunk in self.ranked(query, k)]
+
+    def ranked(self, query: str, k: int = 10) -> list[tuple[float, Chunk]]:
         query_tokens, total, scored = TOKENS.findall(query.lower()), len(self.docs), []
         for chunk, document in zip(self.chunks, self.docs):
             score = 0.0
@@ -72,10 +75,7 @@ class BM25Index:
                     )
             if score:
                 scored.append((score, chunk))
-        return [
-            chunk
-            for _, chunk in sorted(scored, key=lambda item: (-item[0], item[1].id))[:k]
-        ]
+        return sorted(scored, key=lambda item: (-item[0], item[1].id))[:k]
 
 
 def rrf(rankings: Sequence[Sequence[Chunk]], constant: int = 60) -> list[Chunk]:

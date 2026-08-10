@@ -65,7 +65,10 @@ def test_all_chunk_strategies_and_metadata():
 def test_bm25_vector_hybrid_rrf_and_filters():
     data = chunks()
     provider = LocalHashEmbeddingProvider()
-    assert BM25Index(data).search("назначение")
+    bm25 = BM25Index(data)
+    assert bm25.search("назначение")
+    ranked = bm25.ranked("назначение")
+    assert ranked[0][0] > 0 and ranked[0][1] == bm25.search("назначение")[0]
     assert VectorIndex(data, provider, backend=InMemoryVectorBackend()).search(
         "назначение", filters={"object_name": "Документ.Платеж"}
     )

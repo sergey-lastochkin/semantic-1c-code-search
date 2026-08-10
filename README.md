@@ -1,14 +1,16 @@
 # Поиск по BSL-коду
 
-Локальный поиск по выгрузке BSL с BM25, настоящими embeddings и статическим графом вызовов. Удалённый репозиторий пока называется `semantic-1c-code-search`; возможное переименование обсуждается отдельно.
+Локальный поиск по выгрузке BSL с BM25, настоящими эмбеддингами и статическим графом вызовов. Удалённый репозиторий пока называется `semantic-1c-code-search`; возможное переименование обсуждается отдельно.
 
-![Recall@5 на детерминированных запросах](studies/oss-bsl-corpus-2026-08-10/graphs/deterministic-recall-at-5.svg)
+![Локальный поиск по BSL-корпусу](assets/search-example.png)
 
 Прогон сделан на 577 BSL-файлах из трёх открытых проектов Apache-2.0: 156869 строк и 7342 процедуры или функции. Источники, commit SHA и SHA-256 файлов сохранены в [манифесте корпуса](studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json).
 
 На 90 детерминированных проверках BM25 получил лучший Recall@5 `0.855524`. Реальная локальная модель `intfloat/multilingual-e5-small` дала `0.639668`, а RRF с BM25 поднял MRR@10 до `0.788470`. Это не подгонка: для точных имён и известных статических вызовов лексический поиск оказался сильнее.
 
-Для 42 русских вопросов embeddings дали Recall@5 `0.404762` против `0.285714` у BM25. Их разметка пока `pending`, поэтому это эксперимент, а не итоговая метрика. Список вопросов и предлагаемая релевантность находятся в [JSON](evaluation/natural_language_queries.json) и [карточке проверки](evaluation/review-natural-queries.md).
+Для 42 русских вопросов эмбеддинги дали Recall@5 `0.404762` против `0.285714` у BM25. Их разметка пока ожидает ручной проверки, поэтому это эксперимент, а не итоговая метрика. Список вопросов и предлагаемая релевантность находятся в [JSON](evaluation/natural_language_queries.json) и [карточке проверки](evaluation/review-natural-queries.md).
+
+![Recall@5 на детерминированных запросах](studies/oss-bsl-corpus-2026-08-10/graphs/deterministic-recall-at-5.svg)
 
 [Корпус](docs/corpus.md) · [Методика и результаты](docs/benchmark.md) · [Границы парсера](docs/parser-limits.md)
 
@@ -34,6 +36,10 @@ PYTHONPATH=src .venv/bin/python scripts/run_embedding_benchmark.py \
 PYTHONPATH=src .venv/bin/python scripts/render_charts.py \
   --results studies/oss-bsl-corpus-2026-08-10/embedding-results.json \
   --out studies/oss-bsl-corpus-2026-08-10/graphs
+
+PYTHONPATH=src .venv/bin/python scripts/serve_corpus_viewer.py \
+  --corpus ../oss-bsl-corpus \
+  --sources studies/oss-bsl-corpus-2026-08-10/sources.json
 ```
 
 `fetch_corpus.py` делает checkout строго на commit SHA из `sources.json`. Исходный BSL-код в этот репозиторий не добавляется.
