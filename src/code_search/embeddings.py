@@ -53,9 +53,19 @@ class LocalHashEmbeddingProvider(DeterministicFakeEmbeddingProvider):
 
 
 class SentenceTransformerProvider:
+    """Local SentenceTransformer adapter with an explicitly pinned revision.
+
+    `query_prefix` and `passage_prefix` are kept here rather than hidden in a
+    benchmark script: retrieval models such as multilingual-e5 require them.
+    """
+
     def __init__(
         self,
         model_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        revision: str | None = None,
+        device: str | None = None,
+        query_prefix: str = "",
+        passage_prefix: str = "",
     ) -> None:
         try:
             from sentence_transformers import SentenceTransformer
@@ -63,13 +73,40 @@ class SentenceTransformerProvider:
             raise RuntimeError(
                 "Install optional dependency: pip install '.[embeddings]'"
             ) from error
-        self.model = SentenceTransformer(model_name)
+        self.model_name = model_name
+        self.revision = revision
+        self.query_prefix = query_prefix
+        self.passage_prefix = passage_prefix
+        self.model = SentenceTransformer(model_name, revision=revision, device=device)
         self.dimension = int(self.model.get_sentence_embedding_dimension())
 
     def embed(self, text: str, dimension: int | None = None) -> list[float]:
-        return normalize(
-            self.model.encode([text], normalize_embeddings=True)[0].tolist()[:dimension]
+        return self.encode_queries([text], dimension=dimension)[0]
+
+    def encode_queries(
+        self, texts: list[str], dimension: int | None = None, batch_size: int = 32
+    ) -> list[list[float]]:
+        return self._encode(texts, self.query_prefix, dimension, batch_size)
+
+    def encode_passages(
+        self, texts: list[str], dimension: int | None = None, batch_size: int = 32
+    ) -> list[list[float]]:
+        return self._encode(texts, self.passage_prefix, dimension, batch_size)
+
+    def _encode(
+        self,
+        texts: list[str],
+        prefix: str,
+        dimension: int | None,
+        batch_size: int,
+    ) -> list[list[float]]:
+        vectors = self.model.encode(
+            [prefix + text for text in texts],
+            normalize_embeddings=True,
+            batch_size=batch_size,
+            show_progress_bar=False,
         )
+        return [normalize(vector.tolist()[:dimension]) for vector in vectors]
 
 
 class OpenAICompatibleEmbeddingProvider:
