@@ -5,6 +5,10 @@ from .models import Chunk
 from .parser import BSLParser
 
 
+def _mermaid_id(value: str) -> str:
+    return re.sub(r"\W", "_", value)
+
+
 @dataclass
 class DependencyGraph:
     edges: dict[str, set[str]] = field(default_factory=dict)
@@ -16,7 +20,7 @@ class DependencyGraph:
 
     def mermaid(self) -> str:
         return "graph TD\n" + "\n".join(
-            f'  {re.sub(r"\\W", "_", source)}["{source}"] --> {re.sub(r"\\W", "_", target)}["{target}"]'
+            f'  {_mermaid_id(source)}["{source}"] --> {_mermaid_id(target)}["{target}"]'
             for source, targets in sorted(self.edges.items())
             for target in sorted(targets)
         )

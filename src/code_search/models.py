@@ -19,8 +19,8 @@ class BSLUnit:
 class Chunk:
     id: str
     text: str
-    configuration: str = "DemoConfiguration"
-    version: str = "synthetic-1"
+    configuration: str = "Unspecified"
+    version: str = "unversioned"
     object_type: str = "CommonModule"
     object_name: str = "CommonModule.Demo"
     module_type: str = "CommonModule"

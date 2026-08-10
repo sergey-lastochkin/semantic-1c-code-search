@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterable, Sequence
-from math import log
+from math import log2
 
 from .embeddings import EmbeddingProvider, LocalHashEmbeddingProvider
 from .models import Chunk
@@ -27,12 +27,12 @@ def evaluate(
         0.0,
     )
     dcg = sum(
-        1 / log(index + 2, 2)
+        1 / log2(index + 2)
         for index, value in enumerate(identifiers)
         if value in relevant
     )
     ideal = sum(
-        1 / log(index + 2, 2) for index in range(min(len(relevant), len(identifiers)))
+        1 / log2(index + 2) for index in range(min(len(relevant), len(identifiers)))
     )
     metrics["ndcg"] = dcg / ideal if ideal else 0.0
     return metrics

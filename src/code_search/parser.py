@@ -112,8 +112,8 @@ class BSLParser:
     def _base_metadata(self, supplied: dict[str, str]) -> dict[str, str]:
         module_type = supplied.get("module_type", "CommonModule")
         return {
-            "configuration": supplied.get("configuration", "DemoConfiguration"),
-            "version": supplied.get("version", "synthetic-1"),
+            "configuration": supplied.get("configuration", "Unspecified"),
+            "version": supplied.get("version", "unversioned"),
             "object_type": supplied.get("object_type", module_type),
             "object_name": supplied.get("object_name", "CommonModule.Demo"),
             "module_type": module_type,

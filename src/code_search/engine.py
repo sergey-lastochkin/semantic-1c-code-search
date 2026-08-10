@@ -17,6 +17,7 @@ from .embeddings import (
     cosine,
 )
 from .evaluation import evaluate, matryoshka_experiment
+from .impact import ImpactGraph, Link
 from .models import BSLUnit, Chunk
 from .parser import BSLParser
 from .retrieval import BM25Index, HybridRetriever, VectorIndex, rrf
@@ -35,8 +36,10 @@ __all__ = [
     "FaissVectorBackend",
     "FakeEmbeddingProvider",
     "HybridRetriever",
+    "ImpactGraph",
     "InMemoryVectorBackend",
     "LexicalIndex",
+    "Link",
     "LocalHashEmbeddingProvider",
     "OpenAICompatibleEmbeddingProvider",
     "PgVectorBackend",

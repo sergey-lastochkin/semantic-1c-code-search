@@ -1,6 +1,8 @@
 import importlib.util
 
 import pytest
+from fastapi.testclient import TestClient
+
 from code_search.api import create_app
 from code_search.backends import (
     InMemoryVectorBackend,
@@ -16,7 +18,6 @@ from code_search.embeddings import (
 from code_search.evaluation import evaluate, matryoshka_experiment
 from code_search.parser import BSLParser
 from code_search.retrieval import BM25Index, HybridRetriever, VectorIndex, rrf
-from fastapi.testclient import TestClient
 
 TEXT = """// module header
 Функция СформироватьНазначениеПлатежа(Документ) Экспорт
