@@ -4,10 +4,15 @@ from __future__ import annotations
 
 import argparse
 import json
+import pickle
+import platform
 import statistics
+import subprocess
 import time
 import tracemalloc
 from collections import defaultdict
+from datetime import UTC, datetime
+from hashlib import sha256
 from pathlib import Path
 
 from code_search.corpus import load_bsl_chunks
@@ -70,6 +75,7 @@ def measure(name: str, build, search, queries) -> dict[str, object]:
     started = time.perf_counter()
     index = build()
     index_seconds = time.perf_counter() - started
+    serialized_index_bytes = len(pickle.dumps(index, protocol=pickle.HIGHEST_PROTOCOL))
     _, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     latencies: list[float] = []
@@ -83,6 +89,7 @@ def measure(name: str, build, search, queries) -> dict[str, object]:
         "method": name,
         "index_seconds": round(index_seconds, 6),
         "index_peak_bytes": peak,
+        "serialized_index_bytes": serialized_index_bytes,
         "recall_at_1": round(statistics.fmean(row["recall@1"] for row in scores), 6),
         "recall_at_5": round(statistics.fmean(row["recall@5"] for row in scores), 6),
         "recall_at_10": round(statistics.fmean(row["recall@10"] for row in scores), 6),
@@ -97,9 +104,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--corpus", type=Path, required=True)
     parser.add_argument("--sources", type=Path, required=True)
+    parser.add_argument("--corpus-manifest", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     source_data = json.loads(args.sources.read_text(encoding="utf-8"))
+    corpus_manifest = json.loads(args.corpus_manifest.read_text(encoding="utf-8"))
     versions = {row["directory"]: row["commit"] for row in source_data["sources"]}
     chunks = load_bsl_chunks(args.corpus, versions)
     graph = ImpactGraph(chunks)
@@ -133,13 +142,43 @@ def main() -> None:
         ),
     ]
     args.out.parent.mkdir(parents=True, exist_ok=True)
+    queries_path = args.out.with_name("benchmark-queries.jsonl")
+    queries_path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in queries),
+        encoding="utf-8",
+    )
     args.out.write_text(
         json.dumps(
             {
+                "run": {
+                    "generated_at": datetime.now(UTC).isoformat(),
+                    "code_commit": subprocess.check_output(
+                        ["git", "rev-parse", "HEAD"], text=True
+                    ).strip(),
+                    "python": platform.python_version(),
+                    "parameters": {
+                        "k": 10,
+                        "hash_vector_dimension": 256,
+                        "exact_queries": 30,
+                        "known_call_queries": 30,
+                        "metadata_queries": 30,
+                    },
+                },
                 "benchmark_kind": "deterministic_static_gold",
                 "vector_note": "hash_vector uses LocalHashEmbeddingProvider; it is a lexical hash baseline, not a semantic model.",
-                "corpus": {"chunks": len(chunks), "graph_links": sum(len(v) for v in graph.outbound.values())},
+                "corpus": {
+                    **corpus_manifest["totals"],
+                    "chunks": len(chunks),
+                    "graph_links": sum(len(v) for v in graph.outbound.values()),
+                    "source_manifest_sha256": sha256(args.sources.read_bytes()).hexdigest(),
+                    "corpus_manifest_sha256": sha256(args.corpus_manifest.read_bytes()).hexdigest(),
+                },
                 "queries": queries,
+                "graph_sample": [
+                    {"source": link.source, "target": link.target, "kind": link.kind}
+                    for source in sorted(graph.outbound)
+                    for link in sorted(graph.outbound[source], key=lambda item: (item.target, item.kind))
+                ][:18],
                 "methods": rows,
             },
             ensure_ascii=False,

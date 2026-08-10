@@ -33,14 +33,39 @@ def chart(rows, field: str, title: str, output: Path) -> None:
     output.write_text("\n".join(pieces), encoding="utf-8")
 
 
+def graph(edges, output: Path) -> None:
+    width, height = 980, max(300, 84 + len(edges) * 30)
+    pieces = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        '<rect width="100%" height="100%" fill="white"/>',
+        '<defs><marker id="arrow" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker></defs>',
+        '<text x="24" y="32" font-family="sans-serif" font-size="20">Фрагмент графа зависимостей из results.json</text>',
+    ]
+    for number, edge in enumerate(edges):
+        y = 58 + number * 30
+        source = escape(str(edge["source"])[:62])
+        target = escape(str(edge["target"])[:62])
+        pieces.extend(
+            [
+                f'<text x="24" y="{y + 15}" font-family="monospace" font-size="12">{source}</text>',
+                f'<line x1="455" y1="{y + 10}" x2="540" y2="{y + 10}" stroke="#334155" marker-end="url(#arrow)"/>',
+                f'<text x="560" y="{y + 15}" font-family="monospace" font-size="12">{target}</text>',
+            ]
+        )
+    pieces.append("</svg>")
+    output.write_text("\n".join(pieces), encoding="utf-8")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--results", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
-    rows = json.loads(args.results.read_text(encoding="utf-8"))["methods"]
+    result = json.loads(args.results.read_text(encoding="utf-8"))
+    rows = result["methods"]
     chart(rows, "ndcg_at_10", "nDCG@10 на детерминированной проверке", args.out / "quality.svg")
     chart(rows, "search_p95_ms", "p95 задержки поиска, мс", args.out / "latency.svg")
+    graph(result["graph_sample"], args.out / "dependency-graph.svg")
 
 
 if __name__ == "__main__":
