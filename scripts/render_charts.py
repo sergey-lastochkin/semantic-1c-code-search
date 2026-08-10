@@ -8,8 +8,16 @@ from html import escape
 from pathlib import Path
 
 
+def display(value: float, field: str) -> str:
+    if field == "serialized_index_bytes":
+        return f"{value / 1024 / 1024:.1f} MiB"
+    if field.endswith("_ms"):
+        return f"{value:.2f} мс"
+    return f"{value:.4f}"
+
+
 def chart(rows, field: str, title: str, output: Path) -> None:
-    width, height, left = 760, 360, 175
+    width, height, left = 900, 360, 220
     maximum = max(float(row[field]) for row in rows) or 1.0
     pieces = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
@@ -19,15 +27,16 @@ def chart(rows, field: str, title: str, output: Path) -> None:
     for position, row in enumerate(rows):
         y = 60 + position * 54
         value = float(row[field])
-        bar = (width - left - 32) * value / maximum
+        # Leave a generous right margin for the numeric label in GitHub's SVG renderer.
+        bar = (width - left - 220) * value / maximum
         pieces.extend(
             [
                 f'<text x="24" y="{y + 20}" font-family="monospace" font-size="14">{escape(str(row["method"]))}</text>',
                 f'<rect x="{left}" y="{y}" width="{bar:.2f}" height="28" fill="#2563eb"/>',
-                f'<text x="{left + bar + 8:.2f}" y="{y + 20}" font-family="monospace" font-size="14">{value:.4f}</text>',
+                f'<text x="{left + bar + 8:.2f}" y="{y + 20}" font-family="monospace" font-size="14">{display(value, field)}</text>',
             ]
         )
-    pieces.append(f'<text x="24" y="{height - 16}" font-family="sans-serif" font-size="12" fill="#475569">Источник: results.json</text>')
+    pieces.append(f'<text x="24" y="{height - 16}" font-family="sans-serif" font-size="12" fill="#475569">Источник: JSON с результатами</text>')
     pieces.append("</svg>")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(pieces), encoding="utf-8")
@@ -62,10 +71,20 @@ def main() -> None:
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     result = json.loads(args.results.read_text(encoding="utf-8"))
-    rows = result["methods"]
-    chart(rows, "ndcg_at_10", "nDCG@10 на детерминированной проверке", args.out / "quality.svg")
-    chart(rows, "search_p95_ms", "p95 задержки поиска, мс", args.out / "latency.svg")
-    graph(result["graph_sample"], args.out / "dependency-graph.svg")
+    methods = result["methods"]
+    if isinstance(methods, list):
+        chart(methods, "ndcg_at_10", "nDCG@10 на детерминированной проверке", args.out / "quality.svg")
+        chart(methods, "search_p95_ms", "p95 задержки поиска, мс", args.out / "latency.svg")
+    else:
+        deterministic = methods["deterministic_static_gold"]
+        natural = methods["natural_language_pending"]
+        chart(deterministic, "recall_at_5", "Recall@5: детерминированные запросы", args.out / "deterministic-recall-at-5.svg")
+        chart(deterministic, "mrr_at_10", "MRR@10: детерминированные запросы", args.out / "deterministic-mrr-at-10.svg")
+        chart(natural, "recall_at_5", "Recall@5: русские вопросы, разметка pending", args.out / "natural-recall-at-5.svg")
+        chart(deterministic, "search_p95_ms", "p95 поиска: детерминированные запросы", args.out / "latency-p95.svg")
+        chart(deterministic, "serialized_index_bytes", "Размер индекса: детерминированный прогон", args.out / "index-size.svg")
+    if "graph_sample" in result:
+        graph(result["graph_sample"], args.out / "dependency-graph.svg")
 
 
 if __name__ == "__main__":

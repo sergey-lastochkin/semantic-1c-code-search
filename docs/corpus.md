@@ -5,7 +5,7 @@
 | Источник | Commit | Лицензия | Роль в корпусе |
 |---|---|---|---|
 | [Connector](https://github.com/vbondarevsky/Connector) | `7e37f1f5cdd35aac220af853b20a551d4da88cdd` | Apache-2.0 | HTTP-клиент и выгрузка конфигурации 1С |
-| [YAxUnit](https://github.com/bia-technologies/yaxunit) | `23fd2db738dbb26b7b43bdcf0c35fd2c263a3899` | Apache-2.0 | Тестовый фреймворк и smoke-расширение |
+| [YAxUnit](https://github.com/bia-technologies/yaxunit) | `23fd2db738dbb26b7b43bdcf0c35fd2c263a3899` | Apache-2.0 | Тестовый фреймворк и минимальное тестовое расширение |
 | [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) | `acdbe70417e16a1c02d1e16cfc0b409e11307848` | Apache-2.0 | Тестовый фреймворк и плагины |
 
 Снимок содержит 577 BSL-файлов, 156869 строк и 9328165 байт. `corpus-manifest.json` создан `scripts/fetch_corpus.py`; в нём есть дата получения, URL, commit SHA, лицензия и хэш каждого файла. Скрипт не обходит авторизацию и не получает данные из закрытых конфигураций.
