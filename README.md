@@ -1,69 +1,66 @@
-# 1C Semantic Code Search
+# 1C Code Intelligence
 
-## What
+Рабочее имя проекта по поиску и анализу зависимостей в выгрузках BSL-кода. Удалённый репозиторий пока сохраняет старое имя `semantic-1c-code-search`: переименование или объединение репозиториев требует отдельного подтверждения.
 
-Offline-first retrieval engineering demo for synthetic BSL source. It parses structure, builds five chunk variants, indexes lexical/vector representations, performs BM25/vector/RRF retrieval, packages bounded context, builds a call graph and evaluates relevance.
+![Фрагмент графа зависимостей](studies/oss-bsl-corpus-2026-08-10/graphs/dependency-graph.svg)
 
-## Why
+Первый воспроизводимый запуск выполнен на 577 BSL-файлах из трёх открытых проектов под Apache-2.0. В корпусе 156869 строк; локальный статический парсер выделил 7342 процедуры и функции. Числа, commit SHA источников и SHA-256 каждого файла сохранены в [corpus-manifest.json](studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json).
 
-Fixed text windows lose procedure and metadata context; vector-only search misses exact BSL identifiers; lexical-only search misses paraphrases. A useful code retriever needs structured chunks, metadata filters, hybrid ranking, context budgeting and reproducible relevance metrics—not an unmeasured “RAG” label.
+На 90 детерминированных проверках BM25 дал Recall@5 `0.855524`, MRR@10 `0.740384` и p95 `3.926` мс. Hash-vector baseline дал Recall@5 `0.005392` и p95 `59.9991` мс. Результат не замаскирован: текущий hash-vector не является семантической моделью и на этом корпусе хуже BM25. Все значения лежат в [results.json](studies/oss-bsl-corpus-2026-08-10/results.json).
 
-## Architecture
+[Корпус](docs/corpus.md) · [Методика и результаты](docs/benchmark.md) · [Ограничения парсера](docs/parser-limits.md)
 
-- BSL parser: modules, procedures/functions, signatures, export flags, line ranges, queries and metadata references.
-- Chunker: `fixed`, `fixed_overlap`, `procedure_aware`, `module_hierarchy`, `structure_aware`.
-- Embeddings: deterministic test double, local lexical-hash baseline, optional SentenceTransformer and OpenAI-compatible providers.
-- Backends: in-memory, real embedded Qdrant local mode, optional FAISS and a DB-API pgvector adapter.
-- Retrieval/evaluation: BM25, cosine vector, RRF, metadata filters, Recall@k, MRR and nDCG.
-- Interfaces: `index/search/eval` CLI plus FastAPI index/search/retrieve/experiment endpoints.
+## Что сравнивалось
 
-## Key engineering decisions
+![Качество поиска](studies/oss-bsl-corpus-2026-08-10/graphs/quality.svg)
 
-- The zero-setup local hash provider is clearly labeled lexical, not semantic.
-- Qdrant is exercised through `qdrant-client` embedded `:memory:` mode.
-- FAISS/pgvector never silently degrade while claiming an external backend.
-- Context packing deduplicates, preserves module hierarchy, adds neighbors and enforces a token estimate.
-- Matryoshka dimensions `1024/768/512/256/128` are capped by provider capability.
-- Evaluation results are persisted; no strategy winner is claimed without evidence.
+![Задержки поиска](studies/oss-bsl-corpus-2026-08-10/graphs/latency.svg)
 
-## Run
+| Метод | Recall@5 | MRR@10 | nDCG@10 | p50 / p95, мс | Построение, с | Размер сериализованного индекса, байт |
+|---|---:|---:|---:|---:|---:|---:|
+| `exact_name` | 0.522222 | 0.522222 | 0.522222 | 0.0003 / 0.0006 | 0.003106 | 5405069 |
+| `bm25` | 0.855524 | 0.740384 | 0.772367 | 2.0067 / 3.926 | 0.200053 | 17575892 |
+| `hash_vector` | 0.005392 | 0.029643 | 0.031717 | 46.6903 / 59.9991 | 1.067930 | 26776622 |
+| `rrf_hybrid` | 0.683939 | 0.520891 | 0.578775 | 49.4140 / 66.4328 | 1.300795 | 34611739 |
+| `graph_context` | 0.721039 | 0.609484 | 0.701878 | 14.2862 / 15.3891 | 0.365895 | 16799624 |
 
-```bash
-python3.12 -m venv .venv
-.venv/bin/python -m pip install --upgrade pip
-.venv/bin/python -m pip install -e .
-.venv/bin/python -m code_search.cli index fixtures/demo.bsl
-.venv/bin/python -m code_search.cli search fixtures/demo.bsl "где формируется назначение платежа"
-.venv/bin/python -m code_search.cli eval fixtures/demo.bsl examples/questions.jsonl
-.venv/bin/uvicorn code_search.api:app
-```
+`graph_context` расширяет точные совпадения соседними процедурами из статического графа. Это отдельный способ просмотра связей, а не замена полнотекстового ранжирования.
 
-FastAPI: `POST /index`, `POST /search`, `POST /retrieve`, `POST /experiments/run`, `GET /experiments`. The minimal install supports the in-memory vector index, BM25, hybrid RRF, deterministic fake provider and LocalHash lexical baseline.
-
-### Optional integrations
-
-| Backend/provider | Minimal install | Extra | Service/model requirement |
-|---|---:|---|---|
-| In-memory vector, BM25, hybrid RRF | yes | — | no |
-| Embedded Qdrant local | no | `.[qdrant]` | no daemon; local client only |
-| FAISS | no | `.[faiss]` | no service |
-| pgvector DB-API adapter | no | `.[postgres]` | provisioned PostgreSQL with pgvector |
-| SentenceTransformer provider | no | `.[embeddings]` | model download on construction |
-
-Optional backend constructors give an actionable error when their extra is absent. The base test suite skips the real Qdrant test without `qdrant-client`; it still tests the missing-extra boundary.
-
-## Test
+## Как повторить прогон
 
 ```bash
-.venv/bin/python -m pip install -e '.[dev]'
-.venv/bin/python -m pytest -q
+python -m venv .venv
+.venv/bin/pip install -e '.[dev]'
+
+PYTHONPATH=src .venv/bin/python scripts/fetch_corpus.py \
+  --sources studies/oss-bsl-corpus-2026-08-10/sources.json \
+  --target ../oss-bsl-corpus \
+  --manifest studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json
+
+PYTHONPATH=src .venv/bin/python scripts/run_benchmark.py \
+  --corpus ../oss-bsl-corpus \
+  --sources studies/oss-bsl-corpus-2026-08-10/sources.json \
+  --corpus-manifest studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json \
+  --out studies/oss-bsl-corpus-2026-08-10/results.json
+
+PYTHONPATH=src .venv/bin/python scripts/render_charts.py \
+  --results studies/oss-bsl-corpus-2026-08-10/results.json \
+  --out studies/oss-bsl-corpus-2026-08-10/graphs
 ```
 
-The minimal suite covers parsing/chunks, metadata, BM25, in-memory vector filters, hybrid/RRF, missing-Qdrant behavior, pgvector SQL generation, metrics, context, dependencies and API flows. `.[qdrant]` additionally enables the embedded-Qdrant test. CLI index/search/eval are executed above.
+Скрипт загрузки делает checkout строго на commit SHA из `sources.json`. Исходный BSL-код не коммитится в этот репозиторий.
 
-## Limitations
+## Проверки
 
-- No 1C runtime or real exported customer configuration was used.
-- `fixtures/demo.bsl` is synthetic static parser input, not a deployed 1C module.
-- SentenceTransformer model download, live OpenAI-compatible request, FAISS persistence and PostgreSQL/pgvector integration were not executed.
-- The BSL parser is structural/heuristic, not a complete compiler frontend.
+```bash
+PYTHONPATH=src .venv/bin/python -m pytest
+ruff check src scripts tests
+PYTHONPATH=src .venv/bin/python -m compileall -q src scripts tests
+```
+
+## Ограничения
+
+- Корпус состоит из открытых библиотек и тестовых фреймворков, а не из коммерческой конфигурации 1С.
+- Метрики относятся только к детерминированному набору: имена процедур, известные статические вызовы и ссылки на метаданные. Запросы на естественном языке пока не размечены человеком и не участвуют в итоговых числах.
+- Локальный парсер статический и эвристический. BSL Language Server нашёл 7780 процедур и функций против 7342 у парсера этого проекта. Расхождение `-438` описано в [bsl-language-server-validation.json](studies/oss-bsl-corpus-2026-08-10/bsl-language-server-validation.json).
+- Динамическая диспетчеризация, вычисляемые строки запросов и поведение платформы 1С не проверяются выполнением.
