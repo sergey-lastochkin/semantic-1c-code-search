@@ -1,5 +1,7 @@
 # Поиск по BSL-коду
 
+[![CI](https://github.com/sergey-lastochkin/semantic-1c-code-search/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sergey-lastochkin/semantic-1c-code-search/actions/workflows/ci.yml)
+
 Локальный поиск по выгрузке BSL с BM25, настоящими эмбеддингами и статическим графом вызовов. Удалённый репозиторий пока называется `semantic-1c-code-search`; возможное переименование обсуждается отдельно.
 
 ![Локальный поиск по BSL-корпусу](assets/search-example.png)
