@@ -29,7 +29,9 @@ def main() -> None:
             command("git", "clone", "--quiet", source["url"], str(checkout))
         command("git", "-C", str(checkout), "fetch", "--quiet", "origin", source["commit"])
         command("git", "-C", str(checkout), "checkout", "--quiet", "--detach", source["commit"])
-    files = scan_bsl_files(args.target)
+    files = scan_bsl_files(
+        args.target, {str(source["directory"]) for source in sources["sources"]}
+    )
     manifest = {
         "retrieved_at": datetime.now(UTC).isoformat(),
         "sources": sources["sources"],
