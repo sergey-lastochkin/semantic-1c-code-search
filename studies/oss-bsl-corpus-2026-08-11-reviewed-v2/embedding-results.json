@@ -1,0 +1,202 @@
+{
+  "run": {
+    "generated_at": "2026-08-11T06:44:17Z",
+    "code_commit": "3374897332d7003d7c37812425df16d12a77d33b",
+    "python": "3.14.0",
+    "machine": {
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "machine": "arm64",
+      "processor": "arm",
+      "cpu_count": 10,
+      "device": "cpu"
+    }
+  },
+  "model": {
+    "name": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "license": "MIT",
+    "dimension": 384,
+    "input_prefixes": {
+      "query": "query: ",
+      "passage": "passage: "
+    },
+    "matryoshka": {
+      "supported": false,
+      "reason": "The published model card does not state Matryoshka training; dimensions 512, 256 and 128 are not benchmarked as Matryoshka vectors."
+    }
+  },
+  "corpus": {
+    "bsl_files": 577,
+    "lines": 156869,
+    "bytes": 9328165,
+    "chunks": 7342,
+    "graph_links": 105401,
+    "source_manifest_sha256": "64854e2ccc68bccb25de9e99e5005e4196d5eb63393438feb7915629b15e564f",
+    "corpus_manifest_sha256": "fbcdf00ad64d52bce49f31a802a068ae4177655110c5ae1a7fb844d21b3427e1"
+  },
+  "query_sets": {
+    "deterministic_static_gold": {
+      "query_count": 90,
+      "query_set_sha256": "09b805eb81ae95121e530e0af972d812bbae76f6b8e410890a1897013f329863",
+      "review_status": "generated_static_gold"
+    },
+    "natural_language_reviewed_v2": {
+      "path": "evaluation/reviewed_natural_language_queries_v2.json",
+      "query_count": 29,
+      "query_set_sha256": "d8541c9b515f1e2cb9c4974c5500e52e75a2c99abf4d69293c43f06490246271",
+      "schema_version": 2,
+      "dataset_id": "oss-bsl-corpus-russian-natural-language-v2",
+      "reviewed_on": "2026-08-11",
+      "review_method": "manual source inspection against the pinned public corpus; procedure-name-derived wrappers were excluded from scoring",
+      "source_commits": {
+        "Connector": "7e37f1f5cdd35aac220af853b20a551d4da88cdd",
+        "xUnitFor1C": "acdbe70417e16a1c02d1e16cfc0b409e11307848"
+      },
+      "scoring_policy": "Only review_status=reviewed rows are scored. Excluded rows remain auditable but are not used to calculate retrieval metrics.",
+      "source_query_count": 42,
+      "reviewed_query_count": 29,
+      "excluded_query_count": 13,
+      "excluded_query_ids": [
+        "nl-01",
+        "nl-02",
+        "nl-03",
+        "nl-04",
+        "nl-05",
+        "nl-06",
+        "nl-07",
+        "nl-08",
+        "nl-15",
+        "nl-30",
+        "nl-31",
+        "nl-32",
+        "nl-33"
+      ]
+    }
+  },
+  "methods": {
+    "deterministic_static_gold": [
+      {
+        "method": "exact_name",
+        "index_seconds": 0.001776,
+        "serialized_index_bytes": 5414997,
+        "recall_at_1": 0.522222,
+        "recall_at_5": 0.522222,
+        "recall_at_10": 0.522222,
+        "mrr_at_10": 0.522222,
+        "ndcg_at_10": 0.522222,
+        "search_p50_ms": 0.0005,
+        "search_p95_ms": 0.0072
+      },
+      {
+        "method": "bm25",
+        "index_seconds": 0.07345,
+        "serialized_index_bytes": 17579559,
+        "recall_at_1": 0.479393,
+        "recall_at_5": 0.855524,
+        "recall_at_10": 0.911607,
+        "mrr_at_10": 0.740384,
+        "ndcg_at_10": 0.772367,
+        "search_p50_ms": 2.6082,
+        "search_p95_ms": 5.0407
+      },
+      {
+        "method": "embeddings",
+        "index_seconds": 95.430811,
+        "serialized_index_bytes": 11277312,
+        "recall_at_1": 0.466049,
+        "recall_at_5": 0.639668,
+        "recall_at_10": 0.697577,
+        "mrr_at_10": 0.60873,
+        "ndcg_at_10": 0.613113,
+        "search_p50_ms": 9.0115,
+        "search_p95_ms": 14.5306
+      },
+      {
+        "method": "rrf_bm25_embeddings",
+        "index_seconds": 95.504261,
+        "serialized_index_bytes": 28856871,
+        "recall_at_1": 0.598963,
+        "recall_at_5": 0.829589,
+        "recall_at_10": 0.89966,
+        "mrr_at_10": 0.78847,
+        "ndcg_at_10": 0.798151,
+        "search_p50_ms": 11.8005,
+        "search_p95_ms": 14.3932
+      },
+      {
+        "method": "graph_context",
+        "index_seconds": 1e-06,
+        "serialized_index_bytes": 16803291,
+        "recall_at_1": 0.253467,
+        "recall_at_5": 0.721039,
+        "recall_at_10": 0.986081,
+        "mrr_at_10": 0.609484,
+        "ndcg_at_10": 0.701878,
+        "search_p50_ms": 15.2056,
+        "search_p95_ms": 16.6063
+      }
+    ],
+    "natural_language_reviewed_v2": [
+      {
+        "method": "exact_name",
+        "index_seconds": 0.001776,
+        "serialized_index_bytes": 5414997,
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr_at_10": 0.0,
+        "ndcg_at_10": 0.0,
+        "search_p50_ms": 0.0005,
+        "search_p95_ms": 0.0077
+      },
+      {
+        "method": "bm25",
+        "index_seconds": 0.07345,
+        "serialized_index_bytes": 17579559,
+        "recall_at_1": 0.034483,
+        "recall_at_5": 0.137931,
+        "recall_at_10": 0.206897,
+        "mrr_at_10": 0.074904,
+        "ndcg_at_10": 0.10519,
+        "search_p50_ms": 14.025,
+        "search_p95_ms": 17.8359
+      },
+      {
+        "method": "embeddings",
+        "index_seconds": 95.430811,
+        "serialized_index_bytes": 11277312,
+        "recall_at_1": 0.206897,
+        "recall_at_5": 0.344828,
+        "recall_at_10": 0.37931,
+        "mrr_at_10": 0.2578,
+        "ndcg_at_10": 0.28709,
+        "search_p50_ms": 9.2592,
+        "search_p95_ms": 15.6467
+      },
+      {
+        "method": "rrf_bm25_embeddings",
+        "index_seconds": 95.504261,
+        "serialized_index_bytes": 28856871,
+        "recall_at_1": 0.068966,
+        "recall_at_5": 0.275862,
+        "recall_at_10": 0.413793,
+        "mrr_at_10": 0.144089,
+        "ndcg_at_10": 0.206671,
+        "search_p50_ms": 23.8276,
+        "search_p95_ms": 28.8557
+      },
+      {
+        "method": "graph_context",
+        "index_seconds": 1e-06,
+        "serialized_index_bytes": 16803291,
+        "recall_at_1": 0.0,
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr_at_10": 0.0,
+        "ndcg_at_10": 0.0,
+        "search_p50_ms": 14.6987,
+        "search_p95_ms": 15.3242
+      }
+    ]
+  }
+}

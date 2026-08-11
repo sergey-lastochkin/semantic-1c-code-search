@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="sans-serif" font-size="20">p95 поиска: детерминированные запросы</text>
+<text x="24" y="80" font-family="monospace" font-size="14">exact_name</text>
+<rect x="220" y="60" width="0.20" height="28" fill="#2563eb"/>
+<text x="228.20" y="80" font-family="monospace" font-size="14">0.01 мс</text>
+<text x="24" y="134" font-family="monospace" font-size="14">bm25</text>
+<rect x="220" y="114" width="139.63" height="28" fill="#2563eb"/>
+<text x="367.63" y="134" font-family="monospace" font-size="14">5.04 мс</text>
+<text x="24" y="188" font-family="monospace" font-size="14">embeddings</text>
+<rect x="220" y="168" width="402.50" height="28" fill="#2563eb"/>
+<text x="630.50" y="188" font-family="monospace" font-size="14">14.53 мс</text>
+<text x="24" y="242" font-family="monospace" font-size="14">rrf_bm25_embeddings</text>
+<rect x="220" y="222" width="398.70" height="28" fill="#2563eb"/>
+<text x="626.70" y="242" font-family="monospace" font-size="14">14.39 мс</text>
+<text x="24" y="296" font-family="monospace" font-size="14">graph_context</text>
+<rect x="220" y="276" width="460.00" height="28" fill="#2563eb"/>
+<text x="688.00" y="296" font-family="monospace" font-size="14">16.61 мс</text>
+<text x="24" y="344" font-family="sans-serif" font-size="12" fill="#475569">Источник: JSON с результатами</text>
+</svg>

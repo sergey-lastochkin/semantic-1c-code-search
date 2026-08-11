@@ -22,6 +22,7 @@ from code_search.embeddings import SentenceTransformerProvider
 from code_search.evaluation import evaluate
 from code_search.impact import ImpactGraph
 from code_search.retrieval import BM25Index, rrf
+from code_search.review import raw_rankings, resolve_reviewed_natural_queries
 
 MODEL_NAME = "intfloat/multilingual-e5-small"
 MODEL_REVISION = "614241f622f53c4eeff9890bdc4f31cfecc418b3"
@@ -106,37 +107,36 @@ def exact_index(chunks):
     }
 
 
-def resolve_natural_queries(path: Path, chunks) -> list[dict[str, object]]:
-    by_path = {chunk.context_path: chunk for chunk in chunks}
-    raw = json.loads(path.read_text(encoding="utf-8"))
-    rows: list[dict[str, object]] = []
-    for row in raw:
-        paths = row["proposed_relevant_paths"]
-        missing = [value for value in paths if value not in by_path]
-        if missing:
-            raise ValueError(f"Natural-language relevance paths are absent from corpus: {missing}")
-        rows.append(
-            {
-                **row,
-                "relevant_ids": [by_path[value].id for value in paths],
-                "expected_paths": paths,
-            }
-        )
-    return rows
-
-
 def methods(indexes: dict[str, PreparedIndex], queries) -> list[dict[str, object]]:
     return [
-        measure("exact_name", indexes["exact"], lambda index, query: [index[query.casefold()]] if query.casefold() in index else [], queries),
-        measure("bm25", indexes["bm25"], lambda index, query: index.search(query, 10), queries),
-        measure("embeddings", indexes["embedding"], lambda index, query: index.search(query, 10), queries),
-        measure(
+        measure(name, prepared, search, queries)
+        for name, prepared, search in search_methods(indexes)
+    ]
+
+
+def search_methods(indexes: dict[str, PreparedIndex]):
+    return [
+        (
+            "exact_name",
+            indexes["exact"],
+            lambda index, query: [index[query.casefold()]] if query.casefold() in index else [],
+        ),
+        ("bm25", indexes["bm25"], lambda index, query: index.search(query, 10)),
+        (
+            "embeddings",
+            indexes["embedding"],
+            lambda index, query: index.search(query, 10),
+        ),
+        (
             "rrf_bm25_embeddings",
             indexes["rrf"],
             lambda index, query: rrf([index[0].search(query, 20), index[1].search(query, 20)])[:10],
-            queries,
         ),
-        measure("graph_context", indexes["graph"], lambda index, query: index.search_context(query, 10), queries),
+        (
+            "graph_context",
+            indexes["graph"],
+            lambda index, query: index.search_context(query, 10),
+        ),
     ]
 
 
@@ -157,7 +157,7 @@ def main() -> None:
     chunks = load_bsl_chunks(args.corpus, versions)
     graph = ImpactGraph(chunks)
     deterministic = make_queries(chunks, graph)
-    natural = resolve_natural_queries(args.natural_queries, chunks)
+    natural, natural_review = resolve_reviewed_natural_queries(args.natural_queries, chunks)
     provider = SentenceTransformerProvider(
         MODEL_NAME,
         revision=MODEL_REVISION,
@@ -215,21 +215,26 @@ def main() -> None:
                 "query_set_sha256": query_hash(deterministic),
                 "review_status": "generated_static_gold",
             },
-            "natural_language_pending": {
+            "natural_language_reviewed_v2": {
                 "path": args.natural_queries.as_posix(),
                 "query_count": len(natural),
                 "query_set_sha256": sha256(args.natural_queries.read_bytes()).hexdigest(),
-                "review_status": "pending",
-                "note": "Proposed relevance has not been confirmed by the portfolio owner; metrics are experimental.",
+                **natural_review,
             },
         },
         "methods": {
             "deterministic_static_gold": methods(indexes, deterministic),
-            "natural_language_pending": methods(indexes, natural),
+            "natural_language_reviewed_v2": methods(indexes, natural),
         },
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    ranking_path = args.out.with_name("natural-language-query-rankings.jsonl")
+    rankings = raw_rankings(search_methods(indexes), natural)
+    ranking_path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rankings),
+        encoding="utf-8",
+    )
     print(json.dumps({"chunks": len(chunks), "query_sets": {key: len(value) for key, value in {"deterministic": deterministic, "natural": natural}.items()}}, ensure_ascii=False))
 
 

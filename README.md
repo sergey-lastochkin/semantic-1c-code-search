@@ -10,7 +10,7 @@
 
 На 90 детерминированных проверках BM25 получил лучший Recall@5 `0.855524`. Реальная локальная модель `intfloat/multilingual-e5-small` дала `0.639668`, а RRF с BM25 поднял MRR@10 до `0.788470`. Это не подгонка: для точных имён и известных статических вызовов лексический поиск оказался сильнее.
 
-Для 42 русских вопросов эмбеддинги дали Recall@5 `0.404762` против `0.285714` у BM25. Их разметка пока ожидает ручной проверки, поэтому это эксперимент, а не итоговая метрика. Список вопросов и предлагаемая релевантность находятся в [JSON](evaluation/natural_language_queries.json) и [карточке проверки](evaluation/review-natural-queries.md).
+Для V2 вручную просмотрены 42 русских вопроса и target-процедуры в закреплённом открытом корпусе: 29 вошли в метрики, 13 прямых name-level обёрток исключены с причиной. На reviewed V2 embeddings получили Recall@5 `0.344828` против `0.137931` у BM25; RRF получил лучший Recall@10 `0.413793`, но уступил embeddings на Recall@5 и MRR@10. Полный [V2 artifact](studies/oss-bsl-corpus-2026-08-11-reviewed-v2/README.md) содержит query source, source/corpus manifest, raw top-10 ranking каждой строки и графики. Старый [pending-набор](evaluation/natural_language_queries.json) сохранён как исторический эксперимент и не является итоговой метрикой.
 
 ![Recall@5 на детерминированных запросах](studies/oss-bsl-corpus-2026-08-10/graphs/deterministic-recall-at-5.svg)
 
@@ -31,13 +31,13 @@ PYTHONPATH=src .venv/bin/python scripts/run_embedding_benchmark.py \
   --corpus ../oss-bsl-corpus \
   --sources studies/oss-bsl-corpus-2026-08-10/sources.json \
   --corpus-manifest studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json \
-  --natural-queries evaluation/natural_language_queries.json \
-  --out studies/oss-bsl-corpus-2026-08-10/embedding-results.json \
-  --device mps
+  --natural-queries evaluation/reviewed_natural_language_queries_v2.json \
+  --out studies/oss-bsl-corpus-2026-08-11-reviewed-v2/embedding-results.json \
+  --device cpu
 
 PYTHONPATH=src .venv/bin/python scripts/render_charts.py \
-  --results studies/oss-bsl-corpus-2026-08-10/embedding-results.json \
-  --out studies/oss-bsl-corpus-2026-08-10/graphs
+  --results studies/oss-bsl-corpus-2026-08-11-reviewed-v2/embedding-results.json \
+  --out studies/oss-bsl-corpus-2026-08-11-reviewed-v2/graphs
 
 PYTHONPATH=src .venv/bin/python scripts/serve_corpus_viewer.py \
   --corpus ../oss-bsl-corpus \
