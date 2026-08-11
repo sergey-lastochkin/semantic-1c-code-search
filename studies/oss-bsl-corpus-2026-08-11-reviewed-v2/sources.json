@@ -1,0 +1,32 @@
+{
+  "retrieval_date": "2026-08-10",
+  "sources": [
+    {
+      "name": "Connector",
+      "directory": "Connector",
+      "url": "https://github.com/vbondarevsky/Connector.git",
+      "commit": "7e37f1f5cdd35aac220af853b20a551d4da88cdd",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/vbondarevsky/Connector/blob/master/LICENSE",
+      "scope": "BSL modules from the exported 1C HTTP connector"
+    },
+    {
+      "name": "YAxUnit",
+      "directory": "yaxunit",
+      "url": "https://github.com/bia-technologies/yaxunit.git",
+      "commit": "23fd2db738dbb26b7b43bdcf0c35fd2c263a3899",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/bia-technologies/yaxunit/blob/develop/LICENSE",
+      "scope": "BSL modules from the YAxUnit test framework and smoke extension"
+    },
+    {
+      "name": "xUnitFor1C",
+      "directory": "xUnitFor1C",
+      "url": "https://github.com/xDrivenDevelopment/xUnitFor1C.git",
+      "commit": "acdbe70417e16a1c02d1e16cfc0b409e11307848",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/xDrivenDevelopment/xUnitFor1C/blob/develop/LICENSE",
+      "scope": "BSL modules from the xUnitFor1C test framework"
+    }
+  ]
+}

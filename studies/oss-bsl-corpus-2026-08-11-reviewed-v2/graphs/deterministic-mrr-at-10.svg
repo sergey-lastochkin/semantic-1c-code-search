@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="32" font-family="sans-serif" font-size="20">MRR@10: детерминированные запросы</text>
+<text x="24" y="80" font-family="monospace" font-size="14">exact_name</text>
+<rect x="220" y="60" width="304.67" height="28" fill="#2563eb"/>
+<text x="532.67" y="80" font-family="monospace" font-size="14">0.5222</text>
+<text x="24" y="134" font-family="monospace" font-size="14">bm25</text>
+<rect x="220" y="114" width="431.95" height="28" fill="#2563eb"/>
+<text x="659.95" y="134" font-family="monospace" font-size="14">0.7404</text>
+<text x="24" y="188" font-family="monospace" font-size="14">embeddings</text>
+<rect x="220" y="168" width="355.14" height="28" fill="#2563eb"/>
+<text x="583.14" y="188" font-family="monospace" font-size="14">0.6087</text>
+<text x="24" y="242" font-family="monospace" font-size="14">rrf_bm25_embeddings</text>
+<rect x="220" y="222" width="460.00" height="28" fill="#2563eb"/>
+<text x="688.00" y="242" font-family="monospace" font-size="14">0.7885</text>
+<text x="24" y="296" font-family="monospace" font-size="14">graph_context</text>
+<rect x="220" y="276" width="355.58" height="28" fill="#2563eb"/>
+<text x="583.58" y="296" font-family="monospace" font-size="14">0.6095</text>
+<text x="24" y="344" font-family="sans-serif" font-size="12" fill="#475569">Источник: JSON с результатами</text>
+</svg>
