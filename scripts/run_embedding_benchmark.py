@@ -156,17 +156,54 @@ def resolve_natural_queries(path: Path, chunks) -> tuple[list[dict[str, object]]
 
 def methods(indexes: dict[str, PreparedIndex], queries) -> list[dict[str, object]]:
     return [
-        measure("exact_name", indexes["exact"], lambda index, query: [index[query.casefold()]] if query.casefold() in index else [], queries),
-        measure("bm25", indexes["bm25"], lambda index, query: index.search(query, 10), queries),
-        measure("embeddings", indexes["embedding"], lambda index, query: index.search(query, 10), queries),
-        measure(
+        measure(name, prepared, search, queries)
+        for name, prepared, search in search_methods(indexes)
+    ]
+
+
+def search_methods(indexes: dict[str, PreparedIndex]):
+    return [
+        (
+            "exact_name",
+            indexes["exact"],
+            lambda index, query: [index[query.casefold()]] if query.casefold() in index else [],
+        ),
+        ("bm25", indexes["bm25"], lambda index, query: index.search(query, 10)),
+        (
+            "embeddings",
+            indexes["embedding"],
+            lambda index, query: index.search(query, 10),
+        ),
+        (
             "rrf_bm25_embeddings",
             indexes["rrf"],
             lambda index, query: rrf([index[0].search(query, 20), index[1].search(query, 20)])[:10],
-            queries,
         ),
-        measure("graph_context", indexes["graph"], lambda index, query: index.search_context(query, 10), queries),
+        (
+            "graph_context",
+            indexes["graph"],
+            lambda index, query: index.search_context(query, 10),
+        ),
     ]
+
+
+def raw_rankings(indexes: dict[str, PreparedIndex], queries) -> list[dict[str, object]]:
+    """Keep the top-ten paths for every reviewed natural-language judgement."""
+
+    ranked: list[dict[str, object]] = []
+    for row in queries:
+        ranked.append(
+            {
+                "id": row["id"],
+                "query": row["query"],
+                "expected_paths": row["expected_paths"],
+                "ranking": {
+                    name: [chunk.context_path for chunk in search(prepared.value, row["query"])[:10]]
+                    for name, prepared, search in search_methods(indexes)
+                },
+            }
+        )
+    return ranked
 
 
 def main() -> None:
@@ -258,6 +295,12 @@ def main() -> None:
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    ranking_path = args.out.with_name("natural-language-query-rankings.jsonl")
+    rankings = raw_rankings(indexes, natural)
+    ranking_path.write_text(
+        "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rankings),
+        encoding="utf-8",
+    )
     print(json.dumps({"chunks": len(chunks), "query_sets": {key: len(value) for key, value in {"deterministic": deterministic, "natural": natural}.items()}}, ensure_ascii=False))
 
 
