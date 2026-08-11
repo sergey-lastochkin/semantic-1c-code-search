@@ -1,13 +1,9 @@
 import json
-import sys
-from pathlib import Path
 
 import pytest
 
-sys.path.append(str(Path(__file__).parents[1] / "scripts"))
-from run_embedding_benchmark import raw_rankings, resolve_natural_queries
-
 from code_search.models import Chunk
+from code_search.review import raw_rankings, resolve_reviewed_natural_queries
 
 
 def chunk(path: str) -> Chunk:
@@ -40,7 +36,9 @@ def test_reviewed_query_resolver_keeps_only_reviewed_rows(tmp_path):
         encoding="utf-8",
     )
 
-    rows, metadata = resolve_natural_queries(query_path, [chunk("Source/Module/Target")])
+    rows, metadata = resolve_reviewed_natural_queries(
+        query_path, [chunk("Source/Module/Target")]
+    )
 
     assert [row["id"] for row in rows] == ["kept"]
     assert metadata["reviewed_query_count"] == 1
@@ -55,7 +53,7 @@ def test_reviewed_query_resolver_rejects_unreviewed_or_unexplained_rows(tmp_path
     )
 
     with pytest.raises(ValueError, match="not reviewed"):
-        resolve_natural_queries(query_path, [])
+        resolve_reviewed_natural_queries(query_path, [])
 
 
 def test_raw_rankings_keep_paths_in_query_and_ranked_result():
@@ -74,13 +72,11 @@ def test_raw_rankings_keep_paths_in_query_and_ranked_result():
             self.value = value
 
     rankings = raw_rankings(
-        {
-            "exact": Prepared({"вопрос": expected}),
-            "bm25": Prepared(Searchable()),
-            "embedding": Prepared(Searchable()),
-            "rrf": Prepared((Searchable(), Searchable())),
-            "graph": Prepared(Graph()),
-        },
+        [
+            ("exact", Prepared({"вопрос": expected}), lambda index, query: [index[query]]),
+            ("bm25", Prepared(Searchable()), lambda index, query: index.search(query, 10)),
+            ("graph", Prepared(Graph()), lambda index, query: index.search_context(query, 10)),
+        ],
         [{"id": "one", "query": "вопрос", "expected_paths": [expected.context_path]}],
     )
 
