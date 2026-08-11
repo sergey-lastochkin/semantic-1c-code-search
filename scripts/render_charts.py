@@ -77,10 +77,13 @@ def main() -> None:
         chart(methods, "search_p95_ms", "p95 задержки поиска, мс", args.out / "latency.svg")
     else:
         deterministic = methods["deterministic_static_gold"]
-        natural = methods["natural_language_pending"]
+        natural_key = "natural_language_reviewed_v2"
+        if natural_key not in methods:
+            natural_key = "natural_language_pending"
+        natural = methods[natural_key]
         chart(deterministic, "recall_at_5", "Recall@5: детерминированные запросы", args.out / "deterministic-recall-at-5.svg")
         chart(deterministic, "mrr_at_10", "MRR@10: детерминированные запросы", args.out / "deterministic-mrr-at-10.svg")
-        chart(natural, "recall_at_5", "Recall@5: русские вопросы, разметка pending", args.out / "natural-recall-at-5.svg")
+        chart(natural, "recall_at_5", "Recall@5: русские вопросы, reviewed V2", args.out / "natural-recall-at-5.svg")
         chart(deterministic, "search_p95_ms", "p95 поиска: детерминированные запросы", args.out / "latency-p95.svg")
         chart(deterministic, "serialized_index_bytes", "Размер индекса: детерминированный прогон", args.out / "index-size.svg")
     if "graph_sample" in result:

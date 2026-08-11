@@ -106,12 +106,33 @@ def exact_index(chunks):
     }
 
 
-def resolve_natural_queries(path: Path, chunks) -> list[dict[str, object]]:
+def resolve_natural_queries(path: Path, chunks) -> tuple[list[dict[str, object]], dict[str, object]]:
     by_path = {chunk.context_path: chunk for chunk in chunks}
     raw = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(raw, list):
+        metadata: dict[str, object] = {
+            "dataset_id": "natural-language-legacy",
+            "review_status": "pending",
+            "source_query_count": len(raw),
+        }
+        source_rows = raw
+    else:
+        metadata = dict(raw["metadata"])
+        source_rows = raw["queries"]
     rows: list[dict[str, object]] = []
-    for row in raw:
-        paths = row["proposed_relevant_paths"]
+    excluded: list[str] = []
+    for row in source_rows:
+        status = row.get("review_status")
+        if status == "excluded":
+            if not row.get("exclusion_reason"):
+                raise ValueError(f"Excluded query requires a reason: {row['id']}")
+            excluded.append(str(row["id"]))
+            continue
+        if status != "reviewed":
+            raise ValueError(f"Natural-language query is not reviewed: {row['id']}")
+        paths = row.get("expected_relevant_paths")
+        if not paths:
+            raise ValueError(f"Reviewed query requires expected paths: {row['id']}")
         missing = [value for value in paths if value not in by_path]
         if missing:
             raise ValueError(f"Natural-language relevance paths are absent from corpus: {missing}")
@@ -122,7 +143,15 @@ def resolve_natural_queries(path: Path, chunks) -> list[dict[str, object]]:
                 "expected_paths": paths,
             }
         )
-    return rows
+    if not rows:
+        raise ValueError("Natural-language benchmark contains no reviewed queries")
+    return rows, {
+        **metadata,
+        "source_query_count": len(source_rows),
+        "reviewed_query_count": len(rows),
+        "excluded_query_count": len(excluded),
+        "excluded_query_ids": excluded,
+    }
 
 
 def methods(indexes: dict[str, PreparedIndex], queries) -> list[dict[str, object]]:
@@ -157,7 +186,7 @@ def main() -> None:
     chunks = load_bsl_chunks(args.corpus, versions)
     graph = ImpactGraph(chunks)
     deterministic = make_queries(chunks, graph)
-    natural = resolve_natural_queries(args.natural_queries, chunks)
+    natural, natural_review = resolve_natural_queries(args.natural_queries, chunks)
     provider = SentenceTransformerProvider(
         MODEL_NAME,
         revision=MODEL_REVISION,
@@ -215,17 +244,16 @@ def main() -> None:
                 "query_set_sha256": query_hash(deterministic),
                 "review_status": "generated_static_gold",
             },
-            "natural_language_pending": {
+            "natural_language_reviewed_v2": {
                 "path": args.natural_queries.as_posix(),
                 "query_count": len(natural),
                 "query_set_sha256": sha256(args.natural_queries.read_bytes()).hexdigest(),
-                "review_status": "pending",
-                "note": "Proposed relevance has not been confirmed by the portfolio owner; metrics are experimental.",
+                **natural_review,
             },
         },
         "methods": {
             "deterministic_static_gold": methods(indexes, deterministic),
-            "natural_language_pending": methods(indexes, natural),
+            "natural_language_reviewed_v2": methods(indexes, natural),
         },
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
