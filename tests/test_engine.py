@@ -1,4 +1,5 @@
 import importlib.util
+import json
 
 import pytest
 from fastapi.testclient import TestClient
@@ -9,6 +10,7 @@ from code_search.backends import (
     PgVectorBackend,
     QdrantLocalBackend,
 )
+from code_search.cli import load, main
 from code_search.context import context_pack
 from code_search.dependencies import DependencyGraph
 from code_search.embeddings import (
@@ -189,3 +191,27 @@ def test_fake_is_test_double_and_api_smoke():
         and client.get("/experiments").json()[0]["id"] == experiment["id"]
     )
     assert create_app().openapi()["info"]["title"] == "Offline 1C semantic code search"
+
+
+def test_cli_searches_a_directory_and_prints_locations(tmp_path, capsys):
+    nested = tmp_path / "CommonModules" / "Payments"
+    nested.mkdir(parents=True)
+    (nested / "Module.bsl").write_text(TEXT, encoding="utf-8-sig")
+
+    indexed = load(tmp_path)
+    assert len(indexed) == 3
+    assert indexed[0].object_name == "CommonModules/Payments/Module"
+
+    main(["search", str(tmp_path), "СформироватьНазначениеПлатежа", "--k", "1"])
+    output = capsys.readouterr().out
+    assert "СформироватьНазначениеПлатежа" in output
+    assert "CommonModules/Payments/Module" in output
+
+
+def test_cli_json_output_remains_available(tmp_path, capsys):
+    source = tmp_path / "Module.bsl"
+    source.write_text(TEXT, encoding="utf-8")
+
+    main(["search", str(source), "СформироватьНазначениеПлатежа", "--json"])
+    output = json.loads(capsys.readouterr().out)
+    assert output[0]["procedure_name"] == "СформироватьНазначениеПлатежа"

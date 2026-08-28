@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a reproducible parser, CLI, or retrieval problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach proprietary configurations, credentials, or personal data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the command and the unexpected result.
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Minimal BSL fixture
+      description: Paste or link a redistributable example that reproduces the issue.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: dropdown
+    id: engine
+    attributes:
+      label: Search engine
+      options:
+        - bm25
+        - hybrid
+        - parser only
+        - not applicable
+    validations:
+      required: true

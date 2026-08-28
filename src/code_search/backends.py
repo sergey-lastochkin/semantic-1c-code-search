@@ -7,7 +7,7 @@ import re
 from collections.abc import Callable, Iterable
 from typing import Any, Protocol
 
-from .embeddings import EmbeddingProvider, cosine
+from .embeddings import EmbeddingProvider, cosine, embed_passage, embed_query
 from .models import Chunk
 
 
@@ -31,7 +31,8 @@ class InMemoryVectorBackend:
     ) -> None:
         self.dimension = dimension
         self.rows = [
-            (chunk, provider.embed(chunk.text, dimension)) for chunk in list(chunks)
+            (chunk, embed_passage(provider, chunk.text, dimension))
+            for chunk in list(chunks)
         ]
 
     def search(
@@ -41,7 +42,7 @@ class InMemoryVectorBackend:
         k: int = 10,
         filters: dict[str, object] | None = None,
     ) -> list[Chunk]:
-        query_vector = provider.embed(query, self.dimension)
+        query_vector = embed_query(provider, query, self.dimension)
 
         def allowed(chunk: Chunk) -> bool:
             return not filters or all(
@@ -92,7 +93,7 @@ class QdrantLocalBackend:
             points.append(
                 PointStruct(
                     id=point_id,
-                    vector=provider.embed(chunk.text, dimension),
+                    vector=embed_passage(provider, chunk.text, dimension),
                     payload={
                         "object_name": chunk.object_name,
                         "module_type": chunk.module_type,
@@ -118,7 +119,7 @@ class QdrantLocalBackend:
         ]
         result = self.client.query_points(
             self.collection,
-            query=provider.embed(query, self.dimension),
+            query=embed_query(provider, query, self.dimension),
             query_filter=Filter(must=conditions) if conditions else None,
             limit=k,
         )
@@ -147,7 +148,10 @@ class FaissVectorBackend:
         self.index = self.faiss.IndexFlatIP(dimension)
         self.index.add(
             np.asarray(
-                [provider.embed(chunk.text, dimension) for chunk in self.chunks],
+                [
+                    embed_passage(provider, chunk.text, dimension)
+                    for chunk in self.chunks
+                ],
                 dtype="float32",
             )
         )
@@ -162,7 +166,7 @@ class FaissVectorBackend:
         import numpy as np
 
         _scores, identifiers = self.index.search(
-            np.asarray([provider.embed(query, self.dimension)], dtype="float32"),
+            np.asarray([embed_query(provider, query, self.dimension)], dtype="float32"),
             min(k, len(self.chunks)),
         )
         return [
@@ -217,7 +221,9 @@ class PgVectorBackend:
                     (
                         chunk.id,
                         json.dumps(chunk.metadata(), ensure_ascii=False),
-                        self._vector_literal(provider.embed(chunk.text, dimension)),
+                        self._vector_literal(
+                            embed_passage(provider, chunk.text, dimension)
+                        ),
                     ),
                 )
             connection.commit()
@@ -244,7 +250,7 @@ class PgVectorBackend:
             where_parts.append("payload ->> %s = %s")
             params.extend((key, str(value)))
         where = " WHERE " + " AND ".join(where_parts) if where_parts else ""
-        params.extend((self._vector_literal(provider.embed(query, self.dimension)), k))
+        params.extend((self._vector_literal(embed_query(provider, query, self.dimension)), k))
         try:
             cursor.execute(
                 f"SELECT payload FROM {self.table}{where} "

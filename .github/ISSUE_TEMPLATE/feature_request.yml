@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a focused improvement to local BSL search
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: What are you trying to find or understand in a BSL export?
+    validations:
+      required: true
+  - type: textarea
+    id: desired
+    attributes:
+      label: Desired result
+      description: Show the command or output shape you would expect.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Current workaround

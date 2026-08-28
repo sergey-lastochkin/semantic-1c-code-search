@@ -16,6 +16,26 @@ class EmbeddingProvider(Protocol):
     def embed(self, text: str, dimension: int | None = None) -> list[float]: ...
 
 
+def embed_query(
+    provider: EmbeddingProvider, text: str, dimension: int | None = None
+) -> list[float]:
+    """Embed a search query, preserving role prefixes when a model supports them."""
+    encode_queries = getattr(provider, "encode_queries", None)
+    if encode_queries is not None:
+        return encode_queries([text], dimension=dimension)[0]
+    return provider.embed(text, dimension)
+
+
+def embed_passage(
+    provider: EmbeddingProvider, text: str, dimension: int | None = None
+) -> list[float]:
+    """Embed indexed code, preserving role prefixes when a model supports them."""
+    encode_passages = getattr(provider, "encode_passages", None)
+    if encode_passages is not None:
+        return encode_passages([text], dimension=dimension)[0]
+    return provider.embed(text, dimension)
+
+
 def normalize(vector: list[float]) -> list[float]:
     norm = sqrt(sum(value * value for value in vector)) or 1.0
     return [value / norm for value in vector]

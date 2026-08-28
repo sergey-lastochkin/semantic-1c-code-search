@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Semantic 1C Code Search</title>
+  <desc id="desc">Social preview for an offline search tool for exported BSL code.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#18233e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffcc33"/>
+      <stop offset="1" stop-color="#ff8a3d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#02050e" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" rx="32" fill="#0b1020"/>
+  <circle cx="1160" cy="-20" r="260" fill="#2b3f72" opacity="0.28"/>
+  <circle cx="70" cy="660" r="240" fill="#ffad32" opacity="0.08"/>
+
+  <g transform="translate(74 68)">
+    <rect width="76" height="76" rx="19" fill="#ffcc33"/>
+    <text x="38" y="49" text-anchor="middle" font-family="Menlo, Monaco, monospace" font-size="25" font-weight="700" fill="#10172a">BSL</text>
+  </g>
+
+  <text x="174" y="104" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" font-weight="650" fill="#d5deef">OPEN-SOURCE DEVELOPER TOOL</text>
+  <text x="74" y="208" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="62" font-weight="750" fill="#ffffff">Semantic 1C Code Search</text>
+  <text x="76" y="258" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="28" fill="#aebbd2">Offline search across exported 1C / BSL code</text>
+
+  <g transform="translate(74 310)" filter="url(#shadow)">
+    <rect width="1132" height="208" rx="20" fill="#0d1427" stroke="#344463" stroke-width="2"/>
+    <circle cx="26" cy="26" r="6" fill="#ff6b6b"/>
+    <circle cx="48" cy="26" r="6" fill="#ffd166"/>
+    <circle cx="70" cy="26" r="6" fill="#4cd97b"/>
+    <text x="30" y="86" font-family="Menlo, Monaco, monospace" font-size="23" fill="#7d91b4">$ code-search search ./config</text>
+    <text x="470" y="86" font-family="Menlo, Monaco, monospace" font-size="23" fill="#ffca46">"where is stock checked?"</text>
+    <rect x="28" y="112" width="1076" height="66" rx="12" fill="#15213a"/>
+    <text x="50" y="153" font-family="Menlo, Monaco, monospace" font-size="22" fill="#58dfa8">1. ПроверитьОстаток</text>
+    <text x="355" y="153" font-family="Menlo, Monaco, monospace" font-size="20" fill="#aebbd2">CommonModules/Stock:42-68</text>
+  </g>
+
+  <g transform="translate(74 556)" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="19" font-weight="650">
+    <rect width="114" height="42" rx="21" fill="#223152"/>
+    <text x="57" y="27" text-anchor="middle" fill="#dbe6fb">BM25</text>
+    <rect x="132" width="210" height="42" rx="21" fill="#223152"/>
+    <text x="237" y="27" text-anchor="middle" fill="#dbe6fb">Local embeddings</text>
+    <rect x="360" width="195" height="42" rx="21" fill="#223152"/>
+    <text x="457" y="27" text-anchor="middle" fill="#dbe6fb">No code upload</text>
+  </g>
+
+  <text x="1206" y="585" text-anchor="end" font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" fill="#8192b0">Apache-2.0 · Python 3.11+</text>
+</svg>

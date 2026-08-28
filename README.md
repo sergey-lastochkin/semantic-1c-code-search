@@ -1,64 +1,126 @@
-# Поиск по BSL-коду
+# Semantic 1C Code Search
+
+[English](README.en.md) · Русский
 
 [![CI](https://github.com/sergey-lastochkin/semantic-1c-code-search/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sergey-lastochkin/semantic-1c-code-search/actions/workflows/ci.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB.svg)](https://www.python.org/)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE)
 
-Локальный поиск по выгрузке BSL с BM25, настоящими эмбеддингами и статическим графом вызовов. Удалённый репозиторий пока называется `semantic-1c-code-search`; возможное переименование обсуждается отдельно.
+**Локальный поиск по выгруженному BSL-коду: укажите каталог конфигурации и
+задайте вопрос или имя процедуры.** Инструмент рекурсивно находит `.bsl`-файлы,
+показывает исходный модуль и строки и не требует запущенной платформы 1С.
 
-![Локальный поиск по BSL-корпусу](assets/search-example.png)
+![Semantic 1C Code Search](assets/social-preview.svg)
 
-Прогон сделан на 577 BSL-файлах из трёх открытых проектов Apache-2.0: 156869 строк и 7342 процедуры или функции. Источники, commit SHA и SHA-256 файлов сохранены в [манифесте корпуса](studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json).
+## Быстрый старт
 
-На 90 детерминированных проверках BM25 получил лучший Recall@5 `0.855524`. Реальная локальная модель `intfloat/multilingual-e5-small` дала `0.639668`, а RRF с BM25 поднял MRR@10 до `0.788470`. Это не подгонка: для точных имён и известных статических вызовов лексический поиск оказался сильнее.
-
-Для V2 вручную просмотрены 42 русских вопроса и target-процедуры в закреплённом открытом корпусе: 29 вошли в метрики, 13 прямых name-level обёрток исключены с причиной. На reviewed V2 embeddings получили Recall@5 `0.344828` против `0.137931` у BM25; RRF получил лучший Recall@10 `0.413793`, но уступил embeddings на Recall@5 и MRR@10. Полный [V2 artifact](studies/oss-bsl-corpus-2026-08-11-reviewed-v2/README.md) содержит query source, source/corpus manifest, raw top-10 ranking каждой строки и графики. Старый [pending-набор](evaluation/natural_language_queries.json) сохранён как исторический эксперимент и не является итоговой метрикой.
-
-![Recall@5 на детерминированных запросах](studies/oss-bsl-corpus-2026-08-10/graphs/deterministic-recall-at-5.svg)
-
-[Корпус](docs/corpus.md) · [Методика и результаты](docs/benchmark.md) · [Границы парсера](docs/parser-limits.md)
-
-## Как повторить прогон
+Клонируйте проект и установите CLI:
 
 ```bash
-python -m venv .venv
-.venv/bin/pip install -e '.[dev,embeddings]'
-
-PYTHONPATH=src .venv/bin/python scripts/fetch_corpus.py \
-  --sources studies/oss-bsl-corpus-2026-08-10/sources.json \
-  --target ../oss-bsl-corpus \
-  --manifest studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json
-
-PYTHONPATH=src .venv/bin/python scripts/run_embedding_benchmark.py \
-  --corpus ../oss-bsl-corpus \
-  --sources studies/oss-bsl-corpus-2026-08-10/sources.json \
-  --corpus-manifest studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json \
-  --natural-queries evaluation/reviewed_natural_language_queries_v2.json \
-  --out studies/oss-bsl-corpus-2026-08-11-reviewed-v2/embedding-results.json \
-  --device cpu
-
-PYTHONPATH=src .venv/bin/python scripts/render_charts.py \
-  --results studies/oss-bsl-corpus-2026-08-11-reviewed-v2/embedding-results.json \
-  --out studies/oss-bsl-corpus-2026-08-11-reviewed-v2/graphs
-
-PYTHONPATH=src .venv/bin/python scripts/serve_corpus_viewer.py \
-  --corpus ../oss-bsl-corpus \
-  --sources studies/oss-bsl-corpus-2026-08-10/sources.json
+git clone https://github.com/sergey-lastochkin/semantic-1c-code-search.git
+cd semantic-1c-code-search
+python3.11 -m venv .venv
+.venv/bin/python -m pip install .
 ```
 
-`fetch_corpus.py` делает checkout строго на commit SHA из `sources.json`. Исходный BSL-код в этот репозиторий не добавляется.
-
-## Проверки
+Проверка на небольшом примере:
 
 ```bash
-PYTHONPATH=src .venv/bin/python -m pytest
-ruff check src scripts tests
-PYTHONPATH=src .venv/bin/python -m compileall -q src scripts tests
+.venv/bin/code-search search examples "СформироватьНазначениеПлатежа"
 ```
 
-Эти проверки работают только с кодом и малыми фикстурами из репозитория: они не скачивают корпус, не загружают модель эмбеддингов и не вызывают 1С.
+Пример результата:
+
+```text
+1. СформироватьНазначениеПлатежа  [payment_module:1-4]
+   Функция СформироватьНазначениеПлатежа(Документ) Экспорт
+```
+
+Поиск по собственной выгрузке конфигурации:
+
+```bash
+.venv/bin/code-search search /path/to/config-export \
+  "СформироватьНазначениеПлатежа"
+```
+
+По умолчанию используется быстрый BM25 без сетевых запросов и дополнительных
+моделей. Для автоматизации добавьте `--json`.
+
+## Семантический режим
+
+Опциональный hybrid-режим объединяет BM25 и локальные embeddings через RRF:
+
+```bash
+.venv/bin/python -m pip install '.[embeddings]'
+
+.venv/bin/code-search search /path/to/config-export \
+  "проверка доступного остатка перед проведением" \
+  --engine hybrid
+```
+
+Модель `intfloat/multilingual-e5-small` закреплена на конкретной revision. При
+первом запуске `sentence-transformers` скачивает её, после чего вычисления идут
+локально. Текст BSL не отправляется во внешний API.
+
+| Режим | Когда использовать | Дополнительная установка |
+| --- | --- | --- |
+| `bm25` | Имена, реквизиты, точные термины | Нет |
+| `hybrid` | Вопросы на естественном языке | `.[embeddings]` и загрузка модели |
+
+## Что уже реализовано
+
+- Рекурсивный поиск по каталогу `.bsl`-файлов.
+- Разбиение модулей по процедурам и функциям с диапазонами строк.
+- BM25, векторный поиск и объединение результатов через RRF.
+- Статический граф вызовов в JSON, Mermaid или DOT.
+- JSON-вывод для скриптов и локальный FastAPI-интерфейс.
+- Адаптеры in-memory, Qdrant local, FAISS и pgvector.
+
+```bash
+code-search graph /path/to/config-export --format mermaid
+code-search index /path/to/config-export --out .code-search/index.json
+```
+
+## Проверенный benchmark
+
+Эксперимент воспроизводится на 577 BSL-файлах из трёх открытых Apache-2.0
+проектов: 156 869 строк и 7 342 процедуры или функции. Источники, commit SHA и
+SHA-256 сохранены в [манифесте корпуса](studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json).
+
+- На 90 детерминированных запросах BM25 получил Recall@5 `0.855524`.
+- На вручную просмотренном наборе русских вопросов embeddings получили
+  Recall@5 `0.344828` против `0.137931` у BM25.
+- RRF получил лучший Recall@10 `0.413793`, но не выиграл все метрики.
+
+[Методика и результаты](docs/benchmark.md) ·
+[корпус](docs/corpus.md) ·
+[границы парсера](docs/parser-limits.md)
+
+## Разработка и проверки
+
+```bash
+git clone https://github.com/sergey-lastochkin/semantic-1c-code-search.git
+cd semantic-1c-code-search
+python3.11 -m venv .venv
+.venv/bin/python -m pip install -e '.[dev]'
+
+.venv/bin/python -m pytest
+.venv/bin/python -m ruff check src scripts tests
+.venv/bin/python -m compileall -q src scripts tests
+```
+
+Правила и хорошие первые задачи описаны в [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Границы
 
-- Корпус состоит из открытых библиотек и тестовых фреймворков, а не из коммерческой конфигурации 1С.
-- `multilingual-e5-small` зафиксирована на revision `614241f622f53c4eeff9890bdc4f31cfecc418b3`, имеет MIT-лицензию и размерность 384. В карточке модели нет заявления о Matryoshka training, поэтому усечения до 512, 256 и 128 не выдаются за Matryoshka experiment.
-- Парсер статический и эвристический. BSL Language Server нашёл 7780 процедур и функций против 7342 у этого парсера; разница `-438` описана в [файле проверки](studies/oss-bsl-corpus-2026-08-10/bsl-language-server-validation.json).
-- Динамическая диспетчеризация, вычисляемые строки запросов и работа платформы 1С не проверяются выполнением.
+- Парсер статический и эвристический; он не заменяет компилятор или запуск 1С.
+- Динамическая диспетчеризация, препроцессор, расширения и вычисляемые строки
+  могут быть видны не полностью.
+- Benchmark построен на открытых библиотеках и тестовых фреймворках, а не на
+  коммерческой конфигурации.
+- Качество поиска зависит от структуры выгрузки и формулировки запроса.
+
+## Лицензия
+
+[Apache License 2.0](LICENSE). Не добавляйте в issues и pull requests закрытые
+конфигурации, персональные данные или код без права на распространение.

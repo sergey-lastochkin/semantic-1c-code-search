@@ -1,12 +1,24 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "1c-semantic-code-search"
 version = "0.1.0"
-description = "Offline-first BSL retrieval engineering demo."
+description = "Offline search across exported 1C/BSL code with BM25 and local embeddings."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{name = "Sergey Goncharov"}]
 requires-python = ">=3.11"
+keywords = ["1c", "bsl", "code-search", "semantic-search", "static-analysis"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "fastapi>=0.115,<0.116",
     "pydantic>=2,<3",
@@ -20,6 +32,12 @@ faiss = ["faiss-cpu>=1.8,<2", "numpy>=1.26,<3"]
 postgres = ["psycopg[binary]>=3.2,<4"]
 [project.scripts]
 code-search = "code_search.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sergey-lastochkin/semantic-1c-code-search"
+Repository = "https://github.com/sergey-lastochkin/semantic-1c-code-search"
+Issues = "https://github.com/sergey-lastochkin/semantic-1c-code-search/issues"
+Changelog = "https://github.com/sergey-lastochkin/semantic-1c-code-search/blob/main/CHANGELOG.md"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
