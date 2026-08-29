@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "1c-semantic-code-search"
-version = "0.1.0"
+version = "0.1.1"
 description = "Offline search across exported 1C/BSL code with BM25 and local embeddings."
 readme = "README.md"
 license = "Apache-2.0"
@@ -17,6 +17,8 @@ classifiers = [
     "Environment :: Console",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [

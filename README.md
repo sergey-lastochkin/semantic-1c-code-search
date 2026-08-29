@@ -10,9 +10,26 @@
 задайте вопрос или имя процедуры.** Инструмент рекурсивно находит `.bsl`-файлы,
 показывает исходный модуль и строки и не требует запущенной платформы 1С.
 
-![Semantic 1C Code Search](assets/social-preview.svg)
+![Поиск по BSL-коду из терминала](assets/cli-demo.gif)
 
 ## Быстрый старт
+
+### Windows PowerShell: готовый wheel
+
+Клонируйте примеры и установите готовый wheel из релиза `v0.1.1`:
+
+```powershell
+git clone --depth 1 https://github.com/sergey-lastochkin/semantic-1c-code-search.git
+cd semantic-1c-code-search
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install "https://github.com/sergey-lastochkin/semantic-1c-code-search/releases/download/v0.1.1/1c_semantic_code_search-0.1.1-py3-none-any.whl"
+.\.venv\Scripts\code-search.exe search examples "СформироватьНазначениеПлатежа"
+```
+
+Wheel не требует сборки проекта. Его SHA-256 опубликован рядом с файлами
+[релиза `v0.1.1`](https://github.com/sergey-lastochkin/semantic-1c-code-search/releases/tag/v0.1.1).
+
+### macOS и Linux: установка из исходников
 
 Клонируйте проект и установите CLI:
 
@@ -108,6 +125,8 @@ python3.11 -m venv .venv
 .venv/bin/python -m ruff check src scripts tests
 .venv/bin/python -m compileall -q src scripts tests
 ```
+
+Те же проверки выполняются в CI на Windows и Ubuntu с Python 3.11 и 3.12.
 
 Правила и хорошие первые задачи описаны в [CONTRIBUTING.md](CONTRIBUTING.md).
 

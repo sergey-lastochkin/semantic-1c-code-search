@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import sys
 from pathlib import Path
 
 from .dependencies import DependencyGraph
@@ -15,6 +16,14 @@ from .retrieval import BM25Index, HybridRetriever
 DEFAULT_MODEL = "intfloat/multilingual-e5-small"
 DEFAULT_MODEL_REVISION = "614241f622f53c4eeff9890bdc4f31cfecc418b3"
 EXCLUDED_DIRECTORIES = {".git", ".venv", "venv", "node_modules", "__pycache__"}
+
+
+def _configure_output_encoding() -> None:
+    """Keep BSL identifiers printable on Windows runners and legacy consoles."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8")
 
 
 def load(path: str | Path) -> list[Chunk]:
@@ -68,6 +77,7 @@ def _format_results(results: list[Chunk]) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
+    _configure_output_encoding()
     p = argparse.ArgumentParser(description="Offline search across BSL files")
     sub = p.add_subparsers(dest="cmd", required=True)
     i = sub.add_parser("index")

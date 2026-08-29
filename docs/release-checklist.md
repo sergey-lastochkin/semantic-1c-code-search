@@ -8,6 +8,17 @@
 - Website: leave empty until a stable live demo or documentation site exists.
 - Social preview: upload `assets/social-preview.png` in repository settings.
 
+## v0.1.1
+
+- Run the documented test, Ruff, compile, and CLI smoke checks.
+- Confirm the Windows and Ubuntu CI matrix is green.
+- Build both distributions and install the wheel in a clean environment.
+- Confirm the README wheel URL, terminal GIF, release notes, and SHA-256 file.
+- Create tag `v0.1.1` from the reviewed merge commit.
+- Attach the wheel, source distribution, and `SHA256SUMS` to the GitHub release.
+- Do not publish to PyPI until the package name and trusted-publishing setup have
+  been verified.
+
 ## v0.1.0
 
 - Run the documented test, Ruff, and compile checks.

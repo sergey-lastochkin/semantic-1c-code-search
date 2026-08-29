@@ -6,6 +6,21 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-29
+
+### Added
+
+- A Windows PowerShell quick start using the prebuilt release wheel.
+- A terminal GIF recorded against the redistributable example BSL module.
+- Windows and Ubuntu CI coverage for Python 3.11 and 3.12.
+- Distribution build, wheel smoke test, and downloadable CI artifacts.
+
+### Changed
+
+- The package version is now `0.1.1`.
+
+## [0.1.0] - 2026-08-28
+
 ### Added
 
 - Directory-wide search for exported `.bsl` files.
