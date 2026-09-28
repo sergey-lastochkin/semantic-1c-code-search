@@ -5,19 +5,37 @@ English · [Русский](README.md)
 [![CI](https://github.com/sergey-lastochkin/semantic-1c-code-search/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sergey-lastochkin/semantic-1c-code-search/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB.svg)](https://www.python.org/)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/sergey-lastochkin/semantic-1c-code-search)](https://github.com/sergey-lastochkin/semantic-1c-code-search/releases/latest)
 
-**Search an exported 1C/BSL codebase locally: point the CLI at a directory and
-enter a question or procedure name.** It recursively discovers `.bsl` files,
-returns source modules and line ranges, and does not require a running 1C
-platform.
+**Offline search across exported 1C:Enterprise (BSL) code.** Point the CLI at a
+configuration export, ask with words or a procedure name, and get the module,
+procedure and line range. No running 1C platform is required and no code leaves
+the machine.
 
-![BSL code search from the terminal](assets/cli-demo.gif)
+![Searching 577 open-source BSL files from the terminal](assets/cli-demo.gif)
 
-## Quick start
+<sub>A real CLI recording on the open benchmark corpus. How to re-record:
+[scripts/demo](scripts/demo/README.md).</sub>
 
-### Windows PowerShell: prebuilt wheel
+## Problem
 
-Clone the examples and install the prebuilt `v0.1.1` wheel:
+A typical 1C configuration contains tens of thousands of procedures. The
+Designer's search and `grep` return every matching line without ranking. This
+tool splits modules into procedures and functions, ranks whole procedures by
+their name, parameters, variables, comments and strings, and returns a short
+list with module paths and line numbers. The optional `hybrid` mode adds a local
+multilingual embedding model for plain-language questions.
+
+## Who it is for
+
+- 1C developers who inherit an unfamiliar configuration.
+- Leads and auditors who need every place related to payments, exchange or a
+  specific register before estimating a change.
+- Teams that cannot send source code to external AI services.
+
+## Two-minute start
+
+Windows PowerShell, prebuilt wheel:
 
 ```powershell
 git clone --depth 1 https://github.com/sergey-lastochkin/semantic-1c-code-search.git
@@ -27,115 +45,64 @@ py -3.11 -m venv .venv
 .\.venv\Scripts\code-search.exe search examples "СформироватьНазначениеПлатежа"
 ```
 
-The wheel requires no local project build. Its SHA-256 is published with the
-[`v0.1.1` release](https://github.com/sergey-lastochkin/semantic-1c-code-search/releases/tag/v0.1.1).
-
-### macOS and Linux: install from source
-
-Clone the project and install the CLI:
+macOS and Linux, from source:
 
 ```bash
 git clone https://github.com/sergey-lastochkin/semantic-1c-code-search.git
 cd semantic-1c-code-search
 python3.11 -m venv .venv
 .venv/bin/python -m pip install .
-```
-
-Try the bundled example:
-
-```bash
 .venv/bin/code-search search examples "СформироватьНазначениеПлатежа"
 ```
 
-Search your own exported configuration:
+On your own export: `code-search search /path/to/config-export "таймаут соединения" --k 5`
+(add `--json` for scripts).
 
-```bash
-.venv/bin/code-search search /path/to/config-export \
-  "СформироватьНазначениеПлатежа"
+## Example output
+
+```text
+$ code-search search corpus 'таймаут соединения' --k 3
+1. Таймаут  [Connector/src/ru/CommonModules/КоннекторHTTP/Ext/Module:2035-2047]
+   Функция Таймаут(ДополнительныеПараметры)
+
+2. УстановитьТаймаут  [yaxunit/tests/src/CommonModules/Обр_ЮТHTTPСоединение_МО/Module:175-187]
+   Процедура УстановитьТаймаут() Экспорт
+
+3. КонструкторПоУмолчанию  [yaxunit/tests/src/CommonModules/Обр_ЮТHTTPСоединение_МО/Module:187-264]
+   Процедура КонструкторПоУмолчанию() Экспорт
 ```
 
-The default BM25 engine is fast, requires no model, and makes no network
-requests. Add `--json` for machine-readable output.
+Also available: a static call graph (`code-search graph --format mermaid|dot|json`),
+a saved index (`code-search index`), a local FastAPI interface and in-memory,
+Qdrant local, FAISS and pgvector adapters.
 
-## Semantic mode
+## Benchmark
 
-The optional hybrid engine combines BM25 and local embeddings with RRF:
+577 BSL files from three Apache-2.0 projects (Connector, YAxUnit, xUnitFor1C):
+156,869 lines, 7,342 procedures and functions. Commit SHAs and per-file SHA-256
+are in the [corpus manifest](studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json).
 
-```bash
-.venv/bin/python -m pip install '.[embeddings]'
+| Query set | BM25 | Embeddings | RRF |
+| --- | ---: | ---: | ---: |
+| 90 deterministic checks (names, calls, metadata), Recall@5 | **0.856** | 0.640 | 0.830 |
+| 29 reviewed Russian questions, Recall@5 | 0.138 | **0.345** | 0.276 |
+| Same 29 questions, Recall@10 | 0.207 | 0.379 | **0.414** |
 
-.venv/bin/code-search search /path/to/config-export \
-  "validate available stock before posting" \
-  --engine hybrid
-```
-
-`intfloat/multilingual-e5-small` is pinned to a specific revision. The first
-hybrid run downloads it through `sentence-transformers`; inference is local
-afterward. BSL source is never sent to a remote API.
-
-| Engine | Best for | Extra setup |
-| --- | --- | --- |
-| `bm25` | Names, metadata, and exact terminology | None |
-| `hybrid` | Natural-language questions | `.[embeddings]` and a model download |
-
-## Included capabilities
-
-- Recursive discovery of `.bsl` files.
-- Procedure-aware chunks with source paths and line ranges.
-- BM25, vector retrieval, and reciprocal rank fusion.
-- Static call graphs exported as JSON, Mermaid, or DOT.
-- JSON CLI output and a local FastAPI interface.
-- In-memory, Qdrant local, FAISS, and pgvector adapters.
-
-```bash
-code-search graph /path/to/config-export --format mermaid
-code-search index /path/to/config-export --out .code-search/index.json
-```
-
-## Reproducible benchmark
-
-The benchmark uses 577 BSL files from three Apache-2.0 projects: 156,869 lines
-and 7,342 procedures or functions. Source revisions and SHA-256 digests are
-recorded in the [corpus manifest](studies/oss-bsl-corpus-2026-08-10/corpus-manifest.json).
-
-- BM25 reached Recall@5 `0.855524` on 90 deterministic checks.
-- On the manually reviewed Russian natural-language set, embeddings reached
-  Recall@5 `0.344828`, compared with `0.137931` for BM25.
-- RRF produced the best Recall@10 at `0.413793`, but did not win every metric.
-
-[Method and results](docs/benchmark.md) ·
-[corpus](docs/corpus.md) ·
-[parser limitations](docs/parser-limits.md)
-
-## Development
-
-```bash
-git clone https://github.com/sergey-lastochkin/semantic-1c-code-search.git
-cd semantic-1c-code-search
-python3.11 -m venv .venv
-.venv/bin/python -m pip install -e '.[dev]'
-
-.venv/bin/python -m pytest
-.venv/bin/python -m ruff check src scripts tests
-.venv/bin/python -m compileall -q src scripts tests
-```
-
-CI runs the same checks on Windows and Ubuntu with Python 3.11 and 3.12.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and useful
-first issues.
+BM25 is strong on names; embeddings are 2.5× better on plain-language questions,
+but the right procedure still lands in the top 5 only about a third of the time.
+29 questions is a small set — treat it as a signal, not a final score.
+[Methodology](docs/benchmark.md).
 
 ## Limitations
 
-- The parser is static and heuristic; it does not replace the 1C compiler or
-  runtime.
-- Dynamic dispatch, preprocessing, extension merge order, and constructed query
-  strings may be incomplete.
-- The benchmark corpus contains open-source libraries and test frameworks, not
-  a commercial configuration.
-- Retrieval quality depends on the export structure and query wording.
+- The parser is static and heuristic; it does not replace the 1C compiler.
+- Dynamic calls, preprocessor branches and extensions are only partly visible
+  ([parser limits](docs/parser-limits.md)).
+- BM25 matches whole lowercase words, without stemming or identifier splitting.
+- The benchmark uses open libraries, not a commercial configuration.
+- Python 3.11+ is required; there is no standalone executable yet.
 
-## License
+## Author
 
-[Apache License 2.0](LICENSE). Do not submit proprietary configurations,
-personal data, credentials, or code you are not allowed to redistribute.
+Sergey Lastochkin — 1C and Python integrations and automation.
+Telegram: [@metaanswer](https://t.me/metaanswer). License: [Apache 2.0](LICENSE).
